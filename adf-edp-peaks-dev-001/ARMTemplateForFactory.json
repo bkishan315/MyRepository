@@ -13519,7 +13519,7 @@
 						"typeProperties": {
 							"source": {
 								"type": "SqlServerSource",
-								"sqlReaderQuery": "select * from zc_yes_no",
+								"sqlReaderQuery": "select * from etl.x_Databricks_Logic_new\nwhere Sourcetablename='zc_yes_no'",
 								"queryTimeout": "02:00:00",
 								"partitionOption": "None"
 							},
