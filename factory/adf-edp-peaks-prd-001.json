@@ -1,0 +1,13 @@
+{
+	"name": "adf-edp-peaks-prd-001",
+	"location": "westus2",
+	"identity": {
+		"type": "UserAssigned",
+		"userAssignedIdentities": {
+			"/subscriptions/70da3525-9238-4ff7-bb92-0a8241fe8c45/resourcegroups/rg-edp-prd-security/providers/Microsoft.ManagedIdentity/userAssignedIdentities/id-adf-edp-peaks-prd-001": {
+				"clientId": "4b743618-f1ae-4da9-ab6d-24b2326ee9f1",
+				"principalId": "5cba3d53-06cd-4267-a4bc-50d9fdc60286"
+			}
+		}
+	}
+}
