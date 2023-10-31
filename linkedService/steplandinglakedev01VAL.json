@@ -4,9 +4,9 @@
 		"annotations": [],
 		"type": "AzureBlobFS",
 		"typeProperties": {
-			"url": "https://stedplandinglakedev01.dfs.core.windows.net/",
+			"url": "https://stedplandinglaketst01.dfs.core.windows.net/",
 			"credential": {
-				"referenceName": "id_adf_edp_peaks_dev_001",
+				"referenceName": "tst_credential",
 				"type": "CredentialReference"
 			}
 		},
