@@ -1,7 +1,0 @@
-{
-	"name": "ir-poc-testing",
-	"properties": {
-		"type": "SelfHosted",
-		"description": "IR used to test the hub"
-	}
-}
