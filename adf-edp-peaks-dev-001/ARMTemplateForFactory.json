@@ -13524,14 +13524,12 @@
 								"partitionOption": "None"
 							},
 							"sink": {
-								"type": "DelimitedTextSink",
+								"type": "ParquetSink",
 								"storeSettings": {
 									"type": "AzureBlobFSWriteSettings"
 								},
 								"formatSettings": {
-									"type": "DelimitedTextWriteSettings",
-									"quoteAllText": true,
-									"fileExtension": ".txt"
+									"type": "ParquetWriteSettings"
 								}
 							},
 							"enableStaging": false,
@@ -13553,9 +13551,12 @@
 						],
 						"outputs": [
 							{
-								"referenceName": "Datasetgen2",
+								"referenceName": "datasetgen2_CDC_VAL",
 								"type": "DatasetReference",
-								"parameters": {}
+								"parameters": {
+									"path": "@concat(item().Targetfilename,'_Full','_',formatDateTime(convertFromUtc(utcnow(), 'Mountain Standard Time'),'yyyy-MM-dd-HH-mm-ss'),'.','parquet')",
+									"folder": "@item().targetfoldername"
+								}
 							}
 						]
 					}
@@ -13571,7 +13572,7 @@
 			},
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/datasets/Val_No_Table')]",
-				"[concat(variables('factoryId'), '/datasets/Datasetgen2')]"
+				"[concat(variables('factoryId'), '/datasets/datasetgen2_CDC_VAL')]"
 			]
 		},
 		{
