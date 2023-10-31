@@ -1,0 +1,106 @@
+{
+	"name": "SqlServerTable5",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ddcadifinprddb",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [
+			{
+				"name": "LOCATION_ALL",
+				"type": "varchar"
+			},
+			{
+				"name": "LOCATION_MARKET_ABBR",
+				"type": "varchar"
+			},
+			{
+				"name": "LOCATION_MARKET_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "LOCATION_TYPE",
+				"type": "varchar"
+			},
+			{
+				"name": "LOCATION_REGION",
+				"type": "varchar"
+			},
+			{
+				"name": "LOCATION_SITES",
+				"type": "varchar"
+			},
+			{
+				"name": "LOCATION_ABBR",
+				"type": "varchar"
+			},
+			{
+				"name": "ROLLUP_TYPE",
+				"type": "varchar"
+			},
+			{
+				"name": "LOCATION_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "LOCATION_ABBR_ALT",
+				"type": "varchar"
+			},
+			{
+				"name": "FACILITY_LOC_NUM",
+				"type": "varchar"
+			},
+			{
+				"name": "REV_LOC",
+				"type": "varchar"
+			},
+			{
+				"name": "LEGACYNAME_ROW",
+				"type": "varchar"
+			},
+			{
+				"name": "NHSN_ORGID",
+				"type": "varchar"
+			},
+			{
+				"name": "PREMIER_FACILITY",
+				"type": "varchar"
+			},
+			{
+				"name": "ERP_LAWSON",
+				"type": "varchar"
+			},
+			{
+				"name": "ERP_ORACLE",
+				"type": "varchar"
+			},
+			{
+				"name": "ERP_PEOPLESOFT",
+				"type": "varchar"
+			},
+			{
+				"name": "ERP_REPORTING",
+				"type": "varchar"
+			},
+			{
+				"name": "NETREV_AVAILABLE",
+				"type": "varchar"
+			},
+			{
+				"name": "FCILITY_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "LOCATION_MK",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "Kpi",
+			"table": "IHLocations"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

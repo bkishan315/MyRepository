@@ -1,0 +1,226 @@
+{
+	"name": "SqlServerTable_SboDepartment",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "DDCADIFINPRDDB_EBA",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "SCM/SCM_Old"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [
+			{
+				"name": "LOCATION_ABBR",
+				"type": "varchar"
+			},
+			{
+				"name": "SERV_AREA_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "DEPARTMENT_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "DEPARTMENT_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "REV_LOC_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "REV_LOC_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "ADDRESS_CITY",
+				"type": "varchar"
+			},
+			{
+				"name": "ADDRESS_COUNTRY_C",
+				"type": "varchar"
+			},
+			{
+				"name": "COUNTRY_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "ADDRESS_COUNTY_C",
+				"type": "varchar"
+			},
+			{
+				"name": "ADDRESS_COUNTY_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "ADDRESS_STATE_C",
+				"type": "varchar"
+			},
+			{
+				"name": "ADDRESS_STATE_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "ADDRESS_ZIP_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "FAX_NUM",
+				"type": "varchar"
+			},
+			{
+				"name": "ADDRESSLINE1",
+				"type": "varchar"
+			},
+			{
+				"name": "ADDRESSLINE2",
+				"type": "varchar"
+			},
+			{
+				"name": "ADDRESSLINE3",
+				"type": "varchar"
+			},
+			{
+				"name": "BALANCESHEETPREFIX",
+				"type": "varchar"
+			},
+			{
+				"name": "PROFITLOSSPREFIX",
+				"type": "varchar"
+			},
+			{
+				"name": "RPT_GRP_SEVEN",
+				"type": "varchar"
+			},
+			{
+				"name": "RPT_GRP_SEVEN_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "RPT_GRP_FOURTY_C",
+				"type": "varchar"
+			},
+			{
+				"name": "RPT_GRP_FOURTY_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "PHONE_NUMBER",
+				"type": "varchar"
+			},
+			{
+				"name": "SPECIALTY",
+				"type": "varchar"
+			},
+			{
+				"name": "DEPT_ABBREVIATION",
+				"type": "varchar"
+			},
+			{
+				"name": "EXTERNAL_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "RPT_GRP_THIRTY",
+				"type": "varchar"
+			},
+			{
+				"name": "RECORD_STATUS",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "RPT_GRP_ELEVEN_C",
+				"type": "varchar"
+			},
+			{
+				"name": "DEFAULT_POS_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "POS_TYPE_EAF",
+				"type": "varchar"
+			},
+			{
+				"name": "POS_RPT_GRP_ELEVEN",
+				"type": "varchar"
+			},
+			{
+				"name": "RPT_GRP_TWELVE_C",
+				"type": "varchar"
+			},
+			{
+				"name": "MPI_ID_TYPE_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "MPI_ID_TYPE_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "MPI_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "MPI_FROM_DATE",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "MPI_TO_DATE",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "MPI_RET_CHK_PP_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "MPI_RET_CHK_PP_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "CLM_ALT_ADR_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "CLM_ALT_ADR",
+				"type": "varchar"
+			},
+			{
+				"name": "CLM_ALT_CITY",
+				"type": "varchar"
+			},
+			{
+				"name": "CLM_ALT_STATE_C",
+				"type": "varchar"
+			},
+			{
+				"name": "CLM_ALT_ZIP",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "eba",
+			"table": "SboDepartment"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

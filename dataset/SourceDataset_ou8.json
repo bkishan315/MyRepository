@@ -1,0 +1,13 @@
+{
+	"name": "SourceDataset_ou8",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "tstag2_IRP",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

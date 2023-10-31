@@ -1,0 +1,17 @@
+{
+	"name": "Clarity Node 3",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"description": "KDCCLRSPRAGDB3",
+		"annotations": [],
+		"type": "SqlServer",
+		"typeProperties": {
+			"connectionString": "integrated security=False;data source=KDCCLRSPRAGDB3.sclhs.net;initial catalog=CLARITY_PRD_REPORT;user id=protenus",
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiJhZWUyOWZkOC1iMjQwLTQ4OTEtOGZlYS05MWVjYzZiODc0ZWEiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+		},
+		"connectVia": {
+			"referenceName": "integrationRuntimeDDCMSIRTPRDAPP1",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}

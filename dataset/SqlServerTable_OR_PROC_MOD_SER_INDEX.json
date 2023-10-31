@@ -1,0 +1,42 @@
+{
+	"name": "SqlServerTable_OR_PROC_MOD_SER_INDEX",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Clarity Node 3",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "SCM/SCM_Old"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [
+			{
+				"name": "OR_PROC_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "LINE",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "CM_PHY_OWNER_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "CM_LOG_OWNER_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "PMODS_SER_INDEX_ID",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "OR_PROC_MOD_SER_INDEX"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

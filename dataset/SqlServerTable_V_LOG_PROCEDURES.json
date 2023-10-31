@@ -1,0 +1,146 @@
+{
+	"name": "SqlServerTable_V_LOG_PROCEDURES",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Clarity Node 3",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "SCM/SCM_Old"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [
+			{
+				"name": "LOG_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "CASE_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "PROCEDURE_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "PROCEDURE_NM",
+				"type": "varchar"
+			},
+			{
+				"name": "PROCEDURE_NM_WID",
+				"type": "varchar"
+			},
+			{
+				"name": "PROCEDURE_DISPLAY_NM",
+				"type": "varchar"
+			},
+			{
+				"name": "PRIMARY_CODE_PROC_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "SCHEDULED_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "PERFORMED_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "PANEL",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "PANEL_SERVICE_C",
+				"type": "varchar"
+			},
+			{
+				"name": "PANEL_SERVICE_NM",
+				"type": "varchar"
+			},
+			{
+				"name": "PANEL_PRIMARY_PHYSICIAN_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "PANEL_PRIMARY_PHYSICIAN_NM",
+				"type": "varchar"
+			},
+			{
+				"name": "PANEL_PRIMARY_PHYSICIAN_NM_WID",
+				"type": "varchar"
+			},
+			{
+				"name": "PANEL_PRIMARY_PHYSICIAN_CRED",
+				"type": "varchar"
+			},
+			{
+				"name": "LATERALITY_C",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "LATERALITY_NM",
+				"type": "varchar"
+			},
+			{
+				"name": "OPERATING_REGION_C",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "OPERATING_REGION_NM",
+				"type": "varchar"
+			},
+			{
+				"name": "WOUND_CLASS_C",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "WOUND_CLASS_NM",
+				"type": "varchar"
+			},
+			{
+				"name": "APPROACH_C",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "APPROACH_NM",
+				"type": "varchar"
+			},
+			{
+				"name": "POSSIBLE_PROC_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "CCS_PROC_GROUPER_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "CCS_PROC_GROUPER_NM",
+				"type": "varchar"
+			},
+			{
+				"name": "MULTIPLE_CODE_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "ADDL_INFO_OPE_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "V_LOG_PROCEDURES"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

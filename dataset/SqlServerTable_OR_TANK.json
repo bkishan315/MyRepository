@@ -1,0 +1,459 @@
+{
+	"name": "SqlServerTable_OR_TANK",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Clarity Node 3",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "SCM/SCM_Old"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [
+			{
+				"name": "TANK_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "TANK_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "LOCATION_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "SURG_REC_TYPE_C",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "STATUS_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "ANES_STAFF_TYPE_C",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "SURG_STAFF_TYPE_C",
+				"type": "varchar"
+			},
+			{
+				"name": "SURG_EQUIP_TYPE_C",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "ANES_EQUIP_TYPE_C",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "INSTRUMENT_TYPE_C",
+				"type": "varchar"
+			},
+			{
+				"name": "EQP_BIN_LOCATION",
+				"type": "varchar"
+			},
+			{
+				"name": "EQP_TURNAROUNDTIME",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "EQP_AUTH_ALL_LOC",
+				"type": "varchar"
+			},
+			{
+				"name": "RECORD_CREATE_DATE",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "CM_PHY_OWNER_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "CM_LOG_OWNER_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "POS_DEVICE_TYPE_C",
+				"type": "varchar"
+			},
+			{
+				"name": "POS_DEV_CONF_CK_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "POS_BODY_C",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "POS_HEAD_C",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "POS_RIGHT_ARM_C",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "POS_LEFT_ARM_C",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "POS_RIGHT_LEG_C",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "POS_LEFT_LEG_C",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "MSG_START_INSTANT",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "MSG_END_DATETIME",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "MSG_SUBJECT",
+				"type": "varchar"
+			},
+			{
+				"name": "MSG_TEXT",
+				"type": "varchar"
+			},
+			{
+				"name": "PRINT_INV_LOC_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "TRAY_TYPE_C",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "POS_FAC_RECORD_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "GB_MSG_TYPE_C",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "GB_MSG_SUBJECT",
+				"type": "varchar"
+			},
+			{
+				"name": "GB_MSG_SYSTEM_MS_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "GB_MSG_EFF_ST_INST",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "GB_MSG_EFF_END_INST",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "GB_MSG_LAST_USER_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "PROC_INSTRXN_TYPE_C",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "CSR_REQ_HAR_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "CSR_USE_SURG_ENC_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "OVR_EXT_CC_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "SEND_CHRG_CODE_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "ADD_PROFCHG_LPP_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "SEND_DIAG_CHRG_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "SUPPLY_CHG_METHOD_C",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "CHARGE_FOR_DRUGS_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "BUNDLE_SUP_CHRGS_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "ZERO_DOL_SUP_WARN_C",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "WASTED_SUP_METH_C",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "IMP_CHG_METHOD_C",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "ZERO_DOL_IMP_WARN_C",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "CDP_CHG_METHOD_C",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "ZERO_DOL_CDP_WARN_C",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "CHARGE_TYPE_C",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "CHRG_ANES_STF_TYP_C",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "CHRG_SURG_STAFF_C",
+				"type": "varchar"
+			},
+			{
+				"name": "CHRG_SURG_EQP_C",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "CHRG_ANES_EQP_C",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "CHRG_CODE_TBL_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "CHRG_REQ_SER_ID_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "CHRG_SER_TIME_C",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "CHRG_TM_CAL_LPP_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "CHRG_EVT_EMPTY_C",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "CHRG_LQF_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "CHRG_LQL_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "VAR_PACU_CHRG_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "CHRG_INSTR_TYPE_C",
+				"type": "varchar"
+			},
+			{
+				"name": "MISSING_TIMES_C",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "DEF_CSR_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "TANK_REC_TYPE_C",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "SEND_ANES_CHRGS_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "ANES_ST_TM_EVT_C",
+				"type": "varchar"
+			},
+			{
+				"name": "ANES_END_TM_EVT_C",
+				"type": "varchar"
+			},
+			{
+				"name": "CHARGE_MED_DRUGS_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "MESSAGE_TYPE_C",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "PROF_CHARGE_DEPT_C",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "ABBR",
+				"type": "varchar"
+			},
+			{
+				"name": "AVAIL_APPTS_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "PARENT_TANK_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "IND_TMPLT_DEF_OPEN",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "AVAIL_CASES_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "IND_TMPLT_DEF_OVB",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "CSR_ASSOC_CHRG_C",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "STAFF_TYPE_MAP_C",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "INCOMP_IMPLANT_CHARGE_WARN_C",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "AVAIL_ADMISSIONS_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "ADMSN_PLANNING_TYPE_C",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "REQUIRE_END_DATE_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "DFLT_ADMSN_START_TIME_C",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "DFLT_ADMSN_END_TIME_C",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "ADMSN_SCHED_RELEASE_OFFSET_NUM",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "ASSIGNED_RESOURCE_WILL_SORT_YN",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "OR_TANK"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

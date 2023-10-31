@@ -1,0 +1,16 @@
+{
+	"name": "DDCADIFINPRDDB_EBA",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "SqlServer",
+		"typeProperties": {
+			"connectionString": "integrated security=False;data source=ddcadifinprddb;initial catalog=EBA;user id=databricks",
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiIyNzM5MTUzZC00ODc0LTQ2YjYtOGY4My00NmQ4ZDI3NzA1OWIiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+		},
+		"connectVia": {
+			"referenceName": "integrationRuntimeDDCMSIRTPRDAPP1",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}

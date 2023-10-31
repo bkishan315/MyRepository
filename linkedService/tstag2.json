@@ -1,0 +1,16 @@
+{
+	"name": "tstag2",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "SqlServer",
+		"typeProperties": {
+			"connectionString": "integrated security=False;data source=DDCDETSTDBAG02.sclhs.net;initial catalog=CLARITY_BLD_REPORT;user id=Test_Login",
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiJlZDU3MmQ4ZC05MmQ1LTRmMjctODdhZC0xMDdmYzRmMzI0YWMiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+		},
+		"connectVia": {
+			"referenceName": "integrationRuntimeDDCMSIRTPRDAPP1",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}

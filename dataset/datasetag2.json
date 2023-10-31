@@ -1,0 +1,643 @@
+{
+	"name": "datasetag2",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "tstag2_IRP",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [
+			{
+				"name": "ACCOUNT_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "ACCOUNT_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "CONTACT_PERSON",
+				"type": "varchar"
+			},
+			{
+				"name": "BIRTHDATE",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "SEX",
+				"type": "varchar"
+			},
+			{
+				"name": "SSN",
+				"type": "varchar"
+			},
+			{
+				"name": "IS_ACTIVE",
+				"type": "varchar"
+			},
+			{
+				"name": "BILLING_ADDRESS_1",
+				"type": "varchar"
+			},
+			{
+				"name": "BILLING_ADDRESS_2",
+				"type": "varchar"
+			},
+			{
+				"name": "CITY",
+				"type": "varchar"
+			},
+			{
+				"name": "STATE_C",
+				"type": "varchar"
+			},
+			{
+				"name": "ZIP",
+				"type": "varchar"
+			},
+			{
+				"name": "HOME_PHONE",
+				"type": "varchar"
+			},
+			{
+				"name": "WORK_PHONE",
+				"type": "varchar"
+			},
+			{
+				"name": "ACCOUNT_TYPE_C",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "REFERRING_PROV_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "SERV_AREA_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "FIN_CLASS_C",
+				"type": "varchar"
+			},
+			{
+				"name": "TOTAL_BALANCE",
+				"type": "decimal",
+				"precision": 12,
+				"scale": 2
+			},
+			{
+				"name": "INSURANCE_BALANCE",
+				"type": "decimal",
+				"precision": 12,
+				"scale": 2
+			},
+			{
+				"name": "PATIENT_BALANCE",
+				"type": "decimal",
+				"precision": 12,
+				"scale": 2
+			},
+			{
+				"name": "BILLING_CYCLE_C",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "FOLLOW_UP_CYCLE_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "BILLING_STATUS_C",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "PMT_PLAN_AMOUNT",
+				"type": "decimal",
+				"precision": 12,
+				"scale": 2
+			},
+			{
+				"name": "PMT_PLAN_FREQ",
+				"type": "varchar"
+			},
+			{
+				"name": "PMT_PLAN_STRT_DATE",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "PMT_PLAN_DUE_DATE",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "LAST_INS_PMT_DATE",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "LAST_INS_PMT_AMT",
+				"type": "decimal",
+				"precision": 12,
+				"scale": 2
+			},
+			{
+				"name": "LAST_PAT_PMT_DATE",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "LAST_PAT_PMT_AMT",
+				"type": "decimal",
+				"precision": 12,
+				"scale": 2
+			},
+			{
+				"name": "LAST_STMT_DATE",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "CONTRACT_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "CONTRACT_EXP_DATE",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "EMPLOYER_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "EMPLOYER_PHONE",
+				"type": "varchar"
+			},
+			{
+				"name": "COLLECTOR_USER_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "EPIC_ACCT_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "RESEARCH_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "OCCUPATION",
+				"type": "varchar"
+			},
+			{
+				"name": "UNDIST_PMT_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "CREDIT_BALANCE_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "BAD_DEBT_BALANCE",
+				"type": "decimal",
+				"precision": 12,
+				"scale": 2
+			},
+			{
+				"name": "PP_AMOUNT_DUE",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "PP_CUR_BALANCE",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "CM_PHY_OWNER_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "CM_LOG_OWNER_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "ROI_PAT_ACCNT_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "ROI_BALANCE",
+				"type": "decimal",
+				"precision": 12,
+				"scale": 2
+			},
+			{
+				"name": "EB_LAST_ND_STMT_DT",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "EB_LAST_D_STMT_DT",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "HOM_CLARITY_FLG_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "HB_BALANCE",
+				"type": "decimal",
+				"precision": 12,
+				"scale": 2
+			},
+			{
+				"name": "HB_PREBILL_BALANCE",
+				"type": "decimal",
+				"precision": 12,
+				"scale": 2
+			},
+			{
+				"name": "HB_INSURANCE_BALAN",
+				"type": "decimal",
+				"precision": 12,
+				"scale": 2
+			},
+			{
+				"name": "HB_SELFPAY_BALANCE",
+				"type": "decimal",
+				"precision": 12,
+				"scale": 2
+			},
+			{
+				"name": "HB_BADDEBT_BALANCE",
+				"type": "decimal",
+				"precision": 12,
+				"scale": 2
+			},
+			{
+				"name": "HB_UNDISTRIB_BAL",
+				"type": "decimal",
+				"precision": 12,
+				"scale": 2
+			},
+			{
+				"name": "HB_SP_AGING_DATE",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "HB_INS_AGING_DATE",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "HB_LAST_INS_PMT_DT",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "HB_LAST_SP_PMT_DT",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "SBO_HSP_ACCOUNT_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "EB_LAST_INFO_ST_DT",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "EB_LAST_D_INFO_DT",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "HB_PP_EST_LIST",
+				"type": "varchar"
+			},
+			{
+				"name": "EMPR_ID_CMT",
+				"type": "varchar"
+			},
+			{
+				"name": "GUAR_REHOMED_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "OLD_REHOMED_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "HOUSE_NUM",
+				"type": "varchar"
+			},
+			{
+				"name": "PAT_REC_OF_GUAR_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "NXT_STM_DATE",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "CLNT_BILL_FRQNCY_C",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "CLNT_BILL_DAY_C",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "CLNT_BILL_DT_MNTH",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "CLIENT_ACCOUNT_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "CLIENT_REIMB_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "PMT_PLAN_DURATION",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "PMT_PLAN_TOTAL_AMT",
+				"type": "decimal",
+				"precision": 12,
+				"scale": 2
+			},
+			{
+				"name": "PMT_PLAN_ON_TIME_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "PMT_PLAN_BAL_PD_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "PMT_PLAN_LNKSTMT_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "RQG_RELATIONSHIP_C",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "DISTRICT_C",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "ROI_BILL_HOUSE_NUM",
+				"type": "varchar"
+			},
+			{
+				"name": "ROI_BILL_DISTRICT_C",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "HB_BD_SELFPAY_BAL",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "HB_BD_INSURANCE_BAL",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "HB_BD_UNDISTRIB_BAL",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "SELF_VERIFY_DATE",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "SELF_VERIFY_STAT_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "ROI_BILL_COUNTY_C",
+				"type": "varchar"
+			},
+			{
+				"name": "COUNTY_C",
+				"type": "varchar"
+			},
+			{
+				"name": "COUNTRY_C",
+				"type": "varchar"
+			},
+			{
+				"name": "EMPY_STAT_C",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "GUAR_EMPR_CITY",
+				"type": "varchar"
+			},
+			{
+				"name": "GUAR_EMPR_STATE_C",
+				"type": "varchar"
+			},
+			{
+				"name": "GUAR_EMPR_ZIP",
+				"type": "varchar"
+			},
+			{
+				"name": "GUAR_EMP_CNTRY_C",
+				"type": "varchar"
+			},
+			{
+				"name": "GUAR_VERIF_STAT_C",
+				"type": "varchar"
+			},
+			{
+				"name": "LAST_VERIF_DT",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "NEXT_REVIEW_DT",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "LAST_VERIF_USER_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "EXT_BD_SP_BAL",
+				"type": "decimal",
+				"precision": 12,
+				"scale": 2
+			},
+			{
+				"name": "EXT_BD_INS_BAL",
+				"type": "decimal",
+				"precision": 12,
+				"scale": 2
+			},
+			{
+				"name": "PB_EXT_SP_BAL",
+				"type": "decimal",
+				"precision": 12,
+				"scale": 2
+			},
+			{
+				"name": "PB_EXT_INS_BAL",
+				"type": "decimal",
+				"precision": 12,
+				"scale": 2
+			},
+			{
+				"name": "INCOME_SOURCE_C",
+				"type": "varchar"
+			},
+			{
+				"name": "LANGUAGE_C",
+				"type": "varchar"
+			},
+			{
+				"name": "HB_LAST_STMT_DATE",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "HB_NEXT_STMT_DATE",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "HB_LAST_DEMAND_DATE",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "HB_BILL_NOTE_EXP_DT",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "HB_PP_MONTHLY_DUE",
+				"type": "varchar"
+			},
+			{
+				"name": "HB_PP_CUR_HAR_DUE",
+				"type": "varchar"
+			},
+			{
+				"name": "HB_PP_INIT_HAR_BAL",
+				"type": "varchar"
+			},
+			{
+				"name": "GUAR_EMP_HOUSE_NUM",
+				"type": "varchar"
+			},
+			{
+				"name": "GUAR_EMPR_DISTR_C",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "ARPB_NEXT_STMT_DATE",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "GUAR_VERIF_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "ROI_DISPLY_IN_QD_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "ROI_TAX_EXEMPT_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "ROI_PREPAY_ONLY_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "CONF_NAM_OF_ASSC_PT",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "ACCOUNT"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

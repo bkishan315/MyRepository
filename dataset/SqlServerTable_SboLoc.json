@@ -1,0 +1,61 @@
+{
+	"name": "SqlServerTable_SboLoc",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "DDCADIFINPRDDB_EBA",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "SCM/SCM_Old"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [
+			{
+				"name": "LOC_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "LOC_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "LOCATION_ABBR",
+				"type": "varchar"
+			},
+			{
+				"name": "SERV_AREA_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "RPT_GRP_SIX",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 0
+			},
+			{
+				"name": "Custom_Loc",
+				"type": "varchar"
+			},
+			{
+				"name": "CMS_CERT_NUM",
+				"type": "varchar"
+			},
+			{
+				"name": "RPT_GRP_SEVEN",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 0
+			}
+		],
+		"typeProperties": {
+			"schema": "eba",
+			"table": "SboLoc"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

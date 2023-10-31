@@ -1,0 +1,17 @@
+{
+	"name": "DestinationDataset_fe7",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "tstag2",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "account_2_testing"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

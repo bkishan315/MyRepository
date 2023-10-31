@@ -1,0 +1,60 @@
+{
+	"name": "SqlServerTable_OR_SPLY_MANFACTR",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Clarity Node 3",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "SCM/SCM_Old"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [
+			{
+				"name": "ITEM_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "LINE",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "MANUFACTURER_C",
+				"type": "varchar"
+			},
+			{
+				"name": "MAN_CTLG_NUM",
+				"type": "varchar"
+			},
+			{
+				"name": "MAN_PACK_PRICE",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "MAN_PACK_TYPE_C",
+				"type": "varchar"
+			},
+			{
+				"name": "MAN_PACK_RATIO",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "CM_PHY_OWNER_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "CM_LOG_OWNER_ID",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "OR_SPLY_MANFACTR"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

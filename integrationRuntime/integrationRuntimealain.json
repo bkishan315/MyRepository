@@ -1,0 +1,6 @@
+{
+	"name": "integrationRuntimealain",
+	"properties": {
+		"type": "SelfHosted"
+	}
+}

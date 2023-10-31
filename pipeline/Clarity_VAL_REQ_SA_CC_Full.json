@@ -1,0 +1,132 @@
+{
+	"name": "Clarity_VAL_REQ_SA_CC_Full",
+	"properties": {
+		"activities": [
+			{
+				"name": "check_metadata",
+				"type": "Lookup",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.20:00:00",
+					"retry": 5,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "SqlServerSource",
+						"sqlReaderQuery": "select x.Sourcetablename,x.Targetfilename,x.targetfoldername,x.Query_Full_CC from etl.x_Databricks_Logic_new x where EPIC_CC_Filters in ('Service Area Lookup') and Is_REQ=1  and IsActive=1",
+						"queryTimeout": "02:00:00",
+						"partitionOption": "None"
+					},
+					"dataset": {
+						"referenceName": "Val_No_Table",
+						"type": "DatasetReference"
+					},
+					"firstRowOnly": false
+				}
+			},
+			{
+				"name": "ForEach1",
+				"description": "using Community connect logic for these table list. rest will use No CC logic until we update it in metadata table",
+				"type": "ForEach",
+				"dependsOn": [
+					{
+						"activity": "check_metadata",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"items": {
+						"value": "@activity('check_metadata').output.value",
+						"type": "Expression"
+					},
+					"isSequential": false,
+					"activities": [
+						{
+							"name": "CopyChangesToBlob_copy1",
+							"type": "Copy",
+							"dependsOn": [],
+							"policy": {
+								"timeout": "0.20:00:00",
+								"retry": 5,
+								"retryIntervalInSeconds": 30,
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"userProperties": [],
+							"typeProperties": {
+								"source": {
+									"type": "SqlServerSource",
+									"additionalColumns": [
+										{
+											"name": "AzureEtlLoadTime",
+											"value": {
+												"value": "@formatDateTime(convertFromUtc(utcnow(), 'Mountain Standard Time'),'yyyy-MM-dd-HH-mm-ss')",
+												"type": "Expression"
+											}
+										}
+									],
+									"sqlReaderQuery": {
+										"value": "@item().query_Full_CC",
+										"type": "Expression"
+									},
+									"queryTimeout": "02:00:00",
+									"partitionOption": "None"
+								},
+								"sink": {
+									"type": "ParquetSink",
+									"storeSettings": {
+										"type": "AzureBlobFSWriteSettings"
+									},
+									"formatSettings": {
+										"type": "ParquetWriteSettings"
+									}
+								},
+								"enableStaging": false,
+								"translator": {
+									"type": "TabularTranslator",
+									"typeConversion": true,
+									"typeConversionSettings": {
+										"allowDataTruncation": true,
+										"treatBooleanAsNumber": false
+									}
+								}
+							},
+							"inputs": [
+								{
+									"referenceName": "Val_No_Table",
+									"type": "DatasetReference"
+								}
+							],
+							"outputs": [
+								{
+									"referenceName": "datasetgen2_CDC",
+									"type": "DatasetReference",
+									"parameters": {
+										"path": {
+											"value": "@concat(item().Targetfilename,'_Full','_',formatDateTime(convertFromUtc(utcnow(), 'Mountain Standard Time'),'yyyy-MM-dd-HH-mm-ss'),'.','parquet')",
+											"type": "Expression"
+										},
+										"folder": "@item().targetfoldername"
+									}
+								}
+							]
+						}
+					]
+				}
+			}
+		],
+		"folder": {
+			"name": "VAL"
+		},
+		"annotations": [],
+		"lastPublishTime": "2023-10-24T18:55:02Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

@@ -1,0 +1,41 @@
+{
+	"name": "SqlServerTable_ZC_OR_STAFF_TYPE",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Clarity Node 3",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "SCM/SCM_Old"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [
+			{
+				"name": "SURG_STAFF_REQ_C",
+				"type": "varchar"
+			},
+			{
+				"name": "NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "TITLE",
+				"type": "varchar"
+			},
+			{
+				"name": "ABBR",
+				"type": "varchar"
+			},
+			{
+				"name": "INTERNAL_ID",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "ZC_OR_STAFF_TYPE"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

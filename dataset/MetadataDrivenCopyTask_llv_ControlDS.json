@@ -1,0 +1,20 @@
+{
+	"name": "MetadataDrivenCopyTask_llv_ControlDS",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "tstag2",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "MetadataDrivenCopyTask_llv_20230825"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "sclhs",
+			"table": "MainControlTable_llv"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

@@ -1,0 +1,71 @@
+{
+	"name": "SqlServerTable_OR_PKLST_DRUGS",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Clarity Node 3",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "SCM/SCM_Old"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [
+			{
+				"name": "PICK_LIST_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "LINE",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "CM_PHY_OWNER_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "CM_LOG_OWNER_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "MEDICATION_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "MEDICATION_CMT",
+				"type": "varchar"
+			},
+			{
+				"name": "MEDICATION_AMT",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 4
+			},
+			{
+				"name": "MEDICATION_UNIT_C",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "MEDICATION_QTY",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 4
+			},
+			{
+				"name": "MEDICATION_PRN_QTY",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 4
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "OR_PKLST_DRUGS"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

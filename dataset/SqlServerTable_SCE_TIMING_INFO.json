@@ -1,0 +1,90 @@
+{
+	"name": "SqlServerTable_SCE_TIMING_INFO",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Clarity Node 3",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "SCM/SCM_Old"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [
+			{
+				"name": "RESRC_AVAIL_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "LINE",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "CM_PHY_OWNER_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "CM_LOG_OWNER_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "APPLIES_TO_MON_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "APPLIES_TO_TUE_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "APPLIES_TO_WED_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "APPLIES_TO_THU_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "APPLIES_TO_FRI_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "APPLIES_TO_SAT_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "APPLIES_TO_SUN_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "START_TIME",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "END_TIME",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "OPENINGS_CNT",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "OVERBOOKS_CNT",
+				"type": "int",
+				"precision": 10
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "SCE_TIMING_INFO"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

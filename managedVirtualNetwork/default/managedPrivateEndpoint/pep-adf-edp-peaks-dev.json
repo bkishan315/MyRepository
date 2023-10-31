@@ -1,0 +1,10 @@
+{
+	"name": "pep-adf-edp-peaks-dev",
+	"properties": {
+		"privateLinkResourceId": "/subscriptions/fb826747-574b-46e0-9d16-af4e3271fe45/resourceGroups/rg-edp-dev-storage/providers/Microsoft.Storage/storageAccounts/stedplandinglakedev01",
+		"groupId": "dfs",
+		"fqdns": [
+			"stedplandinglakedev01.dfs.core.windows.net"
+		]
+	}
+}

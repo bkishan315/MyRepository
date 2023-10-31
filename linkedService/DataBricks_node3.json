@@ -1,0 +1,17 @@
+{
+	"name": "DataBricks_node3",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"description": "Clarity Node 3 DataBricks table",
+		"annotations": [],
+		"type": "SqlServer",
+		"typeProperties": {
+			"connectionString": "integrated security=False;data source=kdcclrspragdb3;initial catalog=DataBricks;user id=protenus",
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiI1NTBlOWZhNy0xY2Q1LTQ1NjEtYjg0Ny0xZWMwMGZiOGYyNGYiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+		},
+		"connectVia": {
+			"referenceName": "integrationRuntimeDDCMSIRTPRDAPP1",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}

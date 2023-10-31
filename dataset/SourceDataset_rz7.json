@@ -1,0 +1,210 @@
+{
+	"name": "SourceDataset_rz7",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "DDCADIFINPRDDB_EBA",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [
+			{
+				"name": "CANDIDATE_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "EMP_NO",
+				"type": "varchar"
+			},
+			{
+				"name": "FIRST_NM",
+				"type": "varchar"
+			},
+			{
+				"name": "LAST_NM",
+				"type": "varchar"
+			},
+			{
+				"name": "BIRTH_DT",
+				"type": "date"
+			},
+			{
+				"name": "ETHNICITY_TXT",
+				"type": "varchar"
+			},
+			{
+				"name": "GENDER",
+				"type": "varchar"
+			},
+			{
+				"name": "REQ_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "REQ_NM",
+				"type": "varchar"
+			},
+			{
+				"name": "STAGE",
+				"type": "varchar"
+			},
+			{
+				"name": "STAGE_STATUS",
+				"type": "varchar"
+			},
+			{
+				"name": "STAGE_CAND_STATUS",
+				"type": "varchar"
+			},
+			{
+				"name": "STAGE_CAND_STEP",
+				"type": "varchar"
+			},
+			{
+				"name": "ADDED_BY_SOURCE",
+				"type": "varchar"
+			},
+			{
+				"name": "REQ_POSITION_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "JOB_CD",
+				"type": "varchar"
+			},
+			{
+				"name": "JOB_TITLE_TXT",
+				"type": "varchar"
+			},
+			{
+				"name": "JOB_FAMILY_RECRUITING",
+				"type": "varchar"
+			},
+			{
+				"name": "BUSINESS_UNIT_NO",
+				"type": "varchar"
+			},
+			{
+				"name": "BUSINESS_UNIT_NM",
+				"type": "varchar"
+			},
+			{
+				"name": "COST_CENTER_NO",
+				"type": "varchar"
+			},
+			{
+				"name": "COST_CENTER_NM",
+				"type": "varchar"
+			},
+			{
+				"name": "COST_CENTER_COMBINED_CD_NM",
+				"type": "varchar"
+			},
+			{
+				"name": "REGION_NM",
+				"type": "varchar"
+			},
+			{
+				"name": "PRIMARY_LOC_NM",
+				"type": "varchar"
+			},
+			{
+				"name": "LOC_CITY_NM",
+				"type": "varchar"
+			},
+			{
+				"name": "LOC_STATE_NM",
+				"type": "varchar"
+			},
+			{
+				"name": "LOC_POSTAL_CD",
+				"type": "varchar"
+			},
+			{
+				"name": "CAND_START_DT",
+				"type": "date"
+			},
+			{
+				"name": "INTERNAL_FLG",
+				"type": "varchar"
+			},
+			{
+				"name": "JOB_REQ_STATUS",
+				"type": "varchar"
+			},
+			{
+				"name": "IN_OFFER_FLG",
+				"type": "varchar"
+			},
+			{
+				"name": "MANAGEMENT_LEVEL_TXT",
+				"type": "varchar"
+			},
+			{
+				"name": "SERVICE_LINE_NM",
+				"type": "varchar"
+			},
+			{
+				"name": "JOB_REQ_CREATE_REASON",
+				"type": "varchar"
+			},
+			{
+				"name": "NUMBER_OF_OPENINGS",
+				"type": "varchar"
+			},
+			{
+				"name": "SCHEDULED_WEEKLY_HRS",
+				"type": "varchar"
+			},
+			{
+				"name": "ADDED_DT",
+				"type": "date"
+			},
+			{
+				"name": "TARGET_HIRE_DT",
+				"type": "date"
+			},
+			{
+				"name": "REQUEST_COMPLETED_DT",
+				"type": "date"
+			},
+			{
+				"name": "RECRUITING_START_DT",
+				"type": "date"
+			},
+			{
+				"name": "RECRUITER_EMP_NO",
+				"type": "varchar"
+			},
+			{
+				"name": "RECRUITER_FIRST_NM",
+				"type": "varchar"
+			},
+			{
+				"name": "RECRUITER_LAST_NM",
+				"type": "varchar"
+			},
+			{
+				"name": "HIRING_MANAGER_EMP_NO",
+				"type": "varchar"
+			},
+			{
+				"name": "HIRING_MANAGER_FIRST_NM",
+				"type": "varchar"
+			},
+			{
+				"name": "HIRING_MANAGER_LAST_NM",
+				"type": "varchar"
+			},
+			{
+				"name": "EDW_LOAD_DTS",
+				"type": "date"
+			}
+		],
+		"typeProperties": {
+			"schema": "EDW",
+			"table": "HrTaRecruitProvider"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

@@ -1,0 +1,22 @@
+{
+	"name": "HrTaRecruitProvider",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "stedplandinglakedev01",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "HrTaRecruitProvider.parquet",
+				"folderPath": "enterprise/peaks/RAD/physician_recruitment",
+				"fileSystem": "dls-stedplandinglakedev01"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

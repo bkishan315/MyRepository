@@ -1,0 +1,13 @@
+{
+	"name": "BLD_No_Table",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "bld",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

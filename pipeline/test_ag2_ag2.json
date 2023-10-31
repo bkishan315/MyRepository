@@ -1,0 +1,1226 @@
+{
+	"name": "test_ag2_ag2",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy_fe7",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [
+					{
+						"name": "Source",
+						"value": "."
+					},
+					{
+						"name": "Destination",
+						"value": "dbo.account_2_testing"
+					}
+				],
+				"typeProperties": {
+					"source": {
+						"type": "SqlServerSource",
+						"sqlReaderQuery": "select * from dbo.account_2",
+						"partitionOption": "None"
+					},
+					"sink": {
+						"type": "SqlServerSink",
+						"tableOption": "autoCreate"
+					},
+					"enableStaging": false,
+					"validateDataConsistency": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "ACCT_ID",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 0,
+									"precision": 18
+								},
+								"sink": {
+									"name": "ACCT_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "CM_PHY_OWNER_ID",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "CM_PHY_OWNER_ID",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "CM_LOG_OWNER_ID",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "CM_LOG_OWNER_ID",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "RQG_ACCT_YN",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "RQG_ACCT_YN",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "FOL_UP_LEVEL_CUR",
+									"type": "Int32",
+									"physicalType": "int"
+								},
+								"sink": {
+									"name": "FOL_UP_LEVEL_CUR",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "EMPL_ID_NUM",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "EMPL_ID_NUM",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "BILLING_NOTE_EXP_DT",
+									"type": "DateTime",
+									"physicalType": "datetime"
+								},
+								"sink": {
+									"name": "BILLING_NOTE_EXP_DT",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "ALT_BILL_ADDR_YN",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "ALT_BILL_ADDR_YN",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ALT_BILL_CITY",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "ALT_BILL_CITY",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ALT_BILL_STATE_C",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "ALT_BILL_STATE_C",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ALT_BILL_ZIP",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "ALT_BILL_ZIP",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "GUAR_SYNC_OWNER_ID",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 0,
+									"precision": 18
+								},
+								"sink": {
+									"name": "GUAR_SYNC_OWNER_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "ROI_UNCMN_REQSTR_YN",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "ROI_UNCMN_REQSTR_YN",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "REL_ADDR_ATTN_TO",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "REL_ADDR_ATTN_TO",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "EAR_ISOLATED_YN",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "EAR_ISOLATED_YN",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "CVG_LAST_VERIF_DT",
+									"type": "DateTime",
+									"physicalType": "datetime"
+								},
+								"sink": {
+									"name": "CVG_LAST_VERIF_DT",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "USER_CVG_LST_VER_ID",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "USER_CVG_LST_VER_ID",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "EMPLOYMENT_DATE",
+									"type": "DateTime",
+									"physicalType": "datetime"
+								},
+								"sink": {
+									"name": "EMPLOYMENT_DATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "EMPLOYER_FAX",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "EMPLOYER_FAX",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "FAX",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "FAX",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "LAST_CLAIM_FORM_ID",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "LAST_CLAIM_FORM_ID",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "LAST_BILLED_AMT",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 2,
+									"precision": 18
+								},
+								"sink": {
+									"name": "LAST_BILLED_AMT",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "LAST_INS_BAL",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 2,
+									"precision": 18
+								},
+								"sink": {
+									"name": "LAST_INS_BAL",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "SPOUSE_NAME",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "SPOUSE_NAME",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "LAST_CLAIM_DATE",
+									"type": "DateTime",
+									"physicalType": "datetime"
+								},
+								"sink": {
+									"name": "LAST_CLAIM_DATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "LAST_STMT_FORM_ID",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "LAST_STMT_FORM_ID",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "BILL_STATUS_EXP_DT",
+									"type": "DateTime",
+									"physicalType": "datetime"
+								},
+								"sink": {
+									"name": "BILL_STATUS_EXP_DT",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "PMT_PLAN_FREQ_C",
+									"type": "Int32",
+									"physicalType": "int"
+								},
+								"sink": {
+									"name": "PMT_PLAN_FREQ_C",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "ACCT_VIP_STAT_YN",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "ACCT_VIP_STAT_YN",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "HBMYC_LST_ST_V_DTTM",
+									"type": "DateTime",
+									"physicalType": "datetime"
+								},
+								"sink": {
+									"name": "HBMYC_LST_ST_V_DTTM",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "HBMYC_LST_DB_V_DTTM",
+									"type": "DateTime",
+									"physicalType": "datetime"
+								},
+								"sink": {
+									"name": "HBMYC_LST_DB_V_DTTM",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "HBMYC_LST_LT_V_DTTM",
+									"type": "DateTime",
+									"physicalType": "datetime"
+								},
+								"sink": {
+									"name": "HBMYC_LST_LT_V_DTTM",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "CREDIT_SCORE",
+									"type": "Int32",
+									"physicalType": "int"
+								},
+								"sink": {
+									"name": "CREDIT_SCORE",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "PROPENSITY_TO_PAY_C",
+									"type": "Int32",
+									"physicalType": "int"
+								},
+								"sink": {
+									"name": "PROPENSITY_TO_PAY_C",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "DELIVERY_POINT",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "DELIVERY_POINT",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "HAS_ACTIVE_HARS_YN",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "HAS_ACTIVE_HARS_YN",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "FOL_UP_LAST_LET_DT",
+									"type": "DateTime",
+									"physicalType": "datetime"
+								},
+								"sink": {
+									"name": "FOL_UP_LAST_LET_DT",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "FOL_UP_LAST_ACT_CYC",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 0,
+									"precision": 18
+								},
+								"sink": {
+									"name": "FOL_UP_LAST_ACT_CYC",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "UNDIST_CREDIT_BAL",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 2,
+									"precision": 18
+								},
+								"sink": {
+									"name": "UNDIST_CREDIT_BAL",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "UNDIST_INS_CR_BAL",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 2,
+									"precision": 18
+								},
+								"sink": {
+									"name": "UNDIST_INS_CR_BAL",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "UNDIST_SP_CR_BAL",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 2,
+									"precision": 18
+								},
+								"sink": {
+									"name": "UNDIST_SP_CR_BAL",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "MILITARY_RANK_C",
+									"type": "Int32",
+									"physicalType": "int"
+								},
+								"sink": {
+									"name": "MILITARY_RANK_C",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "BRANCH_OF_SERVICE_C",
+									"type": "Int32",
+									"physicalType": "int"
+								},
+								"sink": {
+									"name": "BRANCH_OF_SERVICE_C",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "MIL_COMPONENT_C",
+									"type": "Int32",
+									"physicalType": "int"
+								},
+								"sink": {
+									"name": "MIL_COMPONENT_C",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "MIL_PAY_GRADE_C",
+									"type": "Int32",
+									"physicalType": "int"
+								},
+								"sink": {
+									"name": "MIL_PAY_GRADE_C",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "DIST_LATER_COUNT",
+									"type": "Int32",
+									"physicalType": "int"
+								},
+								"sink": {
+									"name": "DIST_LATER_COUNT",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "GUAR_EMPR_COUNTY_C",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "GUAR_EMPR_COUNTY_C",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ALT_BILL_COUNTY_C",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "ALT_BILL_COUNTY_C",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ALT_BILL_COUNTRY_C",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "ALT_BILL_COUNTRY_C",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ALT_BILL_HOUSE_NUM",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "ALT_BILL_HOUSE_NUM",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ALT_BILL_DISTRICT_C",
+									"type": "Int32",
+									"physicalType": "int"
+								},
+								"sink": {
+									"name": "ALT_BILL_DISTRICT_C",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "GUAR_SUBDIV_CODE_C",
+									"type": "Int32",
+									"physicalType": "int"
+								},
+								"sink": {
+									"name": "GUAR_SUBDIV_CODE_C",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "REQUESTER_TYPE_C",
+									"type": "Int32",
+									"physicalType": "int"
+								},
+								"sink": {
+									"name": "REQUESTER_TYPE_C",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "ASSOC_PROV_ID",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "ASSOC_PROV_ID",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ASSOC_POS_ID",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 0,
+									"precision": 18
+								},
+								"sink": {
+									"name": "ASSOC_POS_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "STMT_HOLD_DT",
+									"type": "DateTime",
+									"physicalType": "datetime"
+								},
+								"sink": {
+									"name": "STMT_HOLD_DT",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "STMT_HOLD_REASON_C",
+									"type": "Int32",
+									"physicalType": "int"
+								},
+								"sink": {
+									"name": "STMT_HOLD_REASON_C",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "STMT_INTERV_WQ_ID",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 0,
+									"precision": 18
+								},
+								"sink": {
+									"name": "STMT_INTERV_WQ_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "STMT_INTERV_RULE_ID",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "STMT_INTERV_RULE_ID",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ASSOC_REQSTR_CVG_ID",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 0,
+									"precision": 18
+								},
+								"sink": {
+									"name": "ASSOC_REQSTR_CVG_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "PRIMARY_ACCT_ID",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 0,
+									"precision": 18
+								},
+								"sink": {
+									"name": "PRIMARY_ACCT_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "ASSOC_ACCT_ID",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 0,
+									"precision": 18
+								},
+								"sink": {
+									"name": "ASSOC_ACCT_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "ASSOC_PAT_ID",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "ASSOC_PAT_ID",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ASSOC_ORG_ID",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 0,
+									"precision": 18
+								},
+								"sink": {
+									"name": "ASSOC_ORG_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "MYPT_ID",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "MYPT_ID",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ASSOC_AGENCY_ID",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "ASSOC_AGENCY_ID",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ASSOC_DEPT_ID",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 0,
+									"precision": 18
+								},
+								"sink": {
+									"name": "ASSOC_DEPT_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "MOBILE_PHONE",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "MOBILE_PHONE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "HB_EXT_AR_SELF_PAY_BAL",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 2,
+									"precision": 18
+								},
+								"sink": {
+									"name": "HB_EXT_AR_SELF_PAY_BAL",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "HB_EXT_AR_INS_BAL",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 2,
+									"precision": 18
+								},
+								"sink": {
+									"name": "HB_EXT_AR_INS_BAL",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "HB_EXT_AR_UNDIST_BAL",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 2,
+									"precision": 18
+								},
+								"sink": {
+									"name": "HB_EXT_AR_UNDIST_BAL",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "HB_LAST_AUTOPAY_DATE",
+									"type": "DateTime",
+									"physicalType": "datetime"
+								},
+								"sink": {
+									"name": "HB_LAST_AUTOPAY_DATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "FOL_UP_LAST_LEVEL",
+									"type": "Int32",
+									"physicalType": "int"
+								},
+								"sink": {
+									"name": "FOL_UP_LAST_LEVEL",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "PMT_PLAN_DLQ_AMT",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 2,
+									"precision": 18
+								},
+								"sink": {
+									"name": "PMT_PLAN_DLQ_AMT",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "PMT_PLAN_DUE_AMT",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 2,
+									"precision": 18
+								},
+								"sink": {
+									"name": "PMT_PLAN_DUE_AMT",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "PMT_PLAN_PAID_AMT",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 2,
+									"precision": 18
+								},
+								"sink": {
+									"name": "PMT_PLAN_PAID_AMT",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "PMT_PLAN_REMAIN_AMT",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 2,
+									"precision": 18
+								},
+								"sink": {
+									"name": "PMT_PLAN_REMAIN_AMT",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "EMAIL_ADDRESS",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "EMAIL_ADDRESS",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "MYC_GP_LOCK_YN",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "MYC_GP_LOCK_YN",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "MYC_GP_LOCK_UTC_DTTM",
+									"type": "DateTime",
+									"physicalType": "datetime"
+								},
+								"sink": {
+									"name": "MYC_GP_LOCK_UTC_DTTM",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "ADDR_CHG_USER_ID",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "ADDR_CHG_USER_ID",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ADDR_CHG_INSTANT_DTTM",
+									"type": "DateTime",
+									"physicalType": "datetime"
+								},
+								"sink": {
+									"name": "ADDR_CHG_INSTANT_DTTM",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "ADDR_CHG_SOURCE",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "ADDR_CHG_SOURCE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "DFLT_REL_TYPE_ID",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 0,
+									"precision": 18
+								},
+								"sink": {
+									"name": "DFLT_REL_TYPE_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "DFLT_ROI_WORKFLOW_C",
+									"type": "Int32",
+									"physicalType": "int"
+								},
+								"sink": {
+									"name": "DFLT_ROI_WORKFLOW_C",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "DFLT_ROI_FORMAT_C",
+									"type": "Int32",
+									"physicalType": "int"
+								},
+								"sink": {
+									"name": "DFLT_ROI_FORMAT_C",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "PREFERENCE_ID",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 0,
+									"precision": 18
+								},
+								"sink": {
+									"name": "PREFERENCE_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "ROI_GENERIC_REQSTR_YN",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "ROI_GENERIC_REQSTR_YN",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "PMT_PLAN_CURRENT_MISS_CNT",
+									"type": "Int32",
+									"physicalType": "int"
+								},
+								"sink": {
+									"name": "PMT_PLAN_CURRENT_MISS_CNT",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "PMT_PLAN_TOTAL_MISS_CNT",
+									"type": "Int32",
+									"physicalType": "int"
+								},
+								"sink": {
+									"name": "PMT_PLAN_TOTAL_MISS_CNT",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "ASSOC_PAYER_ID",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 0,
+									"precision": 18
+								},
+								"sink": {
+									"name": "ASSOC_PAYER_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "PMT_PLAN_AUTOPAY_CARD_ID",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 0,
+									"precision": 18
+								},
+								"sink": {
+									"name": "PMT_PLAN_AUTOPAY_CARD_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "PB_PP_AUTOPAY_SCHED_PMT_ID",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 0,
+									"precision": 18
+								},
+								"sink": {
+									"name": "PB_PP_AUTOPAY_SCHED_PMT_ID",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "PMT_PLAN_CURR_AMT",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 2,
+									"precision": 18
+								},
+								"sink": {
+									"name": "PMT_PLAN_CURR_AMT",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "LAST_PB_BAL_NOTIF_DATE",
+									"type": "DateTime",
+									"physicalType": "datetime"
+								},
+								"sink": {
+									"name": "LAST_PB_BAL_NOTIF_DATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "LAST_HB_BAL_NOTIF_DATE",
+									"type": "DateTime",
+									"physicalType": "datetime"
+								},
+								"sink": {
+									"name": "LAST_HB_BAL_NOTIF_DATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "PB_SELF_PAY_BAL_UPDATE_DATE",
+									"type": "DateTime",
+									"physicalType": "datetime"
+								},
+								"sink": {
+									"name": "PB_SELF_PAY_BAL_UPDATE_DATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "HB_SELF_PAY_BAL_UPDATE_DATE",
+									"type": "DateTime",
+									"physicalType": "datetime"
+								},
+								"sink": {
+									"name": "HB_SELF_PAY_BAL_UPDATE_DATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "KI_GUAR_ACCT_VERIF_DATE",
+									"type": "DateTime",
+									"physicalType": "datetime"
+								},
+								"sink": {
+									"name": "KI_GUAR_ACCT_VERIF_DATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "KI_GUAR_ACCT_VERIF_STS_C",
+									"type": "Int32",
+									"physicalType": "int"
+								},
+								"sink": {
+									"name": "KI_GUAR_ACCT_VERIF_STS_C",
+									"type": "Int32"
+								}
+							}
+						],
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "SourceDataset_fe7",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "DestinationDataset_fe7",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"folder": {
+			"name": "Test"
+		},
+		"annotations": [],
+		"lastPublishTime": "2023-10-18T17:32:43Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

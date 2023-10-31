@@ -1,0 +1,275 @@
+{
+	"name": "SqlServerTable_OR_PKLST",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Clarity Node 3",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "SCM/SCM_Old"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [
+			{
+				"name": "PICK_LIST_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "PICK_LIST_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "PICK_LIST_TYPE_NAM",
+				"type": "varchar"
+			},
+			{
+				"name": "CASE_RECORD_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "PANEL_NUMBER",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "COMB_OR_SEP_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "INSTANT_PRINTED",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "SUP_OPEN_TOT",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "SUP_PRN_TOTAL",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "SUP_GRAND_TOTAL",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "DRUG_OPEN_TOTAL",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "DRUG_PRN_TOTAL",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "DRUG_GRAND_TOTAL",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "GRAND_TOTAL_COST",
+				"type": "decimal",
+				"precision": 12,
+				"scale": 2
+			},
+			{
+				"name": "LOC_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "MODIFIED_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "BASE_PICKLIST_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "USE_SET_FROM_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "CORE_PL_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "SUP_OPEN_TOT_CHRG",
+				"type": "decimal",
+				"precision": 12,
+				"scale": 2
+			},
+			{
+				"name": "SUP_PRN_TOT_CHRG",
+				"type": "decimal",
+				"precision": 12,
+				"scale": 2
+			},
+			{
+				"name": "SUP_GRND_TOT_CHRG",
+				"type": "decimal",
+				"precision": 12,
+				"scale": 2
+			},
+			{
+				"name": "DRG_OPEN_TOT_CHRG",
+				"type": "decimal",
+				"precision": 12,
+				"scale": 2
+			},
+			{
+				"name": "DRG_PRN_TOT_CHRG",
+				"type": "decimal",
+				"precision": 12,
+				"scale": 2
+			},
+			{
+				"name": "DRG_GRND_TOT_CHRG",
+				"type": "decimal",
+				"precision": 12,
+				"scale": 2
+			},
+			{
+				"name": "GRAND_TOTAL_CHARGE",
+				"type": "decimal",
+				"precision": 12,
+				"scale": 2
+			},
+			{
+				"name": "PROC_ONLY_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "RECORD_CREATE_DATE",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "REC_CREATE_USER_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "ACTIVE_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "CREATED_IN_LOG_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "GROUP_NUMBER",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "PROCEDURE_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "SURGEON_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "DELETED_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "LOG_ENTRY_MOD_INST",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "CM_PHY_OWNER_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "CM_LOG_OWNER_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "SERVICE_C",
+				"type": "varchar"
+			},
+			{
+				"name": "INV_DEPL_BFR_INST",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "INV_DEPL_AFTER_INST",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "COMB_OR_SEP_C",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "PICK_LIST_TYPE_C",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "INSTANT_OF_UPD_DTTM",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "CASE_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "LOG_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "HIST_SUPPLY_USAGE_RECORD_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "PAT_ENC_CSN_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "PAT_DEPARTMENT_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "CREATION_DATE",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "LINKED_ORDER_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "OR_PKLST"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

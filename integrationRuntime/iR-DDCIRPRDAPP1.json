@@ -1,0 +1,7 @@
+{
+	"name": "iR-DDCIRPRDAPP1",
+	"properties": {
+		"type": "SelfHosted",
+		"description": "IR using nodes DDCIRPRDAPP1 and DDCIRPRDAPP2."
+	}
+}

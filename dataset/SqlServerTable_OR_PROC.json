@@ -1,0 +1,490 @@
+{
+	"name": "SqlServerTable_OR_PROC",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Clarity Node 3",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "SCM/SCM_Old"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [
+			{
+				"name": "OR_PROC_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "PROC_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "INACTIVE_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "ABBREV",
+				"type": "varchar"
+			},
+			{
+				"name": "PROC_MOD_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "USESETNGS_FROM_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "TYPE_OF_PROC_C",
+				"type": "varchar"
+			},
+			{
+				"name": "USE_CALC_TIMES_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "START_BEFORE_TIME",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "START_AFTER_TIME",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "SETUP_LENGTH",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "CLEANUP_LENGTH",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "TIME_REQUIRED",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "TIME_REQ_MULTIPLE",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "POSITION_C",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "LRB_C",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "OPERATING_REGION_C",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "PAT_HEAD_POS_C",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "RIGHT_ARM_POS_C",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "LEFT_ARM_POS_C",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "RIGHT_LEG_POS_C",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "LEFT_LEG_POS_C",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "ANESTHESIA_TYPE_C",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "CHARGE_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "PICKLIST_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "MOD_MAX_AGE",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "MOD_MIN_AGE",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "MOD_SEX_NAME",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "MOD_MIN_AGE_NUM",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "MOD_MIN_AGE_NAME",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "MOD_MAX_AGE_NUM",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "MOD_MAX_AGE_NAME",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "MOD_SER_INDEX_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "MOD_EAF_INDEX_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "MOD_ORP_INDEX_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "RECORD_CREATE_DATE",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "REC_CREATE_USER_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "PATIENT_INST",
+				"type": "varchar"
+			},
+			{
+				"name": "PROC_DESC",
+				"type": "varchar"
+			},
+			{
+				"name": "PROC_NOTES",
+				"type": "varchar"
+			},
+			{
+				"name": "SCHED_INSTRS",
+				"type": "varchar"
+			},
+			{
+				"name": "XRAY_REQS",
+				"type": "varchar"
+			},
+			{
+				"name": "LAB_REQS",
+				"type": "varchar"
+			},
+			{
+				"name": "NURSING_NOTES",
+				"type": "varchar"
+			},
+			{
+				"name": "PREOP_PREP_NOTES",
+				"type": "varchar"
+			},
+			{
+				"name": "POSITION_NOTES",
+				"type": "varchar"
+			},
+			{
+				"name": "PRIMARY_EXT_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "BASE_COST",
+				"type": "decimal",
+				"precision": 12,
+				"scale": 2
+			},
+			{
+				"name": "WOUND_CLASS_C",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "WOUND_LOC_C",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "PL_GEN_DEFAULT_C",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "PMODS_INDEX_1",
+				"type": "varchar"
+			},
+			{
+				"name": "COST_TABLE_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "USE_AVG_STG_FRM_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "CM_PHY_OWNER_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "CM_LOG_OWNER_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "PROC_LEVEL_C",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "MOD_SVC_INDEX_C",
+				"type": "varchar"
+			},
+			{
+				"name": "PMODS_ORP_SER_SVC",
+				"type": "varchar"
+			},
+			{
+				"name": "PMODS_ORP_EAF_SVC",
+				"type": "varchar"
+			},
+			{
+				"name": "CHARGE_CODE_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "RPT_GRP1_C",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "RPT_GRP2_C",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "RPT_GRP3_C",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "RPT_GRP4_C",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "RPT_GRP5_C",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "RPT_GRP6_C",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "RPT_GRP7_C",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "RPT_GRP8_C",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "RPT_GRP9_C",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "RPT_GRP10_C",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "RPT_GRP1_STR",
+				"type": "varchar"
+			},
+			{
+				"name": "RPT_GRP2_STR",
+				"type": "varchar"
+			},
+			{
+				"name": "RPT_GRP3_STR",
+				"type": "varchar"
+			},
+			{
+				"name": "RPT_GRP4_STR",
+				"type": "varchar"
+			},
+			{
+				"name": "RPT_GRP5_STR",
+				"type": "varchar"
+			},
+			{
+				"name": "RPT_GRP1_NUM",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "RPT_GRP2_NUM",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "RPT_GRP3_NUM",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "RPT_GRP4_NUM",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "RPT_GRP5_NUM",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "CPT_BENEFITS_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "UPD_SURG_HIST_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "SURG_HIST_PROC_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "REQ_IMP_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "OR_BILLING_CAT_C",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "STUDY_ORDER_EAP_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "REQ_OB_CONTACT_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "LAPAROSCOPIC_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "PRNT_PCK_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "PREF_GROUP_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "LAST_BCA_DATETIME",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "LAST_BCA_ACTION_C",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "AVG_LEN_FOR_BILL",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "ENDOSCOPIC_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "REC_TYP_C",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "COUNTS_NEEDED_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "MIN_IMP_CHRG_EXPECT",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "PAT_PREP_LENGTH",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "PAT_CLOSING_LENGTH",
+				"type": "int",
+				"precision": 10
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "OR_PROC"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

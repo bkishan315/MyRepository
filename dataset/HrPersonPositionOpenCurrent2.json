@@ -1,0 +1,214 @@
+{
+	"name": "HrPersonPositionOpenCurrent2",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "stedplandinglakedev01",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"folderPath": "enterprise/peaks/RAD/physician_recruitment",
+				"fileSystem": "dls-stedplandinglakedev01"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": [
+			{
+				"name": "CANDIDATE_ID",
+				"type": "UTF8"
+			},
+			{
+				"name": "EMP_NO",
+				"type": "UTF8"
+			},
+			{
+				"name": "FIRST_NM",
+				"type": "UTF8"
+			},
+			{
+				"name": "LAST_NM",
+				"type": "UTF8"
+			},
+			{
+				"name": "BIRTH_DT",
+				"type": "DATE"
+			},
+			{
+				"name": "ETHNICITY_TXT",
+				"type": "UTF8"
+			},
+			{
+				"name": "GENDER",
+				"type": "UTF8"
+			},
+			{
+				"name": "REQ_ID",
+				"type": "UTF8"
+			},
+			{
+				"name": "REQ_NM",
+				"type": "UTF8"
+			},
+			{
+				"name": "STAGE",
+				"type": "UTF8"
+			},
+			{
+				"name": "STAGE_STATUS",
+				"type": "UTF8"
+			},
+			{
+				"name": "STAGE_CAND_STATUS",
+				"type": "UTF8"
+			},
+			{
+				"name": "STAGE_CAND_STEP",
+				"type": "UTF8"
+			},
+			{
+				"name": "ADDED_BY_SOURCE",
+				"type": "UTF8"
+			},
+			{
+				"name": "REQ_POSITION_ID",
+				"type": "UTF8"
+			},
+			{
+				"name": "JOB_CD",
+				"type": "UTF8"
+			},
+			{
+				"name": "JOB_TITLE_TXT",
+				"type": "UTF8"
+			},
+			{
+				"name": "JOB_FAMILY_RECRUITING",
+				"type": "UTF8"
+			},
+			{
+				"name": "BUSINESS_UNIT_NO",
+				"type": "UTF8"
+			},
+			{
+				"name": "BUSINESS_UNIT_NM",
+				"type": "UTF8"
+			},
+			{
+				"name": "COST_CENTER_NO",
+				"type": "UTF8"
+			},
+			{
+				"name": "COST_CENTER_NM",
+				"type": "UTF8"
+			},
+			{
+				"name": "COST_CENTER_COMBINED_CD_NM",
+				"type": "UTF8"
+			},
+			{
+				"name": "REGION_NM",
+				"type": "UTF8"
+			},
+			{
+				"name": "PRIMARY_LOC_NM",
+				"type": "UTF8"
+			},
+			{
+				"name": "LOC_CITY_NM",
+				"type": "UTF8"
+			},
+			{
+				"name": "LOC_STATE_NM",
+				"type": "UTF8"
+			},
+			{
+				"name": "LOC_POSTAL_CD",
+				"type": "UTF8"
+			},
+			{
+				"name": "CAND_START_DT",
+				"type": "DATE"
+			},
+			{
+				"name": "INTERNAL_FLG",
+				"type": "UTF8"
+			},
+			{
+				"name": "JOB_REQ_STATUS",
+				"type": "UTF8"
+			},
+			{
+				"name": "IN_OFFER_FLG",
+				"type": "UTF8"
+			},
+			{
+				"name": "MANAGEMENT_LEVEL_TXT",
+				"type": "UTF8"
+			},
+			{
+				"name": "SERVICE_LINE_NM",
+				"type": "UTF8"
+			},
+			{
+				"name": "JOB_REQ_CREATE_REASON",
+				"type": "UTF8"
+			},
+			{
+				"name": "NUMBER_OF_OPENINGS",
+				"type": "UTF8"
+			},
+			{
+				"name": "SCHEDULED_WEEKLY_HRS",
+				"type": "UTF8"
+			},
+			{
+				"name": "ADDED_DT",
+				"type": "DATE"
+			},
+			{
+				"name": "TARGET_HIRE_DT",
+				"type": "DATE"
+			},
+			{
+				"name": "REQUEST_COMPLETED_DT",
+				"type": "DATE"
+			},
+			{
+				"name": "RECRUITING_START_DT",
+				"type": "DATE"
+			},
+			{
+				"name": "RECRUITER_EMP_NO",
+				"type": "UTF8"
+			},
+			{
+				"name": "RECRUITER_FIRST_NM",
+				"type": "UTF8"
+			},
+			{
+				"name": "RECRUITER_LAST_NM",
+				"type": "UTF8"
+			},
+			{
+				"name": "HIRING_MANAGER_EMP_NO",
+				"type": "UTF8"
+			},
+			{
+				"name": "HIRING_MANAGER_FIRST_NM",
+				"type": "UTF8"
+			},
+			{
+				"name": "HIRING_MANAGER_LAST_NM",
+				"type": "UTF8"
+			},
+			{
+				"name": "EDW_LOAD_DTS",
+				"type": "DATE"
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

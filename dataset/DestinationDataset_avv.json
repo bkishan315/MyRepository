@@ -1,0 +1,21 @@
+{
+	"name": "DestinationDataset_avv",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "stedplandinglakedev01",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"folderPath": "enterprise/peaks/epic_clarity",
+				"fileSystem": "dls-stedplandinglakedev01"
+			},
+			"compressionCodec": "none"
+		},
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

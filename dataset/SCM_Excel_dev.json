@@ -1,0 +1,29 @@
+{
+	"name": "SCM_Excel_dev",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "stedplandinglakedev01",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "SCM"
+		},
+		"annotations": [],
+		"type": "Excel",
+		"typeProperties": {
+			"sheetName": "DEV",
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "SCM_tables.xlsx",
+				"folderPath": "enterprise/peaks/epic_clarity/SCM",
+				"fileSystem": "dls-stedplandinglakedev01"
+			}
+		},
+		"schema": [
+			{
+				"type": "String"
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

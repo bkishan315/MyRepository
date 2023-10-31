@@ -1,0 +1,17 @@
+{
+	"name": "Clarity Node 2",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "SqlServer",
+		"typeProperties": {
+			"connectionString": "integrated security=True;data source=ddcclrspragdb2.sclhs.net;initial catalog=master",
+			"userName": "sclhs\\s016168",
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiIzM2UyYjQyYy02NDA5LTQ4ODQtOWMxYi03MjJmZDA4MTBmYTciLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+		},
+		"connectVia": {
+			"referenceName": "integrationRuntimeDDCMSIRTPRDAPP1",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}

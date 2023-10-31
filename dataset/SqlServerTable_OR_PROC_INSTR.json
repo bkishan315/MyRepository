@@ -1,0 +1,60 @@
+{
+	"name": "SqlServerTable_OR_PROC_INSTR",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Clarity Node 3",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "SCM/SCM_Old"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [
+			{
+				"name": "OR_PROC_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "LINE",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "INSTR_REQ_C",
+				"type": "varchar"
+			},
+			{
+				"name": "NUM_INSTR_REQ",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "INSTR_REQ_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "INSTR_MRG_CRIT_C",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "CM_PHY_OWNER_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "CM_LOG_OWNER_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "INSTRUMENT_CMT",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "OR_PROC_INSTR"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

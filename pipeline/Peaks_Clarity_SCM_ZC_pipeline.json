@@ -1,0 +1,2107 @@
+{
+	"name": "Peaks_Clarity_SCM_ZC_pipeline",
+	"properties": {
+		"description": "Pipeline for Clarity ZC tables.",
+		"activities": [
+			{
+				"name": "ZC_ACTIVE_STATUS_2",
+				"description": "Clarity ZC_ACTIVE_STATUS_2 table for SCM.",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [
+					{
+						"name": "Source",
+						"value": "dbo.ZC_ACTIVE_STATUS_2"
+					},
+					{
+						"name": "Destination",
+						"value": "dls-stedplandinglakedev01/enterprise/peaks/epic_clarity/SCM/"
+					}
+				],
+				"typeProperties": {
+					"source": {
+						"type": "SqlServerSource",
+						"queryTimeout": "02:00:00",
+						"partitionOption": "None"
+					},
+					"sink": {
+						"type": "DelimitedTextSink",
+						"storeSettings": {
+							"type": "AzureBlobFSWriteSettings"
+						},
+						"formatSettings": {
+							"type": "DelimitedTextWriteSettings",
+							"quoteAllText": true,
+							"fileExtension": ".txt"
+						}
+					},
+					"enableStaging": false,
+					"validateDataConsistency": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "SqlServerTable_ZC_ACTIVE_STATUS_2",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "DelimitedText_ZC_ACTIVE_STATUS_2",
+						"type": "DatasetReference"
+					}
+				]
+			},
+			{
+				"name": "ZC_LOG_TYPE",
+				"description": "Clarity ZC_LOG_TYPE table for SCM.",
+				"type": "Copy",
+				"dependsOn": [
+					{
+						"activity": "ZC_ACTIVE_STATUS_2",
+						"dependencyConditions": [
+							"Completed"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [
+					{
+						"name": "Source",
+						"value": "dbo.ZC_LOG_TYPE"
+					},
+					{
+						"name": "Destination",
+						"value": "dls-stedplandinglakedev01/enterprise/peaks/epic_clarity/SCM/"
+					}
+				],
+				"typeProperties": {
+					"source": {
+						"type": "SqlServerSource",
+						"queryTimeout": "02:00:00",
+						"partitionOption": "None"
+					},
+					"sink": {
+						"type": "DelimitedTextSink",
+						"storeSettings": {
+							"type": "AzureBlobFSWriteSettings"
+						},
+						"formatSettings": {
+							"type": "DelimitedTextWriteSettings",
+							"quoteAllText": true,
+							"fileExtension": ".txt"
+						}
+					},
+					"enableStaging": false,
+					"validateDataConsistency": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "SqlServerTable_ZC_LOG_TYPE",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "DelimitedText_ZC_ACTIVE_STATUS_2",
+						"type": "DatasetReference"
+					}
+				]
+			},
+			{
+				"name": "ZC_MED_UNIT",
+				"description": "Clarity ZC_MED_UNIT table for SCM.",
+				"type": "Copy",
+				"dependsOn": [
+					{
+						"activity": "ZC_LOG_TYPE",
+						"dependencyConditions": [
+							"Completed"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [
+					{
+						"name": "Source",
+						"value": "dbo.ZC_MED_UNIT"
+					},
+					{
+						"name": "Destination",
+						"value": "dls-stedplandinglakedev01/enterprise/peaks/epic_clarity/SCM/"
+					}
+				],
+				"typeProperties": {
+					"source": {
+						"type": "SqlServerSource",
+						"queryTimeout": "02:00:00",
+						"partitionOption": "None"
+					},
+					"sink": {
+						"type": "DelimitedTextSink",
+						"storeSettings": {
+							"type": "AzureBlobFSWriteSettings"
+						},
+						"formatSettings": {
+							"type": "DelimitedTextWriteSettings",
+							"quoteAllText": true,
+							"fileExtension": ".txt"
+						}
+					},
+					"enableStaging": false,
+					"validateDataConsistency": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "SqlServerTable_ZC_MED_UNIT",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "DelimitedText_ZC_MED_UNIT",
+						"type": "DatasetReference"
+					}
+				]
+			},
+			{
+				"name": "ZC_OR_ANES_EQ_TYPE",
+				"description": "Clarity ZC_OR_ANES_EQ_TYPE table for SCM.",
+				"type": "Copy",
+				"dependsOn": [
+					{
+						"activity": "ZC_MED_UNIT",
+						"dependencyConditions": [
+							"Completed"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [
+					{
+						"name": "Source",
+						"value": "dbo.ZC_OR_ANES_EQ_TYPE"
+					},
+					{
+						"name": "Destination",
+						"value": "dls-stedplandinglakedev01/enterprise/peaks/epic_clarity/SCM/"
+					}
+				],
+				"typeProperties": {
+					"source": {
+						"type": "SqlServerSource",
+						"queryTimeout": "02:00:00",
+						"partitionOption": "None"
+					},
+					"sink": {
+						"type": "DelimitedTextSink",
+						"storeSettings": {
+							"type": "AzureBlobFSWriteSettings"
+						},
+						"formatSettings": {
+							"type": "DelimitedTextWriteSettings",
+							"quoteAllText": true,
+							"fileExtension": ".txt"
+						}
+					},
+					"enableStaging": false,
+					"validateDataConsistency": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "SqlServerTable_ZC_OR_ANES_EQ_TYPE",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "DelimitedText_ZC_OR_ANES_EQ_TYPE",
+						"type": "DatasetReference"
+					}
+				]
+			},
+			{
+				"name": "ZC_OR_ANSTAFF_TYPE",
+				"description": "Clarity ZC_OR_ANSTAFF_TYPE table for SCM.",
+				"type": "Copy",
+				"dependsOn": [
+					{
+						"activity": "ZC_OR_ANES_EQ_TYPE",
+						"dependencyConditions": [
+							"Completed"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [
+					{
+						"name": "Source",
+						"value": "dbo.ZC_OR_ANSTAFF_TYPE"
+					},
+					{
+						"name": "Destination",
+						"value": "dls-stedplandinglakedev01/enterprise/peaks/epic_clarity/SCM/"
+					}
+				],
+				"typeProperties": {
+					"source": {
+						"type": "SqlServerSource",
+						"queryTimeout": "02:00:00",
+						"partitionOption": "None"
+					},
+					"sink": {
+						"type": "DelimitedTextSink",
+						"storeSettings": {
+							"type": "AzureBlobFSWriteSettings"
+						},
+						"formatSettings": {
+							"type": "DelimitedTextWriteSettings",
+							"quoteAllText": true,
+							"fileExtension": ".txt"
+						}
+					},
+					"enableStaging": false,
+					"validateDataConsistency": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "SqlServerTable_ZC_OR_ANSTAFF_TYPE",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "DelimitedText_ZC_OR_ANSTAFF_TYPE",
+						"type": "DatasetReference"
+					}
+				]
+			},
+			{
+				"name": "ZC_OR_ASA_RATING",
+				"description": "Clarity ZC_OR_ASA_RATING table for SCM.",
+				"type": "Copy",
+				"dependsOn": [
+					{
+						"activity": "ZC_OR_ANSTAFF_TYPE",
+						"dependencyConditions": [
+							"Completed"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [
+					{
+						"name": "Source",
+						"value": "dbo.ZC_OR_ASA_RATING"
+					},
+					{
+						"name": "Destination",
+						"value": "dls-stedplandinglakedev01/enterprise/peaks/epic_clarity/SCM/"
+					}
+				],
+				"typeProperties": {
+					"source": {
+						"type": "SqlServerSource",
+						"queryTimeout": "02:00:00",
+						"partitionOption": "None"
+					},
+					"sink": {
+						"type": "DelimitedTextSink",
+						"storeSettings": {
+							"type": "AzureBlobFSWriteSettings"
+						},
+						"formatSettings": {
+							"type": "DelimitedTextWriteSettings",
+							"quoteAllText": true,
+							"fileExtension": ".txt"
+						}
+					},
+					"enableStaging": false,
+					"validateDataConsistency": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "SqlServerTable_ZC_OR_ASA_RATING",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "DelimitedText_ZC_OR_ASA_RATING",
+						"type": "DatasetReference"
+					}
+				]
+			},
+			{
+				"name": "ZC_OR_CANCEL_RSN",
+				"description": "Clarity ZC_OR_CANCEL_RSN table for SCM.",
+				"type": "Copy",
+				"dependsOn": [
+					{
+						"activity": "ZC_OR_ASA_RATING",
+						"dependencyConditions": [
+							"Completed"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [
+					{
+						"name": "Source",
+						"value": "dbo.ZC_OR_CANCEL_RSN"
+					},
+					{
+						"name": "Destination",
+						"value": "dls-stedplandinglakedev01/enterprise/peaks/epic_clarity/SCM/"
+					}
+				],
+				"typeProperties": {
+					"source": {
+						"type": "SqlServerSource",
+						"queryTimeout": "02:00:00",
+						"partitionOption": "None"
+					},
+					"sink": {
+						"type": "DelimitedTextSink",
+						"storeSettings": {
+							"type": "AzureBlobFSWriteSettings"
+						},
+						"formatSettings": {
+							"type": "DelimitedTextWriteSettings",
+							"quoteAllText": true,
+							"fileExtension": ".txt"
+						}
+					},
+					"enableStaging": false,
+					"validateDataConsistency": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "SqlServerTable_ZC_OR_CANCEL_RSN",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "DelimitedText_ZC_OR_CANCEL_RSN",
+						"type": "DatasetReference"
+					}
+				]
+			},
+			{
+				"name": "ZC_OR_CASE_CLASS",
+				"description": "Clarity ZC_OR_CASE_CLASS table for SCM.",
+				"type": "Copy",
+				"dependsOn": [
+					{
+						"activity": "ZC_OR_CANCEL_RSN",
+						"dependencyConditions": [
+							"Completed"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [
+					{
+						"name": "Source",
+						"value": "dbo.ZC_OR_CASE_CLASS"
+					},
+					{
+						"name": "Destination",
+						"value": "dls-stedplandinglakedev01/enterprise/peaks/epic_clarity/SCM/"
+					}
+				],
+				"typeProperties": {
+					"source": {
+						"type": "SqlServerSource",
+						"queryTimeout": "02:00:00",
+						"partitionOption": "None"
+					},
+					"sink": {
+						"type": "DelimitedTextSink",
+						"storeSettings": {
+							"type": "AzureBlobFSWriteSettings"
+						},
+						"formatSettings": {
+							"type": "DelimitedTextWriteSettings",
+							"quoteAllText": true,
+							"fileExtension": ".txt"
+						}
+					},
+					"enableStaging": false,
+					"validateDataConsistency": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "SqlServerTable_ZC_OR_CASE_CLASS",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "DelimitedText_ZC_OR_CASE_CLASS",
+						"type": "DatasetReference"
+					}
+				]
+			},
+			{
+				"name": "ZC_OR_CASE_TYPE",
+				"description": "Clarity ZC_OR_CASE_TYPE\n table for SCM.",
+				"type": "Copy",
+				"dependsOn": [
+					{
+						"activity": "ZC_OR_CASE_CLASS",
+						"dependencyConditions": [
+							"Completed"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [
+					{
+						"name": "Source",
+						"value": "dbo.ZC_OR_CASE_TYPE"
+					},
+					{
+						"name": "Destination",
+						"value": "dls-stedplandinglakedev01/enterprise/peaks/epic_clarity/SCM/"
+					}
+				],
+				"typeProperties": {
+					"source": {
+						"type": "SqlServerSource",
+						"queryTimeout": "02:00:00",
+						"partitionOption": "None"
+					},
+					"sink": {
+						"type": "DelimitedTextSink",
+						"storeSettings": {
+							"type": "AzureBlobFSWriteSettings"
+						},
+						"formatSettings": {
+							"type": "DelimitedTextWriteSettings",
+							"quoteAllText": true,
+							"fileExtension": ".txt"
+						}
+					},
+					"enableStaging": false,
+					"validateDataConsistency": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "SqlServerTable_ZC_OR_CASE_TYPE",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "DelimitedText_ZC_OR_CASE_TYPE",
+						"type": "DatasetReference"
+					}
+				]
+			},
+			{
+				"name": "ZC_OR_EQUIP_TYPE",
+				"description": "Clarity ZC_OR_EQUIP_TYPE table for SCM.",
+				"type": "Copy",
+				"dependsOn": [
+					{
+						"activity": "ZC_OR_CASE_TYPE",
+						"dependencyConditions": [
+							"Completed"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [
+					{
+						"name": "Source",
+						"value": "dbo.ZC_OR_EQUIP_TYPE"
+					},
+					{
+						"name": "Destination",
+						"value": "dls-stedplandinglakedev01/enterprise/peaks/epic_clarity/SCM/"
+					}
+				],
+				"typeProperties": {
+					"source": {
+						"type": "SqlServerSource",
+						"queryTimeout": "02:00:00",
+						"partitionOption": "None"
+					},
+					"sink": {
+						"type": "DelimitedTextSink",
+						"storeSettings": {
+							"type": "AzureBlobFSWriteSettings"
+						},
+						"formatSettings": {
+							"type": "DelimitedTextWriteSettings",
+							"quoteAllText": true,
+							"fileExtension": ".txt"
+						}
+					},
+					"enableStaging": false,
+					"validateDataConsistency": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "SqlServerTable_ZC_OR_EQUIP_TYPE",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "DelimitedText_ZC_OR_EQUIP_TYPE",
+						"type": "DatasetReference"
+					}
+				]
+			},
+			{
+				"name": "ZC_OR_IMPLANT_TYPE",
+				"description": "Clarity ZC_OR_IMPLANT_TYPE table for SCM.",
+				"type": "Copy",
+				"dependsOn": [
+					{
+						"activity": "ZC_OR_EQUIP_TYPE",
+						"dependencyConditions": [
+							"Completed"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [
+					{
+						"name": "Source",
+						"value": "dbo.ZC_OR_IMPLANT_TYPE"
+					},
+					{
+						"name": "Destination",
+						"value": "dls-stedplandinglakedev01/enterprise/peaks/epic_clarity/SCM/"
+					}
+				],
+				"typeProperties": {
+					"source": {
+						"type": "SqlServerSource",
+						"queryTimeout": "02:00:00",
+						"partitionOption": "None"
+					},
+					"sink": {
+						"type": "DelimitedTextSink",
+						"storeSettings": {
+							"type": "AzureBlobFSWriteSettings"
+						},
+						"formatSettings": {
+							"type": "DelimitedTextWriteSettings",
+							"quoteAllText": true,
+							"fileExtension": ".txt"
+						}
+					},
+					"enableStaging": false,
+					"validateDataConsistency": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "SqlServerTable_ZC_OR_IMPLANT_TYPE",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "DelimitedText_ZC_OR_IMPLANT_TYPE",
+						"type": "DatasetReference"
+					}
+				]
+			},
+			{
+				"name": "ZC_OR_INSTR_TYPE",
+				"description": "Clarity ZC_OR_INSTR_TYPE table for SCM.",
+				"type": "Copy",
+				"dependsOn": [
+					{
+						"activity": "ZC_OR_IMPLANT_TYPE",
+						"dependencyConditions": [
+							"Completed"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [
+					{
+						"name": "Source",
+						"value": "dbo.ZC_OR_INSTR_TYPE"
+					},
+					{
+						"name": "Destination",
+						"value": "dls-stedplandinglakedev01/enterprise/peaks/epic_clarity/SCM/"
+					}
+				],
+				"typeProperties": {
+					"source": {
+						"type": "SqlServerSource",
+						"queryTimeout": "02:00:00",
+						"partitionOption": "None"
+					},
+					"sink": {
+						"type": "DelimitedTextSink",
+						"storeSettings": {
+							"type": "AzureBlobFSWriteSettings"
+						},
+						"formatSettings": {
+							"type": "DelimitedTextWriteSettings",
+							"quoteAllText": true,
+							"fileExtension": ".txt"
+						}
+					},
+					"enableStaging": false,
+					"validateDataConsistency": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "SqlServerTable_ZC_OR_INSTR_TYPE",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "DelimitedText_ZC_OR_INSTR_TYPE",
+						"type": "DatasetReference"
+					}
+				]
+			},
+			{
+				"name": "ZC_OR_MANUFACTURER",
+				"description": "Clarity ZC_OR_MANUFACTURER table for SCM.",
+				"type": "Copy",
+				"dependsOn": [
+					{
+						"activity": "ZC_OR_INSTR_TYPE",
+						"dependencyConditions": [
+							"Completed"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [
+					{
+						"name": "Source",
+						"value": "dbo.ZC_OR_MANUFACTURER"
+					},
+					{
+						"name": "Destination",
+						"value": "dls-stedplandinglakedev01/enterprise/peaks/epic_clarity/SCM/"
+					}
+				],
+				"typeProperties": {
+					"source": {
+						"type": "SqlServerSource",
+						"queryTimeout": "02:00:00",
+						"partitionOption": "None"
+					},
+					"sink": {
+						"type": "DelimitedTextSink",
+						"storeSettings": {
+							"type": "AzureBlobFSWriteSettings"
+						},
+						"formatSettings": {
+							"type": "DelimitedTextWriteSettings",
+							"quoteAllText": true,
+							"fileExtension": ".txt"
+						}
+					},
+					"enableStaging": false,
+					"validateDataConsistency": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "SqlServerTable_ZC_OR_MANUFACTURER",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "DelimitedText_ZC_OR_MANUFACTURER",
+						"type": "DatasetReference"
+					}
+				]
+			},
+			{
+				"name": "ZC_OR_PAT_POS_DEV_TYPE",
+				"description": "Clarity ZC_OR_PAT_POS_DEV_TYPE table for SCM.",
+				"type": "Copy",
+				"dependsOn": [
+					{
+						"activity": "ZC_OR_MANUFACTURER",
+						"dependencyConditions": [
+							"Completed"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [
+					{
+						"name": "Source",
+						"value": "dbo.ZC_OR_PAT_POS_DEV_TYPE"
+					},
+					{
+						"name": "Destination",
+						"value": "dls-stedplandinglakedev01/enterprise/peaks/epic_clarity/SCM/"
+					}
+				],
+				"typeProperties": {
+					"source": {
+						"type": "SqlServerSource",
+						"queryTimeout": "02:00:00",
+						"partitionOption": "None"
+					},
+					"sink": {
+						"type": "DelimitedTextSink",
+						"storeSettings": {
+							"type": "AzureBlobFSWriteSettings"
+						},
+						"formatSettings": {
+							"type": "DelimitedTextWriteSettings",
+							"quoteAllText": true,
+							"fileExtension": ".txt"
+						}
+					},
+					"enableStaging": false,
+					"validateDataConsistency": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "SqlServerTable_ZC_OR_PAT_POS_DEV_TYPE",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "DelimitedText_ZC_OR_PAT_POS_DEV_TYPE",
+						"type": "DatasetReference"
+					}
+				]
+			},
+			{
+				"name": "ZC_OR_REC_TYPE",
+				"description": "Clarity ZC_OR_REC_TYPE table for SCM.",
+				"type": "Copy",
+				"dependsOn": [
+					{
+						"activity": "ZC_OR_PAT_POS_DEV_TYPE",
+						"dependencyConditions": [
+							"Completed"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [
+					{
+						"name": "Source",
+						"value": "dbo.ZC_OR_REC_TYPE"
+					},
+					{
+						"name": "Destination",
+						"value": "dls-stedplandinglakedev01/enterprise/peaks/epic_clarity/SCM/"
+					}
+				],
+				"typeProperties": {
+					"source": {
+						"type": "SqlServerSource",
+						"queryTimeout": "02:00:00",
+						"partitionOption": "None"
+					},
+					"sink": {
+						"type": "DelimitedTextSink",
+						"storeSettings": {
+							"type": "AzureBlobFSWriteSettings"
+						},
+						"formatSettings": {
+							"type": "DelimitedTextWriteSettings",
+							"quoteAllText": true,
+							"fileExtension": ".txt"
+						}
+					},
+					"enableStaging": false,
+					"validateDataConsistency": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "SqlServerTable_ZC_OR_REC_TYPE",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "DelimitedText_ZC_OR_REC_TYPE",
+						"type": "DatasetReference"
+					}
+				]
+			},
+			{
+				"name": "ZC_OR_RSN_WASTED",
+				"description": "Clarity ZC_OR_RSN_WASTED table for SCM.",
+				"type": "Copy",
+				"dependsOn": [
+					{
+						"activity": "ZC_OR_REC_TYPE",
+						"dependencyConditions": [
+							"Completed"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [
+					{
+						"name": "Source",
+						"value": "dbo.ZC_OR_RSN_WASTED"
+					},
+					{
+						"name": "Destination",
+						"value": "dls-stedplandinglakedev01/enterprise/peaks/epic_clarity/SCM/"
+					}
+				],
+				"typeProperties": {
+					"source": {
+						"type": "SqlServerSource",
+						"queryTimeout": "02:00:00",
+						"partitionOption": "None"
+					},
+					"sink": {
+						"type": "DelimitedTextSink",
+						"storeSettings": {
+							"type": "AzureBlobFSWriteSettings"
+						},
+						"formatSettings": {
+							"type": "DelimitedTextWriteSettings",
+							"quoteAllText": true,
+							"fileExtension": ".txt"
+						}
+					},
+					"enableStaging": false,
+					"validateDataConsistency": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "SqlServerTable_ZC_OR_RSN_WASTED",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "DelimitedText_ZC_OR_RSN_WASTED",
+						"type": "DatasetReference"
+					}
+				]
+			},
+			{
+				"name": "ZC_OR_SERVICE",
+				"description": "Clarity ZC_OR_SERVICE table for SCM.",
+				"type": "Copy",
+				"dependsOn": [
+					{
+						"activity": "ZC_OR_RSN_WASTED",
+						"dependencyConditions": [
+							"Completed"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [
+					{
+						"name": "Source",
+						"value": "dbo.ZC_OR_SERVICE"
+					},
+					{
+						"name": "Destination",
+						"value": "dls-stedplandinglakedev01/enterprise/peaks/epic_clarity/SCM/"
+					}
+				],
+				"typeProperties": {
+					"source": {
+						"type": "SqlServerSource",
+						"queryTimeout": "02:00:00",
+						"partitionOption": "None"
+					},
+					"sink": {
+						"type": "DelimitedTextSink",
+						"storeSettings": {
+							"type": "AzureBlobFSWriteSettings"
+						},
+						"formatSettings": {
+							"type": "DelimitedTextWriteSettings",
+							"quoteAllText": true,
+							"fileExtension": ".txt"
+						}
+					},
+					"enableStaging": false,
+					"validateDataConsistency": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "SqlServerTable_ZC_OR_SERVICE",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "DelimitedText_ZC_OR_SERVICE",
+						"type": "DatasetReference"
+					}
+				]
+			},
+			{
+				"name": "ZC_OR_STAFF_TYPE",
+				"description": "Clarity ZC_OR_STAFF_TYPE table for SCM.",
+				"type": "Copy",
+				"dependsOn": [
+					{
+						"activity": "ZC_OR_SERVICE",
+						"dependencyConditions": [
+							"Completed"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [
+					{
+						"name": "Source",
+						"value": "dbo.ZC_OR_STAFF_TYPE"
+					},
+					{
+						"name": "Destination",
+						"value": "dls-stedplandinglakedev01/enterprise/peaks/epic_clarity/SCM/"
+					}
+				],
+				"typeProperties": {
+					"source": {
+						"type": "SqlServerSource",
+						"queryTimeout": "02:00:00",
+						"partitionOption": "None"
+					},
+					"sink": {
+						"type": "DelimitedTextSink",
+						"storeSettings": {
+							"type": "AzureBlobFSWriteSettings"
+						},
+						"formatSettings": {
+							"type": "DelimitedTextWriteSettings",
+							"quoteAllText": true,
+							"fileExtension": ".txt"
+						}
+					},
+					"enableStaging": false,
+					"validateDataConsistency": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "SqlServerTable_ZC_OR_STAFF_TYPE",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "DelimitedText_ZC_OR_STAFF_TYPE",
+						"type": "DatasetReference"
+					}
+				]
+			},
+			{
+				"name": "ZC_OR_STATUS",
+				"description": "Clarity ZC_OR_STATUS table for SCM.",
+				"type": "Copy",
+				"dependsOn": [
+					{
+						"activity": "ZC_OR_STAFF_TYPE",
+						"dependencyConditions": [
+							"Completed"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [
+					{
+						"name": "Source",
+						"value": "dbo.ZC_OR_STATUS"
+					},
+					{
+						"name": "Destination",
+						"value": "dls-stedplandinglakedev01/enterprise/peaks/epic_clarity/SCM/"
+					}
+				],
+				"typeProperties": {
+					"source": {
+						"type": "SqlServerSource",
+						"queryTimeout": "02:00:00",
+						"partitionOption": "None"
+					},
+					"sink": {
+						"type": "DelimitedTextSink",
+						"storeSettings": {
+							"type": "AzureBlobFSWriteSettings"
+						},
+						"formatSettings": {
+							"type": "DelimitedTextWriteSettings",
+							"quoteAllText": true,
+							"fileExtension": ".txt"
+						}
+					},
+					"enableStaging": false,
+					"validateDataConsistency": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "SqlServerTable_ZC_OR_STATUS",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "DelimitedText_ZC_OR_STATUS",
+						"type": "DatasetReference"
+					}
+				]
+			},
+			{
+				"name": "ZC_OR_STOCK_ITEM",
+				"description": "Clarity ZC_OR_STOCK_ITEM table for SCM.",
+				"type": "Copy",
+				"dependsOn": [
+					{
+						"activity": "ZC_OR_STATUS",
+						"dependencyConditions": [
+							"Completed"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [
+					{
+						"name": "Source",
+						"value": "dbo.ZC_OR_STOCK_ITEM"
+					},
+					{
+						"name": "Destination",
+						"value": "dls-stedplandinglakedev01/enterprise/peaks/epic_clarity/SCM/"
+					}
+				],
+				"typeProperties": {
+					"source": {
+						"type": "SqlServerSource",
+						"queryTimeout": "02:00:00",
+						"partitionOption": "None"
+					},
+					"sink": {
+						"type": "DelimitedTextSink",
+						"storeSettings": {
+							"type": "AzureBlobFSWriteSettings"
+						},
+						"formatSettings": {
+							"type": "DelimitedTextWriteSettings",
+							"quoteAllText": true,
+							"fileExtension": ".txt"
+						}
+					},
+					"enableStaging": false,
+					"validateDataConsistency": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "SqlServerTable_ZC_OR_STOCK_ITEM",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "DelimitedText_ZC_OR_STOCK_ITEM",
+						"type": "DatasetReference"
+					}
+				]
+			},
+			{
+				"name": "ZC_OR_SUPPLIER",
+				"description": "Clarity ZC_OR_SUPPLIER table for SCM.",
+				"type": "Copy",
+				"dependsOn": [
+					{
+						"activity": "ZC_OR_STOCK_ITEM",
+						"dependencyConditions": [
+							"Completed"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [
+					{
+						"name": "Source",
+						"value": "dbo.ZC_OR_SUPPLIER"
+					},
+					{
+						"name": "Destination",
+						"value": "dls-stedplandinglakedev01/enterprise/peaks/epic_clarity/SCM/"
+					}
+				],
+				"typeProperties": {
+					"source": {
+						"type": "SqlServerSource",
+						"queryTimeout": "02:00:00",
+						"partitionOption": "None"
+					},
+					"sink": {
+						"type": "DelimitedTextSink",
+						"storeSettings": {
+							"type": "AzureBlobFSWriteSettings"
+						},
+						"formatSettings": {
+							"type": "DelimitedTextWriteSettings",
+							"quoteAllText": true,
+							"fileExtension": ".txt"
+						}
+					},
+					"enableStaging": false,
+					"validateDataConsistency": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "SqlServerTable_ZC_OR_SUPPLIER",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "DelimitedText_ZC_OR_SUPPLIER",
+						"type": "DatasetReference"
+					}
+				]
+			},
+			{
+				"name": "ZC_OR_TIME_EVT_ENT",
+				"description": "Clarity ZC_OR_TIME_EVT_ENT table for SCM.",
+				"type": "Copy",
+				"dependsOn": [
+					{
+						"activity": "ZC_OR_SUPPLIER",
+						"dependencyConditions": [
+							"Completed"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [
+					{
+						"name": "Source",
+						"value": "dbo.ZC_OR_TIME_EVT_ENT"
+					},
+					{
+						"name": "Destination",
+						"value": "dls-stedplandinglakedev01/enterprise/peaks/epic_clarity/SCM/"
+					}
+				],
+				"typeProperties": {
+					"source": {
+						"type": "SqlServerSource",
+						"queryTimeout": "02:00:00",
+						"partitionOption": "None"
+					},
+					"sink": {
+						"type": "DelimitedTextSink",
+						"storeSettings": {
+							"type": "AzureBlobFSWriteSettings"
+						},
+						"formatSettings": {
+							"type": "DelimitedTextWriteSettings",
+							"quoteAllText": true,
+							"fileExtension": ".txt"
+						}
+					},
+					"enableStaging": false,
+					"validateDataConsistency": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "SqlServerTable_ZC_OR_TIME_EVT_ENT",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "DelimitedText_ZC_OR_TIME_EVT_ENT",
+						"type": "DatasetReference"
+					}
+				]
+			},
+			{
+				"name": "ZC_OR_TYPE_OF_ITEM",
+				"description": "Clarity ZC_OR_TYPE_OF_ITEM table for SCM.",
+				"type": "Copy",
+				"dependsOn": [
+					{
+						"activity": "ZC_OR_TIME_EVT_ENT",
+						"dependencyConditions": [
+							"Completed"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [
+					{
+						"name": "Source",
+						"value": "dbo.ZC_OR_TYPE_OF_ITEM"
+					},
+					{
+						"name": "Destination",
+						"value": "dls-stedplandinglakedev01/enterprise/peaks/epic_clarity/SCM/"
+					}
+				],
+				"typeProperties": {
+					"source": {
+						"type": "SqlServerSource",
+						"queryTimeout": "02:00:00",
+						"partitionOption": "None"
+					},
+					"sink": {
+						"type": "DelimitedTextSink",
+						"storeSettings": {
+							"type": "AzureBlobFSWriteSettings"
+						},
+						"formatSettings": {
+							"type": "DelimitedTextWriteSettings",
+							"quoteAllText": true,
+							"fileExtension": ".txt"
+						}
+					},
+					"enableStaging": false,
+					"validateDataConsistency": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "SqlServerTable_ZC_OR_TYPE_OF_ITEM",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "DelimitedText_ZC_OR_TYPE_OF_ITEM",
+						"type": "DatasetReference"
+					}
+				]
+			},
+			{
+				"name": "ZC_OR_TYPE_OF_PROC",
+				"description": "Clarity ZC_OR_TYPE_OF_PROC table for SCM.",
+				"type": "Copy",
+				"dependsOn": [
+					{
+						"activity": "ZC_OR_TYPE_OF_ITEM",
+						"dependencyConditions": [
+							"Completed"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [
+					{
+						"name": "Source",
+						"value": "dbo.ZC_OR_TYPE_OF_PROC"
+					},
+					{
+						"name": "Destination",
+						"value": "dls-stedplandinglakedev01/enterprise/peaks/epic_clarity/SCM/"
+					}
+				],
+				"typeProperties": {
+					"source": {
+						"type": "SqlServerSource",
+						"queryTimeout": "02:00:00",
+						"partitionOption": "None"
+					},
+					"sink": {
+						"type": "DelimitedTextSink",
+						"storeSettings": {
+							"type": "AzureBlobFSWriteSettings"
+						},
+						"formatSettings": {
+							"type": "DelimitedTextWriteSettings",
+							"quoteAllText": true,
+							"fileExtension": ".txt"
+						}
+					},
+					"enableStaging": false,
+					"validateDataConsistency": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "SqlServerTable_ZC_OR_TYPE_OF_PROC",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "DelimitedText_ZC_OR_TYPE_OF_PROC",
+						"type": "DatasetReference"
+					}
+				]
+			},
+			{
+				"name": "ZC_OR_UNIT_ISSUE",
+				"description": "Clarity ZC_OR_UNIT_ISSUE table for SCM.",
+				"type": "Copy",
+				"dependsOn": [
+					{
+						"activity": "ZC_OR_TYPE_OF_PROC",
+						"dependencyConditions": [
+							"Completed"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [
+					{
+						"name": "Source",
+						"value": "dbo.ZC_OR_UNIT_ISSUE"
+					},
+					{
+						"name": "Destination",
+						"value": "dls-stedplandinglakedev01/enterprise/peaks/epic_clarity/SCM/"
+					}
+				],
+				"typeProperties": {
+					"source": {
+						"type": "SqlServerSource",
+						"queryTimeout": "02:00:00",
+						"partitionOption": "None"
+					},
+					"sink": {
+						"type": "DelimitedTextSink",
+						"storeSettings": {
+							"type": "AzureBlobFSWriteSettings"
+						},
+						"formatSettings": {
+							"type": "DelimitedTextWriteSettings",
+							"quoteAllText": true,
+							"fileExtension": ".txt"
+						}
+					},
+					"enableStaging": false,
+					"validateDataConsistency": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "SqlServerTable_ZC_OR_UNIT_ISSUE",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "DelimitedText_ZC_OR_UNIT_ISSUE",
+						"type": "DatasetReference"
+					}
+				]
+			},
+			{
+				"name": "ZC_PAT_CLASS",
+				"description": "Clarity ZC_PAT_CLASS table for SCM.",
+				"type": "Copy",
+				"dependsOn": [
+					{
+						"activity": "ZC_OR_UNIT_ISSUE",
+						"dependencyConditions": [
+							"Completed"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [
+					{
+						"name": "Source",
+						"value": "dbo.ZC_PAT_CLASS"
+					},
+					{
+						"name": "Destination",
+						"value": "dls-stedplandinglakedev01/enterprise/peaks/epic_clarity/SCM/"
+					}
+				],
+				"typeProperties": {
+					"source": {
+						"type": "SqlServerSource",
+						"queryTimeout": "02:00:00",
+						"partitionOption": "None"
+					},
+					"sink": {
+						"type": "DelimitedTextSink",
+						"storeSettings": {
+							"type": "AzureBlobFSWriteSettings"
+						},
+						"formatSettings": {
+							"type": "DelimitedTextWriteSettings",
+							"quoteAllText": true,
+							"fileExtension": ".txt"
+						}
+					},
+					"enableStaging": false,
+					"validateDataConsistency": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "SqlServerTable_ZC_PAT_CLASS",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "DelimitedText_ZC_PAT_CLASS",
+						"type": "DatasetReference"
+					}
+				]
+			},
+			{
+				"name": "ZC_PROC_LEVEL",
+				"description": "Clarity ZC_PROC_LEVEL table for SCM.",
+				"type": "Copy",
+				"dependsOn": [
+					{
+						"activity": "ZC_PAT_CLASS",
+						"dependencyConditions": [
+							"Completed"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [
+					{
+						"name": "Source",
+						"value": "dbo.ZC_PROC_LEVEL"
+					},
+					{
+						"name": "Destination",
+						"value": "dls-stedplandinglakedev01/enterprise/peaks/epic_clarity/SCM/"
+					}
+				],
+				"typeProperties": {
+					"source": {
+						"type": "SqlServerSource",
+						"queryTimeout": "02:00:00",
+						"partitionOption": "None"
+					},
+					"sink": {
+						"type": "DelimitedTextSink",
+						"storeSettings": {
+							"type": "AzureBlobFSWriteSettings"
+						},
+						"formatSettings": {
+							"type": "DelimitedTextWriteSettings",
+							"quoteAllText": true,
+							"fileExtension": ".txt"
+						}
+					},
+					"enableStaging": false,
+					"validateDataConsistency": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "SqlServerTable_ZC_PROC_LEVEL",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "DelimitedText_ZC_PROC_LEVEL",
+						"type": "DatasetReference"
+					}
+				]
+			},
+			{
+				"name": "ZC_PROC_NOT_PERF",
+				"description": "Clarity ZC_PROC_NOT_PERF table for SCM.",
+				"type": "Copy",
+				"dependsOn": [
+					{
+						"activity": "ZC_PROC_LEVEL",
+						"dependencyConditions": [
+							"Completed"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [
+					{
+						"name": "Source",
+						"value": "dbo.ZC_PROC_NOT_PERF"
+					},
+					{
+						"name": "Destination",
+						"value": "dls-stedplandinglakedev01/enterprise/peaks/epic_clarity/SCM/"
+					}
+				],
+				"typeProperties": {
+					"source": {
+						"type": "SqlServerSource",
+						"queryTimeout": "02:00:00",
+						"partitionOption": "None"
+					},
+					"sink": {
+						"type": "DelimitedTextSink",
+						"storeSettings": {
+							"type": "AzureBlobFSWriteSettings"
+						},
+						"formatSettings": {
+							"type": "DelimitedTextWriteSettings",
+							"quoteAllText": true,
+							"fileExtension": ".txt"
+						}
+					},
+					"enableStaging": false,
+					"validateDataConsistency": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "SqlServerTable_ZC_PROC_NOT_PERF",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "DelimitedText_ZC_PROC_NOT_PERF",
+						"type": "DatasetReference"
+					}
+				]
+			},
+			{
+				"name": "ZC_PROC_REC_TYPE",
+				"description": "Clarity ZC_PROC_REC_TYPE table for SCM.",
+				"type": "Copy",
+				"dependsOn": [
+					{
+						"activity": "ZC_PROC_NOT_PERF",
+						"dependencyConditions": [
+							"Completed"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [
+					{
+						"name": "Source",
+						"value": "dbo.ZC_PROC_REC_TYPE"
+					},
+					{
+						"name": "Destination",
+						"value": "dls-stedplandinglakedev01/enterprise/peaks/epic_clarity/SCM/"
+					}
+				],
+				"typeProperties": {
+					"source": {
+						"type": "SqlServerSource",
+						"queryTimeout": "02:00:00",
+						"partitionOption": "None"
+					},
+					"sink": {
+						"type": "DelimitedTextSink",
+						"storeSettings": {
+							"type": "AzureBlobFSWriteSettings"
+						},
+						"formatSettings": {
+							"type": "DelimitedTextWriteSettings",
+							"quoteAllText": true,
+							"fileExtension": ".txt"
+						}
+					},
+					"enableStaging": false,
+					"validateDataConsistency": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "SqlServerTable_ZC_PROC_REC_TYPE",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "DelimitedText_ZC_PROC_REC_TYPE",
+						"type": "DatasetReference"
+					}
+				]
+			},
+			{
+				"name": "ZC_SUPPLY_DRUG",
+				"description": "Clarity ZC_SUPPLY_DRUG table for SCM.",
+				"type": "Copy",
+				"dependsOn": [
+					{
+						"activity": "ZC_PROC_REC_TYPE",
+						"dependencyConditions": [
+							"Completed"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [
+					{
+						"name": "Source",
+						"value": "dbo.ZC_SUPPLY_DRUG"
+					},
+					{
+						"name": "Destination",
+						"value": "dls-stedplandinglakedev01/enterprise/peaks/epic_clarity/SCM/"
+					}
+				],
+				"typeProperties": {
+					"source": {
+						"type": "SqlServerSource",
+						"queryTimeout": "02:00:00",
+						"partitionOption": "None"
+					},
+					"sink": {
+						"type": "DelimitedTextSink",
+						"storeSettings": {
+							"type": "AzureBlobFSWriteSettings"
+						},
+						"formatSettings": {
+							"type": "DelimitedTextWriteSettings",
+							"quoteAllText": true,
+							"fileExtension": ".txt"
+						}
+					},
+					"enableStaging": false,
+					"validateDataConsistency": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "SqlServerTable_ZC_SUPPLY_DRUG",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "DelimitedText_ZC_SUPPLY_DRUG",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"folder": {
+			"name": "SCM"
+		},
+		"annotations": [],
+		"lastPublishTime": "2023-10-17T11:05:52Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

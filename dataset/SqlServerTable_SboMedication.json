@@ -1,0 +1,112 @@
+{
+	"name": "SqlServerTable_SboMedication",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "DDCADIFINPRDDB_EBA",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "SCM/SCM_Old"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [
+			{
+				"name": "MEDICATION_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "THERA_CLASS_C",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "PHARM_CLASS_C",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "PHARM_SUBCLASS_C",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "SIMPLE_GENERIC_C",
+				"type": "varchar"
+			},
+			{
+				"name": "COST",
+				"type": "varchar"
+			},
+			{
+				"name": "GENERIC_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "GPI",
+				"type": "varchar"
+			},
+			{
+				"name": "STRENGTH",
+				"type": "varchar"
+			},
+			{
+				"name": "FORM",
+				"type": "varchar"
+			},
+			{
+				"name": "ROUTE",
+				"type": "varchar"
+			},
+			{
+				"name": "CONTROLLED_MED_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "DEA_CLASS_CODE_C",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "RECORD_STATE",
+				"type": "varchar"
+			},
+			{
+				"name": "CM_PHY_OWNER_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "CM_LOG_OWNER_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "INVESTIGATL_MED_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "DAY_SUP_ENABLE_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "EQUIP_STATUS_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "MED_IS_CONFIGURED_C",
+				"type": "int",
+				"precision": 10
+			}
+		],
+		"typeProperties": {
+			"schema": "eba",
+			"table": "SboMedication"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

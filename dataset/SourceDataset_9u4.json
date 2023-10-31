@@ -1,0 +1,1440 @@
+{
+	"name": "SourceDataset_9u4",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "tstag2",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [
+			{
+				"name": "RECORD_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "CM_PHY_OWNER_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "CM_LOG_OWNER_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "REGISTRY_STATUS_C",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "PAT_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "CUR_PCP_PROV_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "CUR_PRIM_LOC_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "CONTACT_LAST_DT",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "CONTACT_LAST_TYPE_C",
+				"type": "varchar"
+			},
+			{
+				"name": "OFF_VIS_LAST_DT",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "INPAT_ADMIT_LAST_DT",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "NUM_CONTACT",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "NUM_HOSP_ADMIT",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "ENDO_VIS_LAST_DT",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "NEPH_VIS_LAST_DT",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "OPHTH_VIS_LAST_DT",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "POD_VIS_LAST_DT",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "NUTR_VIS_LAST_DT",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "OFF_VIS_PROV_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "CARDIO_VIS_LAST_DT",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "WEIGHT_LAST",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "WEIGHT_LAST_DT",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "WEIGHT_FIRST",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "WEIGHT_FIRST_DT",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "HEIGHT_LAST",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "HEIGHT_LAST_DT",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "BP_SYS_LAST",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "BP_SYS_LAST_DT",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "BP_DIA_LAST",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "BP_DIA_LAST_DT",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "BP_SYS_FIRST",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "BP_SYS_FIRST_DT",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "BP_DIA_FIRST",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "BP_DIA_FIRST_DT",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "BMI_LAST",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "BMI_FIRST",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "TOBAC_USE_STATUS_C",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "TOBAC_USER_HX_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "TOBAC_DX_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "TOBAC_NUM_PACK",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "TOBAC_QUIT_LAST_DT",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "TOBAC_NUM_PACK_HX",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "TOBAC_DX_DT",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "ALCOHOL_DX_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "ALCOHOL_DX_DT",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "HBA1C_LAST",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "HBA1C_LAST_DT",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "LDL_DIR_LAST",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "LDL_DIR_LAST_DT",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "LDL_CALC_LAST",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "LDL_CALC_LAST_DT",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "HDL_LAST",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "HDL_LAST_DT",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "VLDL_LAST",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "VLDL_LAST_DT",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "LDL_HDL_RT_LAST",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "LDL_HDL_RT_LAST_DT",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "TTL_CHL_LAST",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "TTL_CHL_LAST_DT",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "TRIGLY_LAST",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "TRIGLY_LAST_DT",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "BUN_LAST",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "BUN_LAST_DT",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "UR_MALB_LAST",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "UR_MALB_LAST_DT",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "UR_PROT_LAST",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "UR_PROT_LAST_DT",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "PROT_CR_RT_LAST",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "PROT_CR_RT_LAST_DT",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "CREAT_LAST",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "CREAT_LAST_DT",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "CREAT_CLR_LAST",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "CREAT_CLR_LAST_DT",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "IMMNZTN_PNEUM_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "IMMNZTN_FLU_DT",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "IMMNZTN_FLU_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "ON_STATIN_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "STATIN_ORD_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "STATIN_ORD_DT",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "ON_ANTHYPERT_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "ANTIHYPERT_ORD_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "ANTIHYPERT_ORD_DT",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "ON_SALICYLATE_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "SALICYLATE_ORD_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "SALICYLATE_ORD_DT",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "ON_ANTIPLAT_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "ANTIPLAT_ORD_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "ANTIPLAT_ORD_DT",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "ON_OR_ANTIDIAB_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "OR_ANTIDIAB_ORD_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "OR_ANTIDIAB_ORD_DT",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "ON_INSULIN_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "INSULIN_ORD_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "INSULIN_ORD_DT",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "ON_INJ_ANTIDIAB_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "INJ_ANTIDIAB_ORD_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "INJ_ANTIDIAB_ORD_DT",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "IS_PREGNANT_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "HAS_HYPERTEN_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "HAS_CAD_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "HAS_DIAB_REN_DIS_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "HAS_DIAB_RET_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "HAS_PERI_VAS_DIS_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "HBA1C_L_ORD_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "LDL_DIR_L_ORD_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "HDL_L_ORD_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "VLDL_L_ORD_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "LDL_HDL_RT_L_ORD_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "TTL_CHL_L_ORD_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "TRIGLY_L_ORD_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "BUN_L_ORD_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "UR_MALB_L_ORD_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "UR_PROT_L_ORD_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "PROT_CR_RT_L_ORD_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "CREAT_L_ORD_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "CREAT_CLR_L_ORD_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "LDL_CALC_L_ORD_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "HBA1C_L_LRR_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "LDL_DIR_L_LRR_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "HDL_L_LRR_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "VLDL_L_LRR_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "LDL_HDL_RT_L_LRR_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "TTL_CHL_L_LRR_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "TRIGLY_L_LRR_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "BUN_L_LRR_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "UR_MALB_L_LRR_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "UR_PROT_L_LRR_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "PROT_CR_RT_L_LRR_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "CREAT_L_LRR_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "CREAT_CLR_L_LRR_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "LDL_CALC_L_LRR_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "HBA1C_L_UNIT",
+				"type": "varchar"
+			},
+			{
+				"name": "LDL_DIR_L_UNIT",
+				"type": "varchar"
+			},
+			{
+				"name": "LDL_CALC_L_UNIT",
+				"type": "varchar"
+			},
+			{
+				"name": "HDL_L_UNIT",
+				"type": "varchar"
+			},
+			{
+				"name": "VLDL_L_UNIT",
+				"type": "varchar"
+			},
+			{
+				"name": "LDL_HDL_RT_L_UNIT",
+				"type": "varchar"
+			},
+			{
+				"name": "TTL_CHL_L_UNIT",
+				"type": "varchar"
+			},
+			{
+				"name": "TRIGLY_L_UNIT",
+				"type": "varchar"
+			},
+			{
+				"name": "BUN_L_UNIT",
+				"type": "varchar"
+			},
+			{
+				"name": "UR_MALB_L_UNIT",
+				"type": "varchar"
+			},
+			{
+				"name": "UR_PROT_L_UNIT",
+				"type": "varchar"
+			},
+			{
+				"name": "PROT_CR_RT_L_UNIT",
+				"type": "varchar"
+			},
+			{
+				"name": "CREAT_L_UNIT",
+				"type": "varchar"
+			},
+			{
+				"name": "CREAT_CLR_L_UNIT",
+				"type": "varchar"
+			},
+			{
+				"name": "HAS_CELIAC_DIS_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "TSH_LAST",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "TSH_LAST_DT",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "TSH_L_ORD_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "TSH_L_LRR_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "TSH_L_UNIT",
+				"type": "varchar"
+			},
+			{
+				"name": "TOBAC_PACK_YEAR",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "T3_LAST",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "T3_LAST_DT",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "T3_L_ORD_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "T3_L_LRR_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "T3_L_UNIT",
+				"type": "varchar"
+			},
+			{
+				"name": "T4_LAST",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "T4_LAST_DT",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "T4_L_ORD_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "T4_L_LRR_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "T4_L_UNIT",
+				"type": "varchar"
+			},
+			{
+				"name": "BMI_LAST_DT",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "HAD_STROKE_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "HAD_HEART_ATTACK_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "SMOKING_STATUS_C",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "SMOKING_USER_HX_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "SMOKING_USER_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "SMOKING_QUIT_L_DT",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "NUM_ED_VIS_DIABETES",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "NUM_ED_VIS",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "FOOT_EXAM_HM_C",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "ON_ACE_INHB_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "ACE_INHB_ORD_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "ACE_INHB_ORD_DT",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "ON_ARB_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "ARB_ORD_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "ARB_ORD_DT",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "FOOT_EXAM_L_DT",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "IMMNZTN_PNEUM_DT",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "BMI_FIRST_DT",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "AGE",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "SEX_C",
+				"type": "varchar"
+			},
+			{
+				"name": "HEIGHT_FIRST",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "SC_DIAB_COMP",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "SC_DIAB_BP",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "SC_DIAB_LDL",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "SC_DIAB_A1C",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "SC_DIAB_TOBAC_FREE",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "SC_DIAB_ASPIRIN_USE",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "ASPIRIN_PRESCR_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "ASPIRIN_ORD_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "ASPIRIN_ORD_DT",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "HEIGHT_FIRST_DT",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "HAS_DYSLIPIDEMA_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "HAS_NAFLD_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "HAS_OBESITY_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "HBA1C_LAST_STR",
+				"type": "varchar"
+			},
+			{
+				"name": "LDL_HDL_RT_LAST_STR",
+				"type": "varchar"
+			},
+			{
+				"name": "UR_MALB_LAST_STR",
+				"type": "varchar"
+			},
+			{
+				"name": "CREAT_CLR_LAST_STR",
+				"type": "varchar"
+			},
+			{
+				"name": "UR_PROT_LAST_STR",
+				"type": "varchar"
+			},
+			{
+				"name": "PROT_CR_RT_LAST_STR",
+				"type": "varchar"
+			},
+			{
+				"name": "Y_HN_DM_COMPL_LE_EXAM_SDE",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "Y_HN_DM_DSME_SDE",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "Y_HN_DM_KIDNEY_ASSESS_SDE",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "Y_HN_DM_MNT_SDE",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "Y_HM_DM_RETINAL_SCREEN_SDE",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "CUR_PRIM_PAYER_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "CUR_PRIM_BEN_PLAN_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "CUR_PRIM_FIN_CLASS_C",
+				"type": "varchar"
+			},
+			{
+				"name": "CUR_PRIM_PROD_TYPE_C",
+				"type": "varchar"
+			},
+			{
+				"name": "SMOKELESS_STATUS_C",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "LIPID_PANEL_LAST_DT",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "HAS_ASA_ALLERGY_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "ON_ANTICOAG_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "HAS_IVD_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "HAS_CVD_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "ASCVD_10_YR_SCORE",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "ASCVD_10_YR_SC_MISSING_C",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "NONHISP_AFRICAN_AMER_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "PRIOR_ASCVD_EVENT_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "ASPIRIN_APPROPRIATE_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "IS_BP_TREATED_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "HAS_HYPTN_PROB_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "ON_BP_MED_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "HAS_CLIN_ASCVD_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "SC_DIAB_STATIN_USE",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "SC_DIAB_STATIN_USE_CMT_C",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "STATIN_RECOMMENDED_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "ENDOCRIN_ON_CARE_TEAM_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "GFR_L_DT",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "GFR_L_LRR_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "GFR_L_ORD_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "GFR_L_STR",
+				"type": "varchar"
+			},
+			{
+				"name": "GFR_L_UNIT",
+				"type": "varchar"
+			},
+			{
+				"name": "GFR_LAST",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "HAD_KIDNEY_COMPLICATIONS_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "HAD_LOWER_EXTREM_AMPUTATION_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "HAS_AFIB_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "HAS_ANEMIA_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "HAS_BRONCHIECTASIS_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "HAS_COPD_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "HAS_EYE_COMPLICATIONS_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "HAS_GASTROPARESIS_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "HAS_ISCHEMIC_HEART_DIS_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "HAS_KETOACIDOSIS_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "HAS_LYMPHOMAS_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "HAS_MEDICAID_COVERAGE_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "HAS_MEDICARE_COVERAGE_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "HAS_PERIP_NEURO_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "HAS_SKIN_COMPLICATIONS_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "HAS_TYPE_2_DIABETES_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "ON_ANESTHETIC_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "ON_ANTI_ULCERS_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "ON_ANTISEIZURE_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "ON_BETA_BLOCK_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "ON_CA_BLOCK_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "ON_IMM_SUPPR_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "ON_NON_OPIOID_ANALGESIC_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "ON_OPIOID_ANALGESIC_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "OPHTHALMOLOGY_REFERRAL_LAST_DT",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "PHY_THR_REFERRAL_LAST_DT",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "PODIATRY_REFERRAL_LAST_DT",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "RISK_NEG_OUT_TYPE_2_SCORE",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "SPEC_ON_CARE_TEAM_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "BP_SYS_LAST_REP",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "BP_DIA_LAST_REP",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "EYE_EXAM_L_DT",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "NEG_EYE_EXAM_L_DT",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "HAD_KIDNEY_TRANSPLANT_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "HAS_FOOT_ULCER_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "HAS_FEET_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "FOOT_EXAM_LAST_DT",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "GFR_L_2_DT",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "GFR_L_2_LRR_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "GFR_L_2_ORD_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "GFR_L_2_STR",
+				"type": "varchar"
+			},
+			{
+				"name": "GFR_L_2_UNIT",
+				"type": "varchar"
+			},
+			{
+				"name": "GFR_LAST_2",
+				"type": "float",
+				"precision": 15
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "DM_DIABETES"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

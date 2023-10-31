@@ -1,0 +1,13 @@
+{
+	"name": "TstAg2_NoTable",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "tstag2_IRP",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
