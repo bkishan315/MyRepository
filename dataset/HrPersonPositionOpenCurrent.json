@@ -1,0 +1,230 @@
+{
+	"name": "HrPersonPositionOpenCurrent",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "DDCADIFINPRDDB_EBA",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [
+			{
+				"name": "EMP_NO",
+				"type": "varchar"
+			},
+			{
+				"name": "START_DT",
+				"type": "varchar"
+			},
+			{
+				"name": "END_DT",
+				"type": "varchar"
+			},
+			{
+				"name": "POSITION_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "PRMRY_ASSIGNMENT_FLG",
+				"type": "varchar"
+			},
+			{
+				"name": "MSPR_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "LDAP_USER_NM",
+				"type": "varchar"
+			},
+			{
+				"name": "CURRENTLY_ACTIVE_FLG",
+				"type": "varchar"
+			},
+			{
+				"name": "TERM_FLG",
+				"type": "varchar"
+			},
+			{
+				"name": "PERSON_TYP_TXT",
+				"type": "varchar"
+			},
+			{
+				"name": "LAST_NM",
+				"type": "varchar"
+			},
+			{
+				"name": "FIRST_NM",
+				"type": "varchar"
+			},
+			{
+				"name": "PREFERRED_NM",
+				"type": "varchar"
+			},
+			{
+				"name": "MIDDLE_NM",
+				"type": "varchar"
+			},
+			{
+				"name": "EMAIL_ADDR_TXT",
+				"type": "varchar"
+			},
+			{
+				"name": "BUSINESS_UNIT_NO",
+				"type": "varchar"
+			},
+			{
+				"name": "BUSINESS_UNIT_NM",
+				"type": "varchar"
+			},
+			{
+				"name": "COST_CENTER_NO",
+				"type": "varchar"
+			},
+			{
+				"name": "COST_CENTER_NM",
+				"type": "varchar"
+			},
+			{
+				"name": "COST_CENTER_COMBINED_CD_NM",
+				"type": "varchar"
+			},
+			{
+				"name": "CARE_GROUP_NM",
+				"type": "varchar"
+			},
+			{
+				"name": "SERVICE_LINE_NM",
+				"type": "varchar"
+			},
+			{
+				"name": "LOC_NM",
+				"type": "varchar"
+			},
+			{
+				"name": "LOC_ADDR_LINE_1_TXT",
+				"type": "varchar"
+			},
+			{
+				"name": "LOC_CITY_NM",
+				"type": "varchar"
+			},
+			{
+				"name": "LOC_STATE_NM",
+				"type": "varchar"
+			},
+			{
+				"name": "LOC_POSTAL_CD",
+				"type": "varchar"
+			},
+			{
+				"name": "JOB_CD",
+				"type": "varchar"
+			},
+			{
+				"name": "POSITION_TITLE_TXT",
+				"type": "varchar"
+			},
+			{
+				"name": "EXEMPT_FLG",
+				"type": "varchar"
+			},
+			{
+				"name": "WORKING_HRS",
+				"type": "varchar"
+			},
+			{
+				"name": "WORKING_HRS_ALL_POSITION",
+				"type": "varchar"
+			},
+			{
+				"name": "JOB_FAMILY_COMP",
+				"type": "varchar"
+			},
+			{
+				"name": "GL_ACCT_NO",
+				"type": "varchar"
+			},
+			{
+				"name": "AA_GROUP_CD",
+				"type": "varchar"
+			},
+			{
+				"name": "AA_GROUP_NM",
+				"type": "varchar"
+			},
+			{
+				"name": "SUPERVISOR_NOW_EMP_NO",
+				"type": "varchar"
+			},
+			{
+				"name": "SUPERVISOR_NOW_LAST_NM",
+				"type": "varchar"
+			},
+			{
+				"name": "SUPERVISOR_NOW_FIRST_NM",
+				"type": "varchar"
+			},
+			{
+				"name": "SUPERVISOR_NOW_PREF_NM",
+				"type": "varchar"
+			},
+			{
+				"name": "SUPERVISOR_NOW_MSPR_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "SUPERVISOR_NOW_LDAP_USER_NM",
+				"type": "varchar"
+			},
+			{
+				"name": "SUPERVISOR_NOW_EMAIL_ADDR_TXT",
+				"type": "varchar"
+			},
+			{
+				"name": "HRBP_EMP_NO",
+				"type": "varchar"
+			},
+			{
+				"name": "HRBP_LAST_NM",
+				"type": "varchar"
+			},
+			{
+				"name": "HRBP_FIRST_NM",
+				"type": "varchar"
+			},
+			{
+				"name": "HRBP_PREF_NM",
+				"type": "varchar"
+			},
+			{
+				"name": "HRBP_MSPR_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "HRBP_LDAP_USER_NM",
+				"type": "varchar"
+			},
+			{
+				"name": "HRBP_EMAIL_ADDR_TXT",
+				"type": "varchar"
+			},
+			{
+				"name": "EDW_INSERT_DTS",
+				"type": "varchar"
+			},
+			{
+				"name": "EDW_UPDATE_DTS",
+				"type": "varchar"
+			},
+			{
+				"name": "EDW_LOAD_DTS",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "EDW",
+			"table": "HrPersonPositionOpenCurrent"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

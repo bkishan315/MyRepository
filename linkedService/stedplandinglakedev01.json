@@ -1,0 +1,20 @@
+{
+	"name": "stedplandinglakedev01",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"description": "The Azure Data Lake Storage Account, for landing data.",
+		"annotations": [],
+		"type": "AzureBlobFS",
+		"typeProperties": {
+			"url": "https://stedplandinglakedev01.dfs.core.windows.net/",
+			"credential": {
+				"referenceName": "id_adf_edp_peaks_dev_001",
+				"type": "CredentialReference"
+			}
+		},
+		"connectVia": {
+			"referenceName": "integrationRuntimeDDCMSIRTPRDAPP1",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}

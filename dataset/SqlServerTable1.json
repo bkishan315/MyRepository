@@ -1,0 +1,151 @@
+{
+	"name": "SqlServerTable1",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Clarity Node 3",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [
+			{
+				"name": "LOG_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "LINE",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "OR_PROC_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "POS_C",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "ANES_TYPE_C",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "LRB_C",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "OP_REG_C",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "WND_CLS_C",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "WND_LOC_C",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "ALL_APPROACH_C",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "ALL_PROCS_TOT_TIME",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "ALL_PROCS_PANEL",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "COMMENTS",
+				"type": "varchar"
+			},
+			{
+				"name": "ORDINAL",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "CM_PHY_OWNER_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "CM_LOG_OWNER_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "RESOURCE_PREF_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "PICKLIST_PREF_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "MATCHED_PREF_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "DBC_EPISODE_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "PROC_EAP_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "ALL_PROC_AS_ORDERED",
+				"type": "varchar"
+			},
+			{
+				"name": "ALL_DEF_OR_PROC_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "ALL_PROC_CODE_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "PROC_DISPLAY_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "ALL_PROCS_INCISION_CLOSURE_C",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "ALL_NHSN_CLOSURE_C",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "ALL_PANEL_ADDL_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "OR_LOG_ALL_PROC"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

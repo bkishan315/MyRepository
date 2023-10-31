@@ -1,0 +1,235 @@
+{
+	"name": "EBAEDWHrTaRecruitProvider",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "stedplandinglakedev01",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "HrTaRecruitProvider.parquet",
+				"folderPath": "enterprise/peaks/epic_clarity/SCM",
+				"fileSystem": "dls-stedplandinglakedev01"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": [
+			{
+				"name": "EMP_NO",
+				"type": "UTF8"
+			},
+			{
+				"name": "START_DT",
+				"type": "UTF8"
+			},
+			{
+				"name": "END_DT",
+				"type": "UTF8"
+			},
+			{
+				"name": "POSITION_ID",
+				"type": "UTF8"
+			},
+			{
+				"name": "PRMRY_ASSIGNMENT_FLG",
+				"type": "UTF8"
+			},
+			{
+				"name": "MSPR_ID",
+				"type": "UTF8"
+			},
+			{
+				"name": "LDAP_USER_NM",
+				"type": "UTF8"
+			},
+			{
+				"name": "CURRENTLY_ACTIVE_FLG",
+				"type": "UTF8"
+			},
+			{
+				"name": "TERM_FLG",
+				"type": "UTF8"
+			},
+			{
+				"name": "PERSON_TYP_TXT",
+				"type": "UTF8"
+			},
+			{
+				"name": "LAST_NM",
+				"type": "UTF8"
+			},
+			{
+				"name": "FIRST_NM",
+				"type": "UTF8"
+			},
+			{
+				"name": "PREFERRED_NM",
+				"type": "UTF8"
+			},
+			{
+				"name": "MIDDLE_NM",
+				"type": "UTF8"
+			},
+			{
+				"name": "EMAIL_ADDR_TXT",
+				"type": "UTF8"
+			},
+			{
+				"name": "BUSINESS_UNIT_NO",
+				"type": "UTF8"
+			},
+			{
+				"name": "BUSINESS_UNIT_NM",
+				"type": "UTF8"
+			},
+			{
+				"name": "COST_CENTER_NO",
+				"type": "UTF8"
+			},
+			{
+				"name": "COST_CENTER_NM",
+				"type": "UTF8"
+			},
+			{
+				"name": "COST_CENTER_COMBINED_CD_NM",
+				"type": "UTF8"
+			},
+			{
+				"name": "CARE_GROUP_NM",
+				"type": "UTF8"
+			},
+			{
+				"name": "SERVICE_LINE_NM",
+				"type": "UTF8"
+			},
+			{
+				"name": "LOC_NM",
+				"type": "UTF8"
+			},
+			{
+				"name": "LOC_ADDR_LINE_1_TXT",
+				"type": "UTF8"
+			},
+			{
+				"name": "LOC_CITY_NM",
+				"type": "UTF8"
+			},
+			{
+				"name": "LOC_STATE_NM",
+				"type": "UTF8"
+			},
+			{
+				"name": "LOC_POSTAL_CD",
+				"type": "UTF8"
+			},
+			{
+				"name": "JOB_CD",
+				"type": "UTF8"
+			},
+			{
+				"name": "POSITION_TITLE_TXT",
+				"type": "UTF8"
+			},
+			{
+				"name": "EXEMPT_FLG",
+				"type": "UTF8"
+			},
+			{
+				"name": "WORKING_HRS",
+				"type": "UTF8"
+			},
+			{
+				"name": "WORKING_HRS_ALL_POSITION",
+				"type": "UTF8"
+			},
+			{
+				"name": "JOB_FAMILY_COMP",
+				"type": "UTF8"
+			},
+			{
+				"name": "GL_ACCT_NO",
+				"type": "UTF8"
+			},
+			{
+				"name": "AA_GROUP_CD",
+				"type": "UTF8"
+			},
+			{
+				"name": "AA_GROUP_NM",
+				"type": "UTF8"
+			},
+			{
+				"name": "SUPERVISOR_NOW_EMP_NO",
+				"type": "UTF8"
+			},
+			{
+				"name": "SUPERVISOR_NOW_LAST_NM",
+				"type": "UTF8"
+			},
+			{
+				"name": "SUPERVISOR_NOW_FIRST_NM",
+				"type": "UTF8"
+			},
+			{
+				"name": "SUPERVISOR_NOW_PREF_NM",
+				"type": "UTF8"
+			},
+			{
+				"name": "SUPERVISOR_NOW_MSPR_ID",
+				"type": "UTF8"
+			},
+			{
+				"name": "SUPERVISOR_NOW_LDAP_USER_NM",
+				"type": "UTF8"
+			},
+			{
+				"name": "SUPERVISOR_NOW_EMAIL_ADDR_TXT",
+				"type": "UTF8"
+			},
+			{
+				"name": "HRBP_EMP_NO",
+				"type": "UTF8"
+			},
+			{
+				"name": "HRBP_LAST_NM",
+				"type": "UTF8"
+			},
+			{
+				"name": "HRBP_FIRST_NM",
+				"type": "UTF8"
+			},
+			{
+				"name": "HRBP_PREF_NM",
+				"type": "UTF8"
+			},
+			{
+				"name": "HRBP_MSPR_ID",
+				"type": "UTF8"
+			},
+			{
+				"name": "HRBP_LDAP_USER_NM",
+				"type": "UTF8"
+			},
+			{
+				"name": "HRBP_EMAIL_ADDR_TXT",
+				"type": "UTF8"
+			},
+			{
+				"name": "EDW_INSERT_DTS",
+				"type": "UTF8"
+			},
+			{
+				"name": "EDW_UPDATE_DTS",
+				"type": "UTF8"
+			},
+			{
+				"name": "EDW_LOAD_DTS",
+				"type": "UTF8"
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

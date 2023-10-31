@@ -1,0 +1,268 @@
+{
+	"name": "SqlServerTable_SboProvider",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "DDCADIFINPRDDB_EBA",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "SCM/SCM_Old"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [
+			{
+				"name": "Prov_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "Prov_Name",
+				"type": "varchar"
+			},
+			{
+				"name": "Provider_Type",
+				"type": "varchar"
+			},
+			{
+				"name": "Provider_Type_Desc",
+				"type": "varchar"
+			},
+			{
+				"name": "NPI",
+				"type": "varchar"
+			},
+			{
+				"name": "Degree",
+				"type": "varchar"
+			},
+			{
+				"name": "Medicare_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "Medicaid_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "Addr_Line_1",
+				"type": "varchar"
+			},
+			{
+				"name": "Addr_Line_2",
+				"type": "varchar"
+			},
+			{
+				"name": "Addr_Line_3",
+				"type": "varchar"
+			},
+			{
+				"name": "City",
+				"type": "varchar"
+			},
+			{
+				"name": "Zip",
+				"type": "varchar"
+			},
+			{
+				"name": "Phone",
+				"type": "varchar"
+			},
+			{
+				"name": "State_Name",
+				"type": "varchar"
+			},
+			{
+				"name": "IRS_Num",
+				"type": "varchar"
+			},
+			{
+				"name": "Upin",
+				"type": "varchar"
+			},
+			{
+				"name": "DEA",
+				"type": "varchar"
+			},
+			{
+				"name": "Group_Code_1",
+				"type": "varchar"
+			},
+			{
+				"name": "Group_Name_1",
+				"type": "varchar"
+			},
+			{
+				"name": "Loc_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "Loc_Name",
+				"type": "varchar"
+			},
+			{
+				"name": "Specialty_One_C",
+				"type": "varchar"
+			},
+			{
+				"name": "Specialty_One_Desc",
+				"type": "varchar"
+			},
+			{
+				"name": "Specialty_Two_C",
+				"type": "varchar"
+			},
+			{
+				"name": "Specialty_Two_Desc",
+				"type": "varchar"
+			},
+			{
+				"name": "Credentials",
+				"type": "varchar"
+			},
+			{
+				"name": "EpicCare_Prov_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "Serv_Area_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "Serv_Area_Name",
+				"type": "varchar"
+			},
+			{
+				"name": "Active_Status",
+				"type": "varchar"
+			},
+			{
+				"name": "Active_Status_Desc",
+				"type": "varchar"
+			},
+			{
+				"name": "Rpt_Grp_One",
+				"type": "varchar"
+			},
+			{
+				"name": "IdType_Provider",
+				"type": "varchar"
+			},
+			{
+				"name": "IdType_SPI",
+				"type": "varchar"
+			},
+			{
+				"name": "IdType_ARIA",
+				"type": "varchar"
+			},
+			{
+				"name": "IdType_EH_NPI",
+				"type": "varchar"
+			},
+			{
+				"name": "IdType_CACTUS",
+				"type": "varchar"
+			},
+			{
+				"name": "IdType_RADIOLOGY",
+				"type": "varchar"
+			},
+			{
+				"name": "IdType_LABCORP",
+				"type": "varchar"
+			},
+			{
+				"name": "IdType_TAXONOMY",
+				"type": "varchar"
+			},
+			{
+				"name": "IdType_SCLHS",
+				"type": "varchar"
+			},
+			{
+				"name": "IdType_EXEMPLA",
+				"type": "varchar"
+			},
+			{
+				"name": "IdType_QUEST",
+				"type": "varchar"
+			},
+			{
+				"name": "IdType_MEDITECH",
+				"type": "varchar"
+			},
+			{
+				"name": "IdType_KP",
+				"type": "varchar"
+			},
+			{
+				"name": "IdType_CO",
+				"type": "varchar"
+			},
+			{
+				"name": "IdType_RPI",
+				"type": "varchar"
+			},
+			{
+				"name": "REVENUE_DEPT_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "PRIMARY_DEPT_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "Calc_SCL_Employed_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "Default_User_Role",
+				"type": "varchar"
+			},
+			{
+				"name": "EpicContractorId_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "Home_JobCode",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Home_Process_Level",
+				"type": "nvarchar"
+			},
+			{
+				"name": "KronosPaycheck_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "MgpsContractProv_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "Supervisor_Name",
+				"type": "nvarchar"
+			},
+			{
+				"name": "System_Login",
+				"type": "varchar"
+			},
+			{
+				"name": "DurableKey",
+				"type": "bigint",
+				"precision": 19
+			}
+		],
+		"typeProperties": {
+			"schema": "eba",
+			"table": "SboProvider"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

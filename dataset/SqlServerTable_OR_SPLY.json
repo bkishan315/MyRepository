@@ -1,0 +1,233 @@
+{
+	"name": "SqlServerTable_OR_SPLY",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Clarity Node 3",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "SCM/SCM_Old"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [
+			{
+				"name": "SUPPLY_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "SUPPLY_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "ACTIVE_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "ABBR",
+				"type": "varchar"
+			},
+			{
+				"name": "CHARGE_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "CHARGE_PER_UNIT",
+				"type": "decimal",
+				"precision": 12,
+				"scale": 2
+			},
+			{
+				"name": "COST_PER_UNIT",
+				"type": "decimal",
+				"precision": 12,
+				"scale": 2
+			},
+			{
+				"name": "NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "TEMP_RECORD_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "TYPE_OF_ITEM_C",
+				"type": "varchar"
+			},
+			{
+				"name": "REUSABLE_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "PACK_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "STOCK_ITEM_C",
+				"type": "varchar"
+			},
+			{
+				"name": "LEAD_TIME_DAYS",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "LAST_SUPPLIER_C",
+				"type": "varchar"
+			},
+			{
+				"name": "LAST_SUPPLIER_NUM",
+				"type": "varchar"
+			},
+			{
+				"name": "LAST_PURCHS_PRICE",
+				"type": "decimal",
+				"precision": 12,
+				"scale": 2
+			},
+			{
+				"name": "REC_CREATE_DATE",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "REC_CREATE_USER_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "PRIMARY_EXT_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "ITEM_DESC",
+				"type": "varchar"
+			},
+			{
+				"name": "COMMENTS",
+				"type": "varchar"
+			},
+			{
+				"name": "SMDA_ITEM_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "IMAGE_FILE",
+				"type": "varchar"
+			},
+			{
+				"name": "CHARGEABLE_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "LATEX_PRODUCT_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "PASS_THROUGH_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "IMPLANT_TYPE_C",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "ONLY_IN_PACK_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "CONSIGNMENT_ITM_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "CHARGE_CODE_EAP_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "MARKUP_PERCENTAGE",
+				"type": "decimal",
+				"precision": 12,
+				"scale": 2
+			},
+			{
+				"name": "CM_PHY_OWNER_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "CM_LOG_OWNER_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "ORDERING_RATIO",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "ORDER_PACK_TYPE_C",
+				"type": "varchar"
+			},
+			{
+				"name": "SURGERY_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "BILLING_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "SUPPLY_OR_DRUG_C",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "LDA_TYPE_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "TAXABLE_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "TRACKED_EXTERNAL_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "IMPLANT_CLASS_GROUPER_C",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "IS_ACTIVE_MM_C",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "CLIN_IND_LQL_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "RECORD_STATUS_C",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "IS_ELIGIBLE_HC_EXPENSE_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "IS_ELIGIBLE_HC_EXPNSE_SIGIS_YN",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "OR_SPLY"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

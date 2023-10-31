@@ -1,0 +1,75 @@
+{
+	"name": "CopyFromZC_ACCOUNT_TYPE",
+	"properties": {
+		"description": "Testing Copy data tool",
+		"activities": [
+			{
+				"name": "Copy_8cq",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [
+					{
+						"name": "Source",
+						"value": "dbo.ZC_ACCOUNT_TYPE"
+					},
+					{
+						"name": "Destination",
+						"value": "dls-stedplandinglakedev01/enterprise/peaks/epic_clarity/TR_TEST_CLARITY_BLD_REPORT.dbo.ZC_ACCOUNT_TYPE"
+					}
+				],
+				"typeProperties": {
+					"source": {
+						"type": "SqlServerSource",
+						"partitionOption": "None"
+					},
+					"sink": {
+						"type": "DelimitedTextSink",
+						"storeSettings": {
+							"type": "AzureBlobFSWriteSettings"
+						},
+						"formatSettings": {
+							"type": "DelimitedTextWriteSettings",
+							"quoteAllText": true,
+							"fileExtension": ".txt"
+						}
+					},
+					"enableStaging": false,
+					"validateDataConsistency": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "SourceDataset_8cq",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "DestinationDataset_8cq",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"folder": {
+			"name": "Test"
+		},
+		"annotations": [],
+		"lastPublishTime": "2023-10-18T17:32:43Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

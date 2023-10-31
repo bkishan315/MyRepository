@@ -1,0 +1,16 @@
+{
+	"name": "tstag2_IRP",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "SqlServer",
+		"typeProperties": {
+			"connectionString": "integrated security=False;data source=DDCDETSTDBAG02.sclhs.net;initial catalog=clarity_bld_report;user id=Test_Login",
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiI1Mjk2ODRkZi1kZTMzLTQwYTEtOGUzZC0yZDg0NDFiZGI5ZmMiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+		},
+		"connectVia": {
+			"referenceName": "integrationRuntimeDDCMSIRTPRDAPP1",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}

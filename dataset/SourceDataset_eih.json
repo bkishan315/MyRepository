@@ -1,0 +1,148 @@
+{
+	"name": "SourceDataset_eih",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Clarity Node 3",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [
+			{
+				"name": "BAL_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "CONTACT_DATE_REAL",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "TX_DATE",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "CM_PHY_OWNER_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "CM_LOG_OWNER_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "CM_CT_OWNER_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "TX_NUMBER",
+				"type": "varchar"
+			},
+			{
+				"name": "TX_SERIAL_NUM",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "BAL_ADJSTMNT_COUNT",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "VAL_ADJSTMNT_COUNT",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "DISTRIBUTE_COUNT",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "RECEIVE_COUNT",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "USAGE_COUNT",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "INSTANT_OF_ENTRY",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "INSTANT_OF_EDIT",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "ITEMS_EDITED",
+				"type": "varchar"
+			},
+			{
+				"name": "INSTANT_OF_NOADD_ED",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "NOADD_ITEMS_EDITED",
+				"type": "varchar"
+			},
+			{
+				"name": "DATA_ENTRY_PERSON",
+				"type": "varchar"
+			},
+			{
+				"name": "CHARGEABLE_OT_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "CHRG_COD_EAP_OT_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "CHARGE_CODE_FT_OT",
+				"type": "varchar"
+			},
+			{
+				"name": "OVERRIDE_CHARGE_OT",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "COST_PER_UNIT_OT",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "OVRIDE_MKUP_PCT_OT",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "CONTACT_TYPE_C",
+				"type": "int",
+				"precision": 10
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "OR_BAL_OVTM"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

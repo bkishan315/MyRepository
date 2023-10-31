@@ -1,0 +1,25 @@
+{
+	"name": "DatasetSCM_tables",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "DataBricks_node3",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "SCM"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [
+			{
+				"name": "tname",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "SCM_tables"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

@@ -1,0 +1,64 @@
+{
+	"name": "SqlServerTable_OR_SPLY_SUPPLIER",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Clarity Node 3",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "SCM/SCM_Old"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [
+			{
+				"name": "ITEM_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "LINE",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "SUPPLIER_C",
+				"type": "varchar"
+			},
+			{
+				"name": "SUPPLIER_CTLG_NUM",
+				"type": "varchar"
+			},
+			{
+				"name": "SUPPLIER_PRICE",
+				"type": "varchar"
+			},
+			{
+				"name": "SUPPLIER_PACK_T_C",
+				"type": "varchar"
+			},
+			{
+				"name": "SUPPLIER_PACK_RAT",
+				"type": "decimal",
+				"precision": 12,
+				"scale": 2
+			},
+			{
+				"name": "SUPPLIER_PHONE",
+				"type": "varchar"
+			},
+			{
+				"name": "CM_PHY_OWNER_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "CM_LOG_OWNER_ID",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "OR_SPLY_SUPPLIER"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

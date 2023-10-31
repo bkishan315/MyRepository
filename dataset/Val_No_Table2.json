@@ -1,0 +1,13 @@
+{
+	"name": "Val_No_Table2",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ClarityVal2",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

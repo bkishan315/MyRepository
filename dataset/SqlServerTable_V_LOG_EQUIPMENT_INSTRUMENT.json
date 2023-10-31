@@ -1,0 +1,65 @@
+{
+	"name": "SqlServerTable_V_LOG_EQUIPMENT_INSTRUMENT",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Clarity Node 3",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "SCM/SCM_Old"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [
+			{
+				"name": "LOG_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "ORM_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "GENERAL_RESOURCE_TYPE_C",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "GENERAL_RESOURCE_TYPE_NM",
+				"type": "varchar"
+			},
+			{
+				"name": "RESOURCE_TYPE_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "RESOURCE_TYPE_NM",
+				"type": "varchar"
+			},
+			{
+				"name": "RESOURCE_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "RESOURCE_NM",
+				"type": "varchar"
+			},
+			{
+				"name": "RESOURCE_NM_WID",
+				"type": "varchar"
+			},
+			{
+				"name": "TOTAL_TIME",
+				"type": "int",
+				"precision": 10
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "V_LOG_EQUIPMENT_INSTRUMENT"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

@@ -1,0 +1,16 @@
+{
+	"name": "SCM_Clarity_NoTable",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "DataBricks_node3",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "SCM"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

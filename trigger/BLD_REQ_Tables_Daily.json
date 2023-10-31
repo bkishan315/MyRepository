@@ -1,0 +1,43 @@
+{
+	"name": "BLD_REQ_Tables_Daily",
+	"properties": {
+		"description": "to process any changes to load_type \"REQ\" tables from clarity_bld ",
+		"annotations": [],
+		"runtimeState": "Started",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "Clarity_Bld_REQ_DirectPull_Delta",
+					"type": "PipelineReference"
+				}
+			},
+			{
+				"pipelineReference": {
+					"referenceName": "Clarity_Bld_REQ_CUSTOM_CC_Delta_WorkinProgress",
+					"type": "PipelineReference"
+				}
+			},
+			{
+				"pipelineReference": {
+					"referenceName": "Clarity_Bld_REQ_PB_CC_Delta",
+					"type": "PipelineReference"
+				}
+			},
+			{
+				"pipelineReference": {
+					"referenceName": "Clarity_Bld_REQ_SA_CC_Delta",
+					"type": "PipelineReference"
+				}
+			}
+		],
+		"type": "ScheduleTrigger",
+		"typeProperties": {
+			"recurrence": {
+				"frequency": "Day",
+				"interval": 1,
+				"startTime": "2023-09-30T05:00:00",
+				"timeZone": "Mountain Standard Time"
+			}
+		}
+	}
+}

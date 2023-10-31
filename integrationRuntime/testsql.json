@@ -1,0 +1,6 @@
+{
+	"name": "testsql",
+	"properties": {
+		"type": "SelfHosted"
+	}
+}

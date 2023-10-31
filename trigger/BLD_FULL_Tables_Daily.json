@@ -1,0 +1,31 @@
+{
+	"name": "BLD_FULL_Tables_Daily",
+	"properties": {
+		"description": "to process any changes to tables that load frequency is Full",
+		"annotations": [],
+		"runtimeState": "Started",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "Clarity_Bld_FULL_Non_DirectPull_Daily",
+					"type": "PipelineReference"
+				}
+			},
+			{
+				"pipelineReference": {
+					"referenceName": "Clarity_Bld_FULL_DirectPull_Daily",
+					"type": "PipelineReference"
+				}
+			}
+		],
+		"type": "ScheduleTrigger",
+		"typeProperties": {
+			"recurrence": {
+				"frequency": "Day",
+				"interval": 1,
+				"startTime": "2023-09-29T04:30:00",
+				"timeZone": "Mountain Standard Time"
+			}
+		}
+	}
+}

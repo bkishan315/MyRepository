@@ -1,0 +1,25 @@
+{
+	"name": "BLD_ZC_Tables_Daily",
+	"properties": {
+		"description": "To process ZC tables that were changed with any data on daily basis",
+		"annotations": [],
+		"runtimeState": "Started",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "Clarity_Bld_ZC_FULL_Delta",
+					"type": "PipelineReference"
+				}
+			}
+		],
+		"type": "ScheduleTrigger",
+		"typeProperties": {
+			"recurrence": {
+				"frequency": "Day",
+				"interval": 1,
+				"startTime": "2023-09-29T04:00:00",
+				"timeZone": "Mountain Standard Time"
+			}
+		}
+	}
+}

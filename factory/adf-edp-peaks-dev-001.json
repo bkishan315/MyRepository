@@ -1,0 +1,13 @@
+{
+	"name": "adf-edp-peaks-dev-001",
+	"location": "westus2",
+	"identity": {
+		"type": "UserAssigned",
+		"userAssignedIdentities": {
+			"/subscriptions/fb826747-574b-46e0-9d16-af4e3271fe45/resourcegroups/rg-edp-dev-analytics-and-iot/providers/Microsoft.ManagedIdentity/userAssignedIdentities/id-adf-edp-peaks-dev-001": {
+				"clientId": "03b0546d-4945-40ce-bf36-0a5e20058ba7",
+				"principalId": "31647514-56ab-453d-a67d-1963c0e0c919"
+			}
+		}
+	}
+}

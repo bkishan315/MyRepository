@@ -1,0 +1,43 @@
+{
+	"name": "SqlServerTable_ZC_OR_EQUIP_TYPE",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Clarity Node 3",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "SCM/SCM_Old"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [
+			{
+				"name": "SURG_EQUIPTYPE_C",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "TITLE",
+				"type": "varchar"
+			},
+			{
+				"name": "ABBR",
+				"type": "varchar"
+			},
+			{
+				"name": "INTERNAL_ID",
+				"type": "int",
+				"precision": 10
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "ZC_OR_EQUIP_TYPE"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

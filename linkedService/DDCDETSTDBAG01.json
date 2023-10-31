@@ -1,0 +1,17 @@
+{
+	"name": "DDCDETSTDBAG01",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "SqlServer",
+		"typeProperties": {
+			"connectionString": "integrated security=True;data source=DDCDETSTDBAG01;initial catalog=master",
+			"userName": "SCLHS\\s168198",
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiJmZTRhYzkxMC02N2RlLTRiYmEtOTM0Yi1hODMxMTg2ZmQ5MmQiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+		},
+		"connectVia": {
+			"referenceName": "integrationRuntimeDDCMSIRTPRDAPP1",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}

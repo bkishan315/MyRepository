@@ -1,0 +1,98 @@
+{
+	"name": "SqlServerTable_OR_LOG_ALL_SURG",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Clarity Node 3",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "SCM/SCM_Old"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [
+			{
+				"name": "LOG_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "LINE",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "SURG_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "ROLE_C",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "SERVICE_C",
+				"type": "varchar"
+			},
+			{
+				"name": "START_TIME",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "END_TIME",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "TOTAL_LENGTH",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "PANEL",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "CM_PHY_OWNER_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "CM_LOG_OWNER_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "RTLS_OFF_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "TIME_SOURCE_STATUS_C",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "START_TIME_CMT",
+				"type": "varchar"
+			},
+			{
+				"name": "END_TIME_CMT",
+				"type": "varchar"
+			},
+			{
+				"name": "START_TIME_DOCU_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "END_TIME_DOCU_ID",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "OR_LOG_ALL_SURG"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

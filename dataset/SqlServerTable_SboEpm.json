@@ -1,0 +1,83 @@
+{
+	"name": "SqlServerTable_SboEpm",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "DDCADIFINPRDDB_EBA",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "SCM/SCM_Old"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [
+			{
+				"name": "PAYOR_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "PAYOR_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "FINANCIAL_CLASS",
+				"type": "varchar"
+			},
+			{
+				"name": "FINANCIAL_CLASS_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "ADDR_LINE_1",
+				"type": "varchar"
+			},
+			{
+				"name": "ADDR_LINE_2",
+				"type": "varchar"
+			},
+			{
+				"name": "CITY",
+				"type": "varchar"
+			},
+			{
+				"name": "COUNTRY_C",
+				"type": "varchar"
+			},
+			{
+				"name": "COUNTRY_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "COUNTY_C",
+				"type": "varchar"
+			},
+			{
+				"name": "COUNTY_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "FAX",
+				"type": "varchar"
+			},
+			{
+				"name": "STATE_C",
+				"type": "varchar"
+			},
+			{
+				"name": "STATE_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "ZIP_CODE",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "eba",
+			"table": "SboEpm"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

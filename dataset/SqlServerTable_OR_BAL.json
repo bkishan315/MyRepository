@@ -1,0 +1,196 @@
+{
+	"name": "SqlServerTable_OR_BAL",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Clarity Node 3",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "SCM/SCM_Old"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [
+			{
+				"name": "BAL_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "BALANCE_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "SUPPLY_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "LOC_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "ACTIVE_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "STOCKED_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "MAX_QUANTITY",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "REORDER_POINT",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "REORDER_AMOUNT",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 3
+			},
+			{
+				"name": "PAR_LEVEL",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "GL_ACCOUNT_C",
+				"type": "varchar"
+			},
+			{
+				"name": "GL_GROUP_C",
+				"type": "varchar"
+			},
+			{
+				"name": "UNIT_ISSUE_C",
+				"type": "varchar"
+			},
+			{
+				"name": "CHARGEABLE_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "CHARGE_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "CHARGE_PER_UNIT",
+				"type": "decimal",
+				"precision": 12,
+				"scale": 2
+			},
+			{
+				"name": "COST_PER_UNIT",
+				"type": "decimal",
+				"precision": 12,
+				"scale": 2
+			},
+			{
+				"name": "MARKUP_PERCENT",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "TAXABLE_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "SHELF_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "BALANCE",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "BALANCE_VALUE",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 3
+			},
+			{
+				"name": "AVERAGE_COST",
+				"type": "decimal",
+				"precision": 21,
+				"scale": 6
+			},
+			{
+				"name": "RECORD_CREATE_DATE",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "REC_CREATE_USER_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "MERGING_CRIT_C",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "ORDERING_RATIO",
+				"type": "decimal",
+				"precision": 12,
+				"scale": 2
+			},
+			{
+				"name": "ORDER_PACK_TYP_C",
+				"type": "varchar"
+			},
+			{
+				"name": "CONSIGNMENT_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "BIN_LOCATION",
+				"type": "varchar"
+			},
+			{
+				"name": "MIN_QUANTTY",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "CHARGE_CODE_EAP_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "CM_PHY_OWNER_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "CM_LOG_OWNER_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "TRACKED_EXTERNAL_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "RECORD_STATUS_C",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "IS_ACTIVE_MM_C",
+				"type": "int",
+				"precision": 10
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "OR_BAL"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

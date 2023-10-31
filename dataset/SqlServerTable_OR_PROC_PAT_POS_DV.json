@@ -1,0 +1,67 @@
+{
+	"name": "SqlServerTable_OR_PROC_PAT_POS_DV",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Clarity Node 3",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "SCM/SCM_Old"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [
+			{
+				"name": "OR_PROC_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "LINE",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "PIECE",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "OR_DV_BODY_C",
+				"type": "varchar"
+			},
+			{
+				"name": "OR_DV_HEAD_C",
+				"type": "varchar"
+			},
+			{
+				"name": "OR_DV_RT_ARM_C",
+				"type": "varchar"
+			},
+			{
+				"name": "OR_DV_LT_ARM_C",
+				"type": "varchar"
+			},
+			{
+				"name": "OR_DV_RT_LEG_C",
+				"type": "varchar"
+			},
+			{
+				"name": "OR_DV_LT_LEG_C",
+				"type": "varchar"
+			},
+			{
+				"name": "CM_PHY_OWNER_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "CM_LOG_OWNER_ID",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "OR_PROC_PAT_POS_DV"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

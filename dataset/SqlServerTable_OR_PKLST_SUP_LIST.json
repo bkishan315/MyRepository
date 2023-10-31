@@ -1,0 +1,186 @@
+{
+	"name": "SqlServerTable_OR_PKLST_SUP_LIST",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Clarity Node 3",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "SCM/SCM_Old"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [
+			{
+				"name": "PICK_LIST_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "LINE",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "SUPPLY_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "NUM_NEEDED_OPEN",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "NUM_SUPPLIES_PRN",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "SUPPLIES_USED",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "SUPPLIES_WASTED",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "RSN_SUP_WASTED_C",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "CHRG_WASTED_SUP_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "SUPPLY_INV_LOC_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "SUPPLIES_EDITED_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "USUALCUST_SUP_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "CM_PHY_OWNER_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "CM_LOG_OWNER_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "SUP_UNIT_CHARGE",
+				"type": "decimal",
+				"precision": 12,
+				"scale": 2
+			},
+			{
+				"name": "SUP_UNIT_COST",
+				"type": "decimal",
+				"precision": 12,
+				"scale": 2
+			},
+			{
+				"name": "DEFAULT_INV_LOC_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "SUPPLY_PACK_KEY",
+				"type": "varchar"
+			},
+			{
+				"name": "SUPPLY_COMMENT_C",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "SUPPLY_FREETXT_CMNT",
+				"type": "varchar"
+			},
+			{
+				"name": "IMPLANT_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "CHARGEABLE_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "SUPPLY_SERIAL_NUM",
+				"type": "varchar"
+			},
+			{
+				"name": "SUPPLY_LOT_NUM",
+				"type": "varchar"
+			},
+			{
+				"name": "SUPPLY_EXP_DATE",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "SUP_UNIT_WASTE_CHRG",
+				"type": "decimal",
+				"precision": 12,
+				"scale": 2
+			},
+			{
+				"name": "UNIQUE_SUPPLY_IDENTIFIER",
+				"type": "varchar"
+			},
+			{
+				"name": "SUPPLY_KEY",
+				"type": "varchar"
+			},
+			{
+				"name": "SUPPLY_INSTANT_DTTM",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "WAS_SWITCHED_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "DRUG_SUPPLY_NDC_CSN_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "DRUG_SUPPLY_DOSE",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "DRUG_SUPPLY_DOSE_UNIT_C",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "STATIC_UDI",
+				"type": "varchar"
+			},
+			{
+				"name": "STATIC_UDI_TYPE_C",
+				"type": "int",
+				"precision": 10
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "OR_PKLST_SUP_LIST"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

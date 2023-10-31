@@ -1,0 +1,110 @@
+{
+	"name": "ihDepartment",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "stedplandinglakedev01",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"folderPath": "enterprise/peaks/epic_clarity/SCM",
+				"fileSystem": "dls-stedplandinglakedev01"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": [
+			{
+				"name": "LOCATION_ALL",
+				"type": "UTF8"
+			},
+			{
+				"name": "LOCATION_MARKET_ABBR",
+				"type": "UTF8"
+			},
+			{
+				"name": "LOCATION_MARKET_NAME",
+				"type": "UTF8"
+			},
+			{
+				"name": "LOCATION_TYPE",
+				"type": "UTF8"
+			},
+			{
+				"name": "LOCATION_REGION",
+				"type": "UTF8"
+			},
+			{
+				"name": "LOCATION_SITES",
+				"type": "UTF8"
+			},
+			{
+				"name": "LOCATION_ABBR",
+				"type": "UTF8"
+			},
+			{
+				"name": "ROLLUP_TYPE",
+				"type": "UTF8"
+			},
+			{
+				"name": "LOCATION_NAME",
+				"type": "UTF8"
+			},
+			{
+				"name": "LOCATION_ABBR_ALT",
+				"type": "UTF8"
+			},
+			{
+				"name": "FACILITY_LOC_NUM",
+				"type": "UTF8"
+			},
+			{
+				"name": "REV_LOC",
+				"type": "UTF8"
+			},
+			{
+				"name": "LEGACYNAME_ROW",
+				"type": "UTF8"
+			},
+			{
+				"name": "NHSN_ORGID",
+				"type": "UTF8"
+			},
+			{
+				"name": "PREMIER_FACILITY",
+				"type": "UTF8"
+			},
+			{
+				"name": "ERP_LAWSON",
+				"type": "UTF8"
+			},
+			{
+				"name": "ERP_ORACLE",
+				"type": "UTF8"
+			},
+			{
+				"name": "ERP_PEOPLESOFT",
+				"type": "UTF8"
+			},
+			{
+				"name": "ERP_REPORTING",
+				"type": "UTF8"
+			},
+			{
+				"name": "NETREV_AVAILABLE",
+				"type": "UTF8"
+			},
+			{
+				"name": "FCILITY_ID",
+				"type": "UTF8"
+			},
+			{
+				"name": "LOCATION_MK",
+				"type": "UTF8"
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

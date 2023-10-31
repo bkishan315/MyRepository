@@ -1,0 +1,213 @@
+{
+	"name": "SqlServerTable_OR_LOC",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Clarity Node 3",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "SCM/SCM_Old"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [
+			{
+				"name": "LOC_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "DEP_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "TR_SKIP_SAT_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "TR_SKIP_SUN_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "EOD_OFFSET_DAYS",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "CM_PHY_OWNER_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "CM_LOG_OWNER_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "LOCATION_TYPE_C",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "SUP_LKUP_TMP_CRT_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "DEC_INV_BALANCE_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "IMP_BC_DATA_MOD_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "IMP_BC_HIBC_SEC_C",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "NEW_PAT_ACTIVITY",
+				"type": "varchar"
+			},
+			{
+				"name": "NEW_PAT_MENU",
+				"type": "varchar"
+			},
+			{
+				"name": "NEW_PAT_LPP_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "HOL_SAT_ACT_C",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "HOL_SUN_ACT_C",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "HOL_SAT_SKIP_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "HOL_SUN_SKIP_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "HSB_TYP_FOR_CASE_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "AUTO_CRT_HSB_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "USE_STRUCTURE_FR_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "IMP_NAME_SYNCH_C",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "ANESTH_ST_EVENT_C",
+				"type": "varchar"
+			},
+			{
+				"name": "ANESTH_END_EVENT_C",
+				"type": "varchar"
+			},
+			{
+				"name": "DFLT_MARKUP_TBL_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "OR_DEPARTMENT_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "CASE_VIEW_ONLY_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "IN_ROOM_EVENT_C",
+				"type": "varchar"
+			},
+			{
+				"name": "PAT_LOC_IN_ROOM_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "PAT_LOC_OUT_PACU_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "OUT_PREOP_EVENT_C",
+				"type": "varchar"
+			},
+			{
+				"name": "OUT_PHASEII_EVENT_C",
+				"type": "varchar"
+			},
+			{
+				"name": "SUB_PRSRV_INV_LO_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "HOL_SCHED_WARN_C",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "IS_SYSTEM_DEFS_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "RELEASE_TIME",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "TR_SKIP_HOL_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "DISABLE_NEW_HIER_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "LOCATION_CLASSIFICATION_C",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "OUT_ROOM_TRACKING_EVENT_C",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "OR_LOC"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

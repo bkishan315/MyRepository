@@ -1,0 +1,17 @@
+{
+	"name": "DDCCLRSPRAGDB1_CLARITY1",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "SqlServer",
+		"typeProperties": {
+			"connectionString": "integrated security=True;data source=DDCCLRSPRAGDB1;initial catalog=master",
+			"userName": "SCLHS\\s168198",
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiI0MWVmMmM3Yi0xMGI3LTQ3ZmMtYjcyYi1mMWRlMjQwMTBjN2IiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+		},
+		"connectVia": {
+			"referenceName": "integrationRuntimeDDCMSIRTPRDAPP1",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}

@@ -1,0 +1,573 @@
+{
+	"name": "SqlServerTable_OR_LOG",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Clarity Node 3",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "SCM/SCM_Old"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [
+			{
+				"name": "LOG_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "LOG_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "SURGERY_DATE",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "CASE_TYPE_C",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "CASE_CLASS_C",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "TRAUMA_CASE_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "PAT_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "PAT_AGE",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "PAT_TYPE_C",
+				"type": "varchar"
+			},
+			{
+				"name": "POSTOP_CONSCIOUS_C",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "PREOP_CONSCIOUS_C",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "PREOP_BED_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "PACU_BED_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "NUM_OF_PANELS",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "REQUEST_PERSON",
+				"type": "varchar"
+			},
+			{
+				"name": "TOTAL_TIME_NEEDED",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "REFER_PROV_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "PAT_PREOP_COND_C",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "PAT_POSTOP_COND_C",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "ASA_RATING_C",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "DISCHARGE_TO_C",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "DISPOSITION_TIME",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "DISCHARGED_BY_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "EXPIRED_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "EXPIRED_WHERE_C",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "EXPIRED_TIME",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "REPORTED_TO_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "REPORTED_BY_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "X_RAYS_TAKEN_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "PREOP_XRAYS_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "PREOP_VISIT_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "LATEX_ALLERGIC_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "EST_BLOOD_LOSS",
+				"type": "decimal",
+				"precision": 12,
+				"scale": 2
+			},
+			{
+				"name": "ROOM_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "LOC_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "PRIORITY_C",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "ADD_ON_CASE_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "STATUS_C",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "SERVICE_C",
+				"type": "varchar"
+			},
+			{
+				"name": "SCHED_START_TIME",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "VOID_REASON_C",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "TOUCHED_BY_EOD_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "CHECKIN_INSTANT",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "PATIENT_ESCORT",
+				"type": "varchar"
+			},
+			{
+				"name": "CASE_REQUEST_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "RECORD_CREATE_DATE",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "REC_CREATE_USER_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "SPECIAL_NEEDS",
+				"type": "varchar"
+			},
+			{
+				"name": "PRE_OP_DIAG",
+				"type": "varchar"
+			},
+			{
+				"name": "POST_OP_DX",
+				"type": "varchar"
+			},
+			{
+				"name": "ADT_CSN",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "BLD_LOS_UNIT",
+				"type": "varchar"
+			},
+			{
+				"name": "RESEARCH_IND_C",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "PACU1_LOC_C",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "REASON_OVER_C",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "IOP_XRAYS_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "POSTOP_DEST_C",
+				"type": "varchar"
+			},
+			{
+				"name": "IS_CONFIDENTIAL_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "PANEL1_EXCL_HX_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "PANEL2_EXCL_HX_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "PANEL3_EXCL_HX_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "PANEL4_EXCL_HX_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "PANEL5_EXCL_HX_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "ADDENDA_COUNT",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "REQ_BY_PHONE",
+				"type": "varchar"
+			},
+			{
+				"name": "PATIENT_ID_VERB_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "PAT_HAS_ID_BAND_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "PAT_BLOOD_BAND_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "BLOOD_BAND_NUMBER",
+				"type": "varchar"
+			},
+			{
+				"name": "CONSENT_CONF_BY_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "OR_REP_TO_PACU_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "REP_GIVEN_TO_OTHER",
+				"type": "varchar"
+			},
+			{
+				"name": "DESTINATION",
+				"type": "varchar"
+			},
+			{
+				"name": "PROPH_AB_REQ_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "WEIGHT",
+				"type": "decimal",
+				"precision": 12,
+				"scale": 2
+			},
+			{
+				"name": "ADMIT_SOURCE_C",
+				"type": "varchar"
+			},
+			{
+				"name": "ADMITTING_SRVC_C",
+				"type": "varchar"
+			},
+			{
+				"name": "ADMITTING_PHYS_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "ADMIT_BED_TYPE_C",
+				"type": "varchar"
+			},
+			{
+				"name": "INTRAOP_DISCH_TO_C",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "INPATIENT_DATA_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "TOTAL_COST",
+				"type": "decimal",
+				"precision": 12,
+				"scale": 2
+			},
+			{
+				"name": "SURGEON_COST",
+				"type": "decimal",
+				"precision": 12,
+				"scale": 2
+			},
+			{
+				"name": "ANES_STAFF_COST",
+				"type": "decimal",
+				"precision": 12,
+				"scale": 2
+			},
+			{
+				"name": "OR_COST",
+				"type": "decimal",
+				"precision": 12,
+				"scale": 2
+			},
+			{
+				"name": "SURG_STAFF_COST",
+				"type": "decimal",
+				"precision": 12,
+				"scale": 2
+			},
+			{
+				"name": "SURG_EQUIP_COST",
+				"type": "decimal",
+				"precision": 12,
+				"scale": 2
+			},
+			{
+				"name": "ANES_EQUIP_COST",
+				"type": "decimal",
+				"precision": 12,
+				"scale": 2
+			},
+			{
+				"name": "INSTR_COST",
+				"type": "decimal",
+				"precision": 12,
+				"scale": 2
+			},
+			{
+				"name": "PROC_COST",
+				"type": "decimal",
+				"precision": 12,
+				"scale": 2
+			},
+			{
+				"name": "LOCATION_COST",
+				"type": "decimal",
+				"precision": 12,
+				"scale": 2
+			},
+			{
+				"name": "STAND_ALONE_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "VOID_COMMENTS",
+				"type": "varchar"
+			},
+			{
+				"name": "CM_PHY_OWNER_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "CM_LOG_OWNER_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "LOG_ACCEPTED_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "PROC_LEVEL_C",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "PROJ_END_INSTANT",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "LOG_START_INSTANT",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "USER_PROJ_END_TIME",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "OR_TIME_EVTS_ENT_C",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "PROC_NOT_PERF_C",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "PROC_NOT_PERF_COM",
+				"type": "varchar"
+			},
+			{
+				"name": "LOG_TYPE_C",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "PHASE_TWO_BED_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "PAT_SOUND_LIKE",
+				"type": "varchar"
+			},
+			{
+				"name": "CASE_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "IS_CLINICAL_TRL_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "BLOOD_LOSS_UNIT_C",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "SCHED_INSTR_EDIT_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "PAT_INSTR_EDITED_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "NURSE_NOTES_EDIT_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "POSITION_NOTES_E_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "EMERG_STATUS_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "IS_JOINT_RVSN_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "RECORD_STATUS_C",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "FORM_ID_COUNTER",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "CHRGS_AT_ADDEND_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "USING_EAP_YN",
+				"type": "varchar"
+			},
+			{
+				"name": "PRIMARY_PHYS_ID",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "OR_LOG"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

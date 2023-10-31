@@ -1,0 +1,65 @@
+{
+	"name": "SqlServerTable_SCE_RES_TYPE_INFO",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Clarity Node 3",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "SCM/SCM_Old"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [
+			{
+				"name": "RESRC_AVAIL_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "CM_PHY_OWNER_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "CM_LOG_OWNER_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "RECORD_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "RECORD_STATUS_C",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "SCE_REC_TYPE_C",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "RESOURCE_TYPE_ID",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "LINKED_PROV_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "RECORD_CREATION_DT",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "SCE_RES_TYPE_INFO"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
