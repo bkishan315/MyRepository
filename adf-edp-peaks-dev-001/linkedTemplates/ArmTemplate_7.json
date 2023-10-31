@@ -1,0 +1,2168 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "adf-edp-peaks-dev-001"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "[concat(parameters('factoryName'), '/SqlServerTable_OR_LOG_ALL_SURG')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "Clarity Node 3",
+					"type": "LinkedServiceReference"
+				},
+				"folder": {
+					"name": "SCM/SCM_Old"
+				},
+				"annotations": [],
+				"type": "SqlServerTable",
+				"schema": [
+					{
+						"name": "LOG_ID",
+						"type": "varchar"
+					},
+					{
+						"name": "LINE",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "SURG_ID",
+						"type": "varchar"
+					},
+					{
+						"name": "ROLE_C",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "SERVICE_C",
+						"type": "varchar"
+					},
+					{
+						"name": "START_TIME",
+						"type": "datetime",
+						"precision": 23,
+						"scale": 3
+					},
+					{
+						"name": "END_TIME",
+						"type": "datetime",
+						"precision": 23,
+						"scale": 3
+					},
+					{
+						"name": "TOTAL_LENGTH",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "PANEL",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "CM_PHY_OWNER_ID",
+						"type": "varchar"
+					},
+					{
+						"name": "CM_LOG_OWNER_ID",
+						"type": "varchar"
+					},
+					{
+						"name": "RTLS_OFF_YN",
+						"type": "varchar"
+					},
+					{
+						"name": "TIME_SOURCE_STATUS_C",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "START_TIME_CMT",
+						"type": "varchar"
+					},
+					{
+						"name": "END_TIME_CMT",
+						"type": "varchar"
+					},
+					{
+						"name": "START_TIME_DOCU_ID",
+						"type": "varchar"
+					},
+					{
+						"name": "END_TIME_DOCU_ID",
+						"type": "varchar"
+					}
+				],
+				"typeProperties": {
+					"schema": "dbo",
+					"table": "OR_LOG_ALL_SURG"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/SqlServerTable_OR_PKLST')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "Clarity Node 3",
+					"type": "LinkedServiceReference"
+				},
+				"folder": {
+					"name": "SCM/SCM_Old"
+				},
+				"annotations": [],
+				"type": "SqlServerTable",
+				"schema": [
+					{
+						"name": "PICK_LIST_ID",
+						"type": "varchar"
+					},
+					{
+						"name": "PICK_LIST_NAME",
+						"type": "varchar"
+					},
+					{
+						"name": "PICK_LIST_TYPE_NAM",
+						"type": "varchar"
+					},
+					{
+						"name": "CASE_RECORD_ID",
+						"type": "varchar"
+					},
+					{
+						"name": "PANEL_NUMBER",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "COMB_OR_SEP_NAME",
+						"type": "varchar"
+					},
+					{
+						"name": "INSTANT_PRINTED",
+						"type": "datetime",
+						"precision": 23,
+						"scale": 3
+					},
+					{
+						"name": "SUP_OPEN_TOT",
+						"type": "float",
+						"precision": 15
+					},
+					{
+						"name": "SUP_PRN_TOTAL",
+						"type": "float",
+						"precision": 15
+					},
+					{
+						"name": "SUP_GRAND_TOTAL",
+						"type": "float",
+						"precision": 15
+					},
+					{
+						"name": "DRUG_OPEN_TOTAL",
+						"type": "float",
+						"precision": 15
+					},
+					{
+						"name": "DRUG_PRN_TOTAL",
+						"type": "float",
+						"precision": 15
+					},
+					{
+						"name": "DRUG_GRAND_TOTAL",
+						"type": "float",
+						"precision": 15
+					},
+					{
+						"name": "GRAND_TOTAL_COST",
+						"type": "decimal",
+						"precision": 12,
+						"scale": 2
+					},
+					{
+						"name": "LOC_ID",
+						"type": "decimal",
+						"precision": 18,
+						"scale": 0
+					},
+					{
+						"name": "MODIFIED_YN",
+						"type": "varchar"
+					},
+					{
+						"name": "BASE_PICKLIST_ID",
+						"type": "varchar"
+					},
+					{
+						"name": "USE_SET_FROM_ID",
+						"type": "varchar"
+					},
+					{
+						"name": "CORE_PL_YN",
+						"type": "varchar"
+					},
+					{
+						"name": "SUP_OPEN_TOT_CHRG",
+						"type": "decimal",
+						"precision": 12,
+						"scale": 2
+					},
+					{
+						"name": "SUP_PRN_TOT_CHRG",
+						"type": "decimal",
+						"precision": 12,
+						"scale": 2
+					},
+					{
+						"name": "SUP_GRND_TOT_CHRG",
+						"type": "decimal",
+						"precision": 12,
+						"scale": 2
+					},
+					{
+						"name": "DRG_OPEN_TOT_CHRG",
+						"type": "decimal",
+						"precision": 12,
+						"scale": 2
+					},
+					{
+						"name": "DRG_PRN_TOT_CHRG",
+						"type": "decimal",
+						"precision": 12,
+						"scale": 2
+					},
+					{
+						"name": "DRG_GRND_TOT_CHRG",
+						"type": "decimal",
+						"precision": 12,
+						"scale": 2
+					},
+					{
+						"name": "GRAND_TOTAL_CHARGE",
+						"type": "decimal",
+						"precision": 12,
+						"scale": 2
+					},
+					{
+						"name": "PROC_ONLY_YN",
+						"type": "varchar"
+					},
+					{
+						"name": "RECORD_CREATE_DATE",
+						"type": "datetime",
+						"precision": 23,
+						"scale": 3
+					},
+					{
+						"name": "REC_CREATE_USER_ID",
+						"type": "varchar"
+					},
+					{
+						"name": "ACTIVE_YN",
+						"type": "varchar"
+					},
+					{
+						"name": "CREATED_IN_LOG_YN",
+						"type": "varchar"
+					},
+					{
+						"name": "GROUP_NUMBER",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "PROCEDURE_ID",
+						"type": "varchar"
+					},
+					{
+						"name": "SURGEON_ID",
+						"type": "varchar"
+					},
+					{
+						"name": "DELETED_YN",
+						"type": "varchar"
+					},
+					{
+						"name": "LOG_ENTRY_MOD_INST",
+						"type": "datetime",
+						"precision": 23,
+						"scale": 3
+					},
+					{
+						"name": "CM_PHY_OWNER_ID",
+						"type": "varchar"
+					},
+					{
+						"name": "CM_LOG_OWNER_ID",
+						"type": "varchar"
+					},
+					{
+						"name": "SERVICE_C",
+						"type": "varchar"
+					},
+					{
+						"name": "INV_DEPL_BFR_INST",
+						"type": "datetime",
+						"precision": 23,
+						"scale": 3
+					},
+					{
+						"name": "INV_DEPL_AFTER_INST",
+						"type": "datetime",
+						"precision": 23,
+						"scale": 3
+					},
+					{
+						"name": "COMB_OR_SEP_C",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "PICK_LIST_TYPE_C",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "INSTANT_OF_UPD_DTTM",
+						"type": "datetime",
+						"precision": 23,
+						"scale": 3
+					},
+					{
+						"name": "CASE_ID",
+						"type": "varchar"
+					},
+					{
+						"name": "LOG_ID",
+						"type": "varchar"
+					},
+					{
+						"name": "HIST_SUPPLY_USAGE_RECORD_ID",
+						"type": "decimal",
+						"precision": 18,
+						"scale": 0
+					},
+					{
+						"name": "PAT_ENC_CSN_ID",
+						"type": "decimal",
+						"precision": 18,
+						"scale": 0
+					},
+					{
+						"name": "PAT_DEPARTMENT_ID",
+						"type": "decimal",
+						"precision": 18,
+						"scale": 0
+					},
+					{
+						"name": "CREATION_DATE",
+						"type": "datetime",
+						"precision": 23,
+						"scale": 3
+					},
+					{
+						"name": "LINKED_ORDER_ID",
+						"type": "decimal",
+						"precision": 18,
+						"scale": 0
+					}
+				],
+				"typeProperties": {
+					"schema": "dbo",
+					"table": "OR_PKLST"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/SqlServerTable_OR_PKLST_DRUGS')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "Clarity Node 3",
+					"type": "LinkedServiceReference"
+				},
+				"folder": {
+					"name": "SCM/SCM_Old"
+				},
+				"annotations": [],
+				"type": "SqlServerTable",
+				"schema": [
+					{
+						"name": "PICK_LIST_ID",
+						"type": "varchar"
+					},
+					{
+						"name": "LINE",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "CM_PHY_OWNER_ID",
+						"type": "varchar"
+					},
+					{
+						"name": "CM_LOG_OWNER_ID",
+						"type": "varchar"
+					},
+					{
+						"name": "MEDICATION_ID",
+						"type": "decimal",
+						"precision": 18,
+						"scale": 0
+					},
+					{
+						"name": "MEDICATION_CMT",
+						"type": "varchar"
+					},
+					{
+						"name": "MEDICATION_AMT",
+						"type": "decimal",
+						"precision": 18,
+						"scale": 4
+					},
+					{
+						"name": "MEDICATION_UNIT_C",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "MEDICATION_QTY",
+						"type": "decimal",
+						"precision": 18,
+						"scale": 4
+					},
+					{
+						"name": "MEDICATION_PRN_QTY",
+						"type": "decimal",
+						"precision": 18,
+						"scale": 4
+					}
+				],
+				"typeProperties": {
+					"schema": "dbo",
+					"table": "OR_PKLST_DRUGS"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/SqlServerTable_OR_PKLST_SUP_LIST')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "Clarity Node 3",
+					"type": "LinkedServiceReference"
+				},
+				"folder": {
+					"name": "SCM/SCM_Old"
+				},
+				"annotations": [],
+				"type": "SqlServerTable",
+				"schema": [
+					{
+						"name": "PICK_LIST_ID",
+						"type": "varchar"
+					},
+					{
+						"name": "LINE",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "SUPPLY_ID",
+						"type": "varchar"
+					},
+					{
+						"name": "NUM_NEEDED_OPEN",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "NUM_SUPPLIES_PRN",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "SUPPLIES_USED",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "SUPPLIES_WASTED",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "RSN_SUP_WASTED_C",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "CHRG_WASTED_SUP_YN",
+						"type": "varchar"
+					},
+					{
+						"name": "SUPPLY_INV_LOC_ID",
+						"type": "decimal",
+						"precision": 18,
+						"scale": 0
+					},
+					{
+						"name": "SUPPLIES_EDITED_YN",
+						"type": "varchar"
+					},
+					{
+						"name": "USUALCUST_SUP_YN",
+						"type": "varchar"
+					},
+					{
+						"name": "CM_PHY_OWNER_ID",
+						"type": "varchar"
+					},
+					{
+						"name": "CM_LOG_OWNER_ID",
+						"type": "varchar"
+					},
+					{
+						"name": "SUP_UNIT_CHARGE",
+						"type": "decimal",
+						"precision": 12,
+						"scale": 2
+					},
+					{
+						"name": "SUP_UNIT_COST",
+						"type": "decimal",
+						"precision": 12,
+						"scale": 2
+					},
+					{
+						"name": "DEFAULT_INV_LOC_ID",
+						"type": "decimal",
+						"precision": 18,
+						"scale": 0
+					},
+					{
+						"name": "SUPPLY_PACK_KEY",
+						"type": "varchar"
+					},
+					{
+						"name": "SUPPLY_COMMENT_C",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "SUPPLY_FREETXT_CMNT",
+						"type": "varchar"
+					},
+					{
+						"name": "IMPLANT_YN",
+						"type": "varchar"
+					},
+					{
+						"name": "CHARGEABLE_YN",
+						"type": "varchar"
+					},
+					{
+						"name": "SUPPLY_SERIAL_NUM",
+						"type": "varchar"
+					},
+					{
+						"name": "SUPPLY_LOT_NUM",
+						"type": "varchar"
+					},
+					{
+						"name": "SUPPLY_EXP_DATE",
+						"type": "datetime",
+						"precision": 23,
+						"scale": 3
+					},
+					{
+						"name": "SUP_UNIT_WASTE_CHRG",
+						"type": "decimal",
+						"precision": 12,
+						"scale": 2
+					},
+					{
+						"name": "UNIQUE_SUPPLY_IDENTIFIER",
+						"type": "varchar"
+					},
+					{
+						"name": "SUPPLY_KEY",
+						"type": "varchar"
+					},
+					{
+						"name": "SUPPLY_INSTANT_DTTM",
+						"type": "datetime",
+						"precision": 23,
+						"scale": 3
+					},
+					{
+						"name": "WAS_SWITCHED_YN",
+						"type": "varchar"
+					},
+					{
+						"name": "DRUG_SUPPLY_NDC_CSN_ID",
+						"type": "varchar"
+					},
+					{
+						"name": "DRUG_SUPPLY_DOSE",
+						"type": "decimal",
+						"precision": 18,
+						"scale": 2
+					},
+					{
+						"name": "DRUG_SUPPLY_DOSE_UNIT_C",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "STATIC_UDI",
+						"type": "varchar"
+					},
+					{
+						"name": "STATIC_UDI_TYPE_C",
+						"type": "int",
+						"precision": 10
+					}
+				],
+				"typeProperties": {
+					"schema": "dbo",
+					"table": "OR_PKLST_SUP_LIST"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/SqlServerTable_OR_PROC')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "Clarity Node 3",
+					"type": "LinkedServiceReference"
+				},
+				"folder": {
+					"name": "SCM/SCM_Old"
+				},
+				"annotations": [],
+				"type": "SqlServerTable",
+				"schema": [
+					{
+						"name": "OR_PROC_ID",
+						"type": "varchar"
+					},
+					{
+						"name": "PROC_NAME",
+						"type": "varchar"
+					},
+					{
+						"name": "INACTIVE_YN",
+						"type": "varchar"
+					},
+					{
+						"name": "ABBREV",
+						"type": "varchar"
+					},
+					{
+						"name": "PROC_MOD_YN",
+						"type": "varchar"
+					},
+					{
+						"name": "USESETNGS_FROM_ID",
+						"type": "varchar"
+					},
+					{
+						"name": "TYPE_OF_PROC_C",
+						"type": "varchar"
+					},
+					{
+						"name": "USE_CALC_TIMES_YN",
+						"type": "varchar"
+					},
+					{
+						"name": "START_BEFORE_TIME",
+						"type": "datetime",
+						"precision": 23,
+						"scale": 3
+					},
+					{
+						"name": "START_AFTER_TIME",
+						"type": "datetime",
+						"precision": 23,
+						"scale": 3
+					},
+					{
+						"name": "SETUP_LENGTH",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "CLEANUP_LENGTH",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "TIME_REQUIRED",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "TIME_REQ_MULTIPLE",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "POSITION_C",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "LRB_C",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "OPERATING_REGION_C",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "PAT_HEAD_POS_C",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "RIGHT_ARM_POS_C",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "LEFT_ARM_POS_C",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "RIGHT_LEG_POS_C",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "LEFT_LEG_POS_C",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "ANESTHESIA_TYPE_C",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "CHARGE_CODE",
+						"type": "varchar"
+					},
+					{
+						"name": "PICKLIST_ID",
+						"type": "varchar"
+					},
+					{
+						"name": "MOD_MAX_AGE",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "MOD_MIN_AGE",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "MOD_SEX_NAME",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "MOD_MIN_AGE_NUM",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "MOD_MIN_AGE_NAME",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "MOD_MAX_AGE_NUM",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "MOD_MAX_AGE_NAME",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "MOD_SER_INDEX_ID",
+						"type": "varchar"
+					},
+					{
+						"name": "MOD_EAF_INDEX_ID",
+						"type": "decimal",
+						"precision": 18,
+						"scale": 0
+					},
+					{
+						"name": "MOD_ORP_INDEX_ID",
+						"type": "varchar"
+					},
+					{
+						"name": "RECORD_CREATE_DATE",
+						"type": "datetime",
+						"precision": 23,
+						"scale": 3
+					},
+					{
+						"name": "REC_CREATE_USER_ID",
+						"type": "varchar"
+					},
+					{
+						"name": "PATIENT_INST",
+						"type": "varchar"
+					},
+					{
+						"name": "PROC_DESC",
+						"type": "varchar"
+					},
+					{
+						"name": "PROC_NOTES",
+						"type": "varchar"
+					},
+					{
+						"name": "SCHED_INSTRS",
+						"type": "varchar"
+					},
+					{
+						"name": "XRAY_REQS",
+						"type": "varchar"
+					},
+					{
+						"name": "LAB_REQS",
+						"type": "varchar"
+					},
+					{
+						"name": "NURSING_NOTES",
+						"type": "varchar"
+					},
+					{
+						"name": "PREOP_PREP_NOTES",
+						"type": "varchar"
+					},
+					{
+						"name": "POSITION_NOTES",
+						"type": "varchar"
+					},
+					{
+						"name": "PRIMARY_EXT_ID",
+						"type": "varchar"
+					},
+					{
+						"name": "BASE_COST",
+						"type": "decimal",
+						"precision": 12,
+						"scale": 2
+					},
+					{
+						"name": "WOUND_CLASS_C",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "WOUND_LOC_C",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "PL_GEN_DEFAULT_C",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "PMODS_INDEX_1",
+						"type": "varchar"
+					},
+					{
+						"name": "COST_TABLE_ID",
+						"type": "decimal",
+						"precision": 18,
+						"scale": 0
+					},
+					{
+						"name": "USE_AVG_STG_FRM_ID",
+						"type": "varchar"
+					},
+					{
+						"name": "CM_PHY_OWNER_ID",
+						"type": "varchar"
+					},
+					{
+						"name": "CM_LOG_OWNER_ID",
+						"type": "varchar"
+					},
+					{
+						"name": "PROC_LEVEL_C",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "MOD_SVC_INDEX_C",
+						"type": "varchar"
+					},
+					{
+						"name": "PMODS_ORP_SER_SVC",
+						"type": "varchar"
+					},
+					{
+						"name": "PMODS_ORP_EAF_SVC",
+						"type": "varchar"
+					},
+					{
+						"name": "CHARGE_CODE_ID",
+						"type": "decimal",
+						"precision": 18,
+						"scale": 0
+					},
+					{
+						"name": "RPT_GRP1_C",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "RPT_GRP2_C",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "RPT_GRP3_C",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "RPT_GRP4_C",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "RPT_GRP5_C",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "RPT_GRP6_C",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "RPT_GRP7_C",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "RPT_GRP8_C",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "RPT_GRP9_C",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "RPT_GRP10_C",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "RPT_GRP1_STR",
+						"type": "varchar"
+					},
+					{
+						"name": "RPT_GRP2_STR",
+						"type": "varchar"
+					},
+					{
+						"name": "RPT_GRP3_STR",
+						"type": "varchar"
+					},
+					{
+						"name": "RPT_GRP4_STR",
+						"type": "varchar"
+					},
+					{
+						"name": "RPT_GRP5_STR",
+						"type": "varchar"
+					},
+					{
+						"name": "RPT_GRP1_NUM",
+						"type": "float",
+						"precision": 15
+					},
+					{
+						"name": "RPT_GRP2_NUM",
+						"type": "float",
+						"precision": 15
+					},
+					{
+						"name": "RPT_GRP3_NUM",
+						"type": "float",
+						"precision": 15
+					},
+					{
+						"name": "RPT_GRP4_NUM",
+						"type": "float",
+						"precision": 15
+					},
+					{
+						"name": "RPT_GRP5_NUM",
+						"type": "float",
+						"precision": 15
+					},
+					{
+						"name": "CPT_BENEFITS_ID",
+						"type": "decimal",
+						"precision": 18,
+						"scale": 0
+					},
+					{
+						"name": "UPD_SURG_HIST_YN",
+						"type": "varchar"
+					},
+					{
+						"name": "SURG_HIST_PROC_ID",
+						"type": "decimal",
+						"precision": 18,
+						"scale": 0
+					},
+					{
+						"name": "REQ_IMP_YN",
+						"type": "varchar"
+					},
+					{
+						"name": "OR_BILLING_CAT_C",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "STUDY_ORDER_EAP_ID",
+						"type": "decimal",
+						"precision": 18,
+						"scale": 0
+					},
+					{
+						"name": "REQ_OB_CONTACT_YN",
+						"type": "varchar"
+					},
+					{
+						"name": "LAPAROSCOPIC_YN",
+						"type": "varchar"
+					},
+					{
+						"name": "PRNT_PCK_YN",
+						"type": "varchar"
+					},
+					{
+						"name": "PREF_GROUP_ID",
+						"type": "varchar"
+					},
+					{
+						"name": "LAST_BCA_DATETIME",
+						"type": "datetime",
+						"precision": 23,
+						"scale": 3
+					},
+					{
+						"name": "LAST_BCA_ACTION_C",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "AVG_LEN_FOR_BILL",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "ENDOSCOPIC_YN",
+						"type": "varchar"
+					},
+					{
+						"name": "REC_TYP_C",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "COUNTS_NEEDED_YN",
+						"type": "varchar"
+					},
+					{
+						"name": "MIN_IMP_CHRG_EXPECT",
+						"type": "decimal",
+						"precision": 18,
+						"scale": 2
+					},
+					{
+						"name": "PAT_PREP_LENGTH",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "PAT_CLOSING_LENGTH",
+						"type": "int",
+						"precision": 10
+					}
+				],
+				"typeProperties": {
+					"schema": "dbo",
+					"table": "OR_PROC"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/SqlServerTable_OR_PROC_ANEQUIP')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "Clarity Node 3",
+					"type": "LinkedServiceReference"
+				},
+				"folder": {
+					"name": "SCM/SCM_Old"
+				},
+				"annotations": [],
+				"type": "SqlServerTable",
+				"schema": [
+					{
+						"name": "OR_PROC_ID",
+						"type": "varchar"
+					},
+					{
+						"name": "LINE",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "ANEST_EQUIP_REQ_C",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "NUM_ANEST_EQUIP",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "ANS_EQP_REQ_YN",
+						"type": "varchar"
+					},
+					{
+						"name": "ANS_EQP_MRG_CRIT_C",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "CM_PHY_OWNER_ID",
+						"type": "varchar"
+					},
+					{
+						"name": "CM_LOG_OWNER_ID",
+						"type": "varchar"
+					},
+					{
+						"name": "ANEST_EQUIP_CMT",
+						"type": "varchar"
+					}
+				],
+				"typeProperties": {
+					"schema": "dbo",
+					"table": "OR_PROC_ANEQUIP"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/SqlServerTable_OR_PROC_ANSTAFF')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "Clarity Node 3",
+					"type": "LinkedServiceReference"
+				},
+				"folder": {
+					"name": "SCM/SCM_Old"
+				},
+				"annotations": [],
+				"type": "SqlServerTable",
+				"schema": [
+					{
+						"name": "OR_PROC_ID",
+						"type": "varchar"
+					},
+					{
+						"name": "LINE",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "ANEST_STAFF_REQ_C",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "NUM_ANEST_STAFF",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "ANS_STF_REQ_YN",
+						"type": "varchar"
+					},
+					{
+						"name": "ANS_STF_MRG_CRIT_C",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "CM_PHY_OWNER_ID",
+						"type": "varchar"
+					},
+					{
+						"name": "CM_LOG_OWNER_ID",
+						"type": "varchar"
+					}
+				],
+				"typeProperties": {
+					"schema": "dbo",
+					"table": "OR_PROC_ANSTAFF"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/SqlServerTable_OR_PROC_AUDIT_TRL')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "Clarity Node 3",
+					"type": "LinkedServiceReference"
+				},
+				"folder": {
+					"name": "SCM/SCM_Old"
+				},
+				"annotations": [],
+				"type": "SqlServerTable",
+				"schema": [
+					{
+						"name": "PROC_ID",
+						"type": "varchar"
+					},
+					{
+						"name": "LINE",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "CM_PHY_OWNER_ID",
+						"type": "varchar"
+					},
+					{
+						"name": "CM_LOG_OWNER_ID",
+						"type": "varchar"
+					},
+					{
+						"name": "AUDIT_ACTION_C",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "AUDIT_USER_ID",
+						"type": "varchar"
+					},
+					{
+						"name": "AUDIT_DATE",
+						"type": "datetime",
+						"precision": 23,
+						"scale": 3
+					},
+					{
+						"name": "AUDIT_TIME",
+						"type": "datetime",
+						"precision": 23,
+						"scale": 3
+					},
+					{
+						"name": "AUDIT_COMMENTS",
+						"type": "varchar"
+					}
+				],
+				"typeProperties": {
+					"schema": "dbo",
+					"table": "OR_PROC_AUDIT_TRL"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/SqlServerTable_OR_PROC_AUTH_LOC')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "Clarity Node 3",
+					"type": "LinkedServiceReference"
+				},
+				"folder": {
+					"name": "SCM/SCM_Old"
+				},
+				"annotations": [],
+				"type": "SqlServerTable",
+				"schema": [
+					{
+						"name": "OR_PROC_ID",
+						"type": "varchar"
+					},
+					{
+						"name": "LINE",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "AUTH_LOCATIONS_ID",
+						"type": "decimal",
+						"precision": 18,
+						"scale": 0
+					},
+					{
+						"name": "CM_PHY_OWNER_ID",
+						"type": "varchar"
+					},
+					{
+						"name": "CM_LOG_OWNER_ID",
+						"type": "varchar"
+					}
+				],
+				"typeProperties": {
+					"schema": "dbo",
+					"table": "OR_PROC_AUTHLOC"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/SqlServerTable_OR_PROC_EQUIP')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "Clarity Node 3",
+					"type": "LinkedServiceReference"
+				},
+				"folder": {
+					"name": "SCM/SCM_Old"
+				},
+				"annotations": [],
+				"type": "SqlServerTable",
+				"schema": [
+					{
+						"name": "OR_PROC_ID",
+						"type": "varchar"
+					},
+					{
+						"name": "LINE",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "SURG_EQUIP_REQ_C",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "NUM_SURG_EQUIP",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "SRG_EQP_REQ_YN",
+						"type": "varchar"
+					},
+					{
+						"name": "SRG_EQP_MRG_CRIT_C",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "CM_PHY_OWNER_ID",
+						"type": "varchar"
+					},
+					{
+						"name": "CM_LOG_OWNER_ID",
+						"type": "varchar"
+					},
+					{
+						"name": "SURG_EQUIP_CMT",
+						"type": "varchar"
+					}
+				],
+				"typeProperties": {
+					"schema": "dbo",
+					"table": "OR_PROC_EQUIP"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/SqlServerTable_OR_PROC_INSTR')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "Clarity Node 3",
+					"type": "LinkedServiceReference"
+				},
+				"folder": {
+					"name": "SCM/SCM_Old"
+				},
+				"annotations": [],
+				"type": "SqlServerTable",
+				"schema": [
+					{
+						"name": "OR_PROC_ID",
+						"type": "varchar"
+					},
+					{
+						"name": "LINE",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "INSTR_REQ_C",
+						"type": "varchar"
+					},
+					{
+						"name": "NUM_INSTR_REQ",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "INSTR_REQ_YN",
+						"type": "varchar"
+					},
+					{
+						"name": "INSTR_MRG_CRIT_C",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "CM_PHY_OWNER_ID",
+						"type": "varchar"
+					},
+					{
+						"name": "CM_LOG_OWNER_ID",
+						"type": "varchar"
+					},
+					{
+						"name": "INSTRUMENT_CMT",
+						"type": "varchar"
+					}
+				],
+				"typeProperties": {
+					"schema": "dbo",
+					"table": "OR_PROC_INSTR"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/SqlServerTable_OR_PROC_MOD_EAF_INDEX')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "Clarity Node 3",
+					"type": "LinkedServiceReference"
+				},
+				"folder": {
+					"name": "SCM/SCM_Old"
+				},
+				"annotations": [],
+				"type": "SqlServerTable",
+				"schema": [
+					{
+						"name": "OR_PROC_ID",
+						"type": "varchar"
+					},
+					{
+						"name": "LINE",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "CM_PHY_OWNER_ID",
+						"type": "varchar"
+					},
+					{
+						"name": "CM_LOG_OWNER_ID",
+						"type": "varchar"
+					},
+					{
+						"name": "PMODS_EAF_INDEX_ID",
+						"type": "decimal",
+						"precision": 18,
+						"scale": 0
+					}
+				],
+				"typeProperties": {
+					"schema": "dbo",
+					"table": "OR_PROC_MOD_EAF_INDEX"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/SqlServerTable_OR_PROC_MOD_ORP_INDEX')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "Clarity Node 3",
+					"type": "LinkedServiceReference"
+				},
+				"folder": {
+					"name": "SCM/SCM_Old"
+				},
+				"annotations": [],
+				"type": "SqlServerTable",
+				"schema": [
+					{
+						"name": "OR_PROC_ID",
+						"type": "varchar"
+					},
+					{
+						"name": "LINE",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "CM_PHY_OWNER_ID",
+						"type": "varchar"
+					},
+					{
+						"name": "CM_LOG_OWNER_ID",
+						"type": "varchar"
+					},
+					{
+						"name": "PMODS_ORP_INDEX_ID",
+						"type": "varchar"
+					}
+				],
+				"typeProperties": {
+					"schema": "dbo",
+					"table": "OR_PROC_MOD_ORP_INDEX"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/SqlServerTable_OR_PROC_MOD_SER_INDEX')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "Clarity Node 3",
+					"type": "LinkedServiceReference"
+				},
+				"folder": {
+					"name": "SCM/SCM_Old"
+				},
+				"annotations": [],
+				"type": "SqlServerTable",
+				"schema": [
+					{
+						"name": "OR_PROC_ID",
+						"type": "varchar"
+					},
+					{
+						"name": "LINE",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "CM_PHY_OWNER_ID",
+						"type": "varchar"
+					},
+					{
+						"name": "CM_LOG_OWNER_ID",
+						"type": "varchar"
+					},
+					{
+						"name": "PMODS_SER_INDEX_ID",
+						"type": "varchar"
+					}
+				],
+				"typeProperties": {
+					"schema": "dbo",
+					"table": "OR_PROC_MOD_SER_INDEX"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/SqlServerTable_OR_PROC_PAT_POS_DV')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "Clarity Node 3",
+					"type": "LinkedServiceReference"
+				},
+				"folder": {
+					"name": "SCM/SCM_Old"
+				},
+				"annotations": [],
+				"type": "SqlServerTable",
+				"schema": [
+					{
+						"name": "OR_PROC_ID",
+						"type": "varchar"
+					},
+					{
+						"name": "LINE",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "PIECE",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "OR_DV_BODY_C",
+						"type": "varchar"
+					},
+					{
+						"name": "OR_DV_HEAD_C",
+						"type": "varchar"
+					},
+					{
+						"name": "OR_DV_RT_ARM_C",
+						"type": "varchar"
+					},
+					{
+						"name": "OR_DV_LT_ARM_C",
+						"type": "varchar"
+					},
+					{
+						"name": "OR_DV_RT_LEG_C",
+						"type": "varchar"
+					},
+					{
+						"name": "OR_DV_LT_LEG_C",
+						"type": "varchar"
+					},
+					{
+						"name": "CM_PHY_OWNER_ID",
+						"type": "varchar"
+					},
+					{
+						"name": "CM_LOG_OWNER_ID",
+						"type": "varchar"
+					}
+				],
+				"typeProperties": {
+					"schema": "dbo",
+					"table": "OR_PROC_PAT_POS_DV"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/SqlServerTable_OR_PROC_SERVICE')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "Clarity Node 3",
+					"type": "LinkedServiceReference"
+				},
+				"folder": {
+					"name": "SCM/SCM_Old"
+				},
+				"annotations": [],
+				"type": "SqlServerTable",
+				"schema": [
+					{
+						"name": "OR_PROC_ID",
+						"type": "varchar"
+					},
+					{
+						"name": "LINE",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "SERVICE_C",
+						"type": "varchar"
+					},
+					{
+						"name": "CM_PHY_OWNER_ID",
+						"type": "varchar"
+					},
+					{
+						"name": "CM_LOG_OWNER_ID",
+						"type": "varchar"
+					}
+				],
+				"typeProperties": {
+					"schema": "dbo",
+					"table": "OR_PROC_SERVICE"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/SqlServerTable_OR_PROC_STAFF')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "Clarity Node 3",
+					"type": "LinkedServiceReference"
+				},
+				"folder": {
+					"name": "SCM/SCM_Old"
+				},
+				"annotations": [],
+				"type": "SqlServerTable",
+				"schema": [
+					{
+						"name": "OR_PROC_ID",
+						"type": "varchar"
+					},
+					{
+						"name": "LINE",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "SURG_STAFF_REQ_C",
+						"type": "varchar"
+					},
+					{
+						"name": "NUM_SURG_STAFF",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "SRG_STF_REQ_YN",
+						"type": "varchar"
+					},
+					{
+						"name": "SRG_STF_MRG_CRIT_C",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "CM_PHY_OWNER_ID",
+						"type": "varchar"
+					},
+					{
+						"name": "CM_LOG_OWNER_ID",
+						"type": "varchar"
+					}
+				],
+				"typeProperties": {
+					"schema": "dbo",
+					"table": "OR_PROC_STAFF"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/SqlServerTable_OR_SPLY')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "Clarity Node 3",
+					"type": "LinkedServiceReference"
+				},
+				"folder": {
+					"name": "SCM/SCM_Old"
+				},
+				"annotations": [],
+				"type": "SqlServerTable",
+				"schema": [
+					{
+						"name": "SUPPLY_ID",
+						"type": "varchar"
+					},
+					{
+						"name": "SUPPLY_NAME",
+						"type": "varchar"
+					},
+					{
+						"name": "ACTIVE_YN",
+						"type": "varchar"
+					},
+					{
+						"name": "ABBR",
+						"type": "varchar"
+					},
+					{
+						"name": "CHARGE_CODE",
+						"type": "varchar"
+					},
+					{
+						"name": "CHARGE_PER_UNIT",
+						"type": "decimal",
+						"precision": 12,
+						"scale": 2
+					},
+					{
+						"name": "COST_PER_UNIT",
+						"type": "decimal",
+						"precision": 12,
+						"scale": 2
+					},
+					{
+						"name": "NAME",
+						"type": "varchar"
+					},
+					{
+						"name": "TEMP_RECORD_YN",
+						"type": "varchar"
+					},
+					{
+						"name": "TYPE_OF_ITEM_C",
+						"type": "varchar"
+					},
+					{
+						"name": "REUSABLE_YN",
+						"type": "varchar"
+					},
+					{
+						"name": "PACK_YN",
+						"type": "varchar"
+					},
+					{
+						"name": "STOCK_ITEM_C",
+						"type": "varchar"
+					},
+					{
+						"name": "LEAD_TIME_DAYS",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "LAST_SUPPLIER_C",
+						"type": "varchar"
+					},
+					{
+						"name": "LAST_SUPPLIER_NUM",
+						"type": "varchar"
+					},
+					{
+						"name": "LAST_PURCHS_PRICE",
+						"type": "decimal",
+						"precision": 12,
+						"scale": 2
+					},
+					{
+						"name": "REC_CREATE_DATE",
+						"type": "datetime",
+						"precision": 23,
+						"scale": 3
+					},
+					{
+						"name": "REC_CREATE_USER_ID",
+						"type": "varchar"
+					},
+					{
+						"name": "PRIMARY_EXT_ID",
+						"type": "varchar"
+					},
+					{
+						"name": "ITEM_DESC",
+						"type": "varchar"
+					},
+					{
+						"name": "COMMENTS",
+						"type": "varchar"
+					},
+					{
+						"name": "SMDA_ITEM_YN",
+						"type": "varchar"
+					},
+					{
+						"name": "IMAGE_FILE",
+						"type": "varchar"
+					},
+					{
+						"name": "CHARGEABLE_YN",
+						"type": "varchar"
+					},
+					{
+						"name": "LATEX_PRODUCT_YN",
+						"type": "varchar"
+					},
+					{
+						"name": "PASS_THROUGH_CODE",
+						"type": "varchar"
+					},
+					{
+						"name": "IMPLANT_TYPE_C",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "ONLY_IN_PACK_YN",
+						"type": "varchar"
+					},
+					{
+						"name": "CONSIGNMENT_ITM_YN",
+						"type": "varchar"
+					},
+					{
+						"name": "CHARGE_CODE_EAP_ID",
+						"type": "decimal",
+						"precision": 18,
+						"scale": 0
+					},
+					{
+						"name": "MARKUP_PERCENTAGE",
+						"type": "decimal",
+						"precision": 12,
+						"scale": 2
+					},
+					{
+						"name": "CM_PHY_OWNER_ID",
+						"type": "varchar"
+					},
+					{
+						"name": "CM_LOG_OWNER_ID",
+						"type": "varchar"
+					},
+					{
+						"name": "ORDERING_RATIO",
+						"type": "decimal",
+						"precision": 18,
+						"scale": 2
+					},
+					{
+						"name": "ORDER_PACK_TYPE_C",
+						"type": "varchar"
+					},
+					{
+						"name": "SURGERY_ID",
+						"type": "varchar"
+					},
+					{
+						"name": "BILLING_NAME",
+						"type": "varchar"
+					},
+					{
+						"name": "SUPPLY_OR_DRUG_C",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "LDA_TYPE_ID",
+						"type": "varchar"
+					},
+					{
+						"name": "TAXABLE_YN",
+						"type": "varchar"
+					},
+					{
+						"name": "TRACKED_EXTERNAL_YN",
+						"type": "varchar"
+					},
+					{
+						"name": "IMPLANT_CLASS_GROUPER_C",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "IS_ACTIVE_MM_C",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "CLIN_IND_LQL_ID",
+						"type": "varchar"
+					},
+					{
+						"name": "RECORD_STATUS_C",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "IS_ELIGIBLE_HC_EXPENSE_YN",
+						"type": "varchar"
+					},
+					{
+						"name": "IS_ELIGIBLE_HC_EXPNSE_SIGIS_YN",
+						"type": "varchar"
+					}
+				],
+				"typeProperties": {
+					"schema": "dbo",
+					"table": "OR_SPLY"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/SqlServerTable_OR_SPLY_LOC_INFO')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "Clarity Node 3",
+					"type": "LinkedServiceReference"
+				},
+				"folder": {
+					"name": "SCM/SCM_Old"
+				},
+				"annotations": [],
+				"type": "SqlServerTable",
+				"schema": [
+					{
+						"name": "ITEM_ID",
+						"type": "varchar"
+					},
+					{
+						"name": "LINE",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "OR_LOC_ID",
+						"type": "decimal",
+						"precision": 18,
+						"scale": 0
+					},
+					{
+						"name": "INVENTORY_LOC_ID",
+						"type": "decimal",
+						"precision": 18,
+						"scale": 0
+					},
+					{
+						"name": "CM_PHY_OWNER_ID",
+						"type": "varchar"
+					},
+					{
+						"name": "CM_LOG_OWNER_ID",
+						"type": "varchar"
+					},
+					{
+						"name": "ACTIVE_OR_LOC_YN",
+						"type": "varchar"
+					},
+					{
+						"name": "DEPARTMENT_ID",
+						"type": "decimal",
+						"precision": 18,
+						"scale": 0
+					}
+				],
+				"typeProperties": {
+					"schema": "dbo",
+					"table": "OR_SPLY_LOC_INFO"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/SqlServerTable_OR_SPLY_MANFACTR')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "Clarity Node 3",
+					"type": "LinkedServiceReference"
+				},
+				"folder": {
+					"name": "SCM/SCM_Old"
+				},
+				"annotations": [],
+				"type": "SqlServerTable",
+				"schema": [
+					{
+						"name": "ITEM_ID",
+						"type": "varchar"
+					},
+					{
+						"name": "LINE",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "MANUFACTURER_C",
+						"type": "varchar"
+					},
+					{
+						"name": "MAN_CTLG_NUM",
+						"type": "varchar"
+					},
+					{
+						"name": "MAN_PACK_PRICE",
+						"type": "float",
+						"precision": 15
+					},
+					{
+						"name": "MAN_PACK_TYPE_C",
+						"type": "varchar"
+					},
+					{
+						"name": "MAN_PACK_RATIO",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "CM_PHY_OWNER_ID",
+						"type": "varchar"
+					},
+					{
+						"name": "CM_LOG_OWNER_ID",
+						"type": "varchar"
+					}
+				],
+				"typeProperties": {
+					"schema": "dbo",
+					"table": "OR_SPLY_MANFACTR"
+				}
+			},
+			"dependsOn": []
+		}
+	]
+}

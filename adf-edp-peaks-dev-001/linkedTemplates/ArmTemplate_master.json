@@ -1,0 +1,563 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "adf-edp-peaks-dev-001"
+		},
+		"AGCLRSPRD_CLARITY_AG_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AGCLRSPRD_CLARITY_AG'",
+			"defaultValue": "Integrated Security=True;Data Source=AGCLRSPRD;Initial Catalog=master"
+		},
+		"AGCLRSPRD_CLARITY_AG_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'AGCLRSPRD_CLARITY_AG'"
+		},
+		"Clarity Node 2_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'Clarity Node 2'",
+			"defaultValue": "Integrated Security=True;Data Source=ddcclrspragdb2.sclhs.net;Initial Catalog=master"
+		},
+		"Clarity Node 2_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'Clarity Node 2'"
+		},
+		"Clarity Node 3_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'Clarity Node 3'"
+		},
+		"ClarityVal_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'ClarityVal'"
+		},
+		"ClarityVal2_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'ClarityVal2'"
+		},
+		"DDCADIFINPRDDB_EBA_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'DDCADIFINPRDDB_EBA'"
+		},
+		"DDCCLRSPRAGDB1_CLARITY1_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'DDCCLRSPRAGDB1_CLARITY1'",
+			"defaultValue": "Integrated Security=True;Data Source=DDCCLRSPRAGDB1;Initial Catalog=master"
+		},
+		"DDCCLRSPRAGDB1_CLARITY1_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'DDCCLRSPRAGDB1_CLARITY1'"
+		},
+		"DDCDETSTDBAG01_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'DDCDETSTDBAG01'",
+			"defaultValue": "Integrated Security=True;Data Source=DDCDETSTDBAG01;Initial Catalog=master"
+		},
+		"DDCDETSTDBAG01_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'DDCDETSTDBAG01'"
+		},
+		"DDCDETSTDBAG02_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'DDCDETSTDBAG02'",
+			"defaultValue": "Integrated Security=True;Data Source=DDCDETSTDBAG02;Initial Catalog=CLARITY_BLD_REPORT"
+		},
+		"DDCDETSTDBAG02_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'DDCDETSTDBAG02'"
+		},
+		"DataBricks_node3_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'DataBricks_node3'"
+		},
+		"KDCDETSTDBBAG03_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'KDCDETSTDBBAG03'",
+			"defaultValue": "Integrated Security=True;Data Source=KDCDETSTDBAG03;Initial Catalog=master"
+		},
+		"KDCDETSTDBBAG03_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'KDCDETSTDBBAG03'"
+		},
+		"bld_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'bld'"
+		},
+		"ddcadifinprddb_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'ddcadifinprddb'"
+		},
+		"stg_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'stg'"
+		},
+		"testv_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'testv'",
+			"defaultValue": "Integrated Security=True;Data Source=DDCDETSTDBAG01;Initial Catalog=clarity_bld_stage"
+		},
+		"testv_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'testv'"
+		},
+		"tstag2_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'tstag2'"
+		},
+		"tstag2_IRP_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'tstag2_IRP'"
+		},
+		"AGCLRSPRD_CLARITY_AG_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "SCLHS\\s168198"
+		},
+		"Clarity Node 2_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "sclhs\\s016168"
+		},
+		"DDCCLRSPRAGDB1_CLARITY1_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "SCLHS\\s168198"
+		},
+		"DDCDETSTDBAG01_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "SCLHS\\s168198"
+		},
+		"DDCDETSTDBAG02_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "sclhs\\S164612"
+		},
+		"KDCDETSTDBBAG03_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "SCLHS\\S164612"
+		},
+		"stedplandinglakedev01_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://stedplandinglakedev01.dfs.core.windows.net/"
+		},
+		"steplandinglakedev01VAL_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://stedplandinglaketst01.dfs.core.windows.net/"
+		},
+		"testv_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "sclhs\\s016168"
+		},
+		"pep-adf-edp-peaks-dev_properties_privateLinkResourceId": {
+			"type": "string",
+			"defaultValue": "/subscriptions/fb826747-574b-46e0-9d16-af4e3271fe45/resourceGroups/rg-edp-dev-storage/providers/Microsoft.Storage/storageAccounts/stedplandinglakedev01"
+		},
+		"pep-adf-edp-peaks-dev_properties_groupId": {
+			"type": "string",
+			"defaultValue": "dfs"
+		},
+		"pep-adf-edp-peaks-dev_properties_fqdns": {
+			"type": "array",
+			"defaultValue": [
+				"stedplandinglakedev01.dfs.core.windows.net"
+			]
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "adf-edp-peaks-dev-001_ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"AGCLRSPRD_CLARITY_AG_connectionString": {
+						"value": "[parameters('AGCLRSPRD_CLARITY_AG_connectionString')]"
+					},
+					"AGCLRSPRD_CLARITY_AG_password": {
+						"value": "[parameters('AGCLRSPRD_CLARITY_AG_password')]"
+					},
+					"Clarity Node 2_connectionString": {
+						"value": "[parameters('Clarity Node 2_connectionString')]"
+					},
+					"Clarity Node 2_password": {
+						"value": "[parameters('Clarity Node 2_password')]"
+					},
+					"Clarity Node 3_connectionString": {
+						"value": "[parameters('Clarity Node 3_connectionString')]"
+					},
+					"ClarityVal_connectionString": {
+						"value": "[parameters('ClarityVal_connectionString')]"
+					},
+					"ClarityVal2_connectionString": {
+						"value": "[parameters('ClarityVal2_connectionString')]"
+					},
+					"DDCADIFINPRDDB_EBA_connectionString": {
+						"value": "[parameters('DDCADIFINPRDDB_EBA_connectionString')]"
+					},
+					"DDCCLRSPRAGDB1_CLARITY1_connectionString": {
+						"value": "[parameters('DDCCLRSPRAGDB1_CLARITY1_connectionString')]"
+					},
+					"DDCCLRSPRAGDB1_CLARITY1_password": {
+						"value": "[parameters('DDCCLRSPRAGDB1_CLARITY1_password')]"
+					},
+					"DDCDETSTDBAG01_connectionString": {
+						"value": "[parameters('DDCDETSTDBAG01_connectionString')]"
+					},
+					"DDCDETSTDBAG01_password": {
+						"value": "[parameters('DDCDETSTDBAG01_password')]"
+					},
+					"DDCDETSTDBAG02_connectionString": {
+						"value": "[parameters('DDCDETSTDBAG02_connectionString')]"
+					},
+					"DDCDETSTDBAG02_password": {
+						"value": "[parameters('DDCDETSTDBAG02_password')]"
+					},
+					"DataBricks_node3_connectionString": {
+						"value": "[parameters('DataBricks_node3_connectionString')]"
+					},
+					"AGCLRSPRD_CLARITY_AG_properties_typeProperties_userName": {
+						"value": "[parameters('AGCLRSPRD_CLARITY_AG_properties_typeProperties_userName')]"
+					},
+					"Clarity Node 2_properties_typeProperties_userName": {
+						"value": "[parameters('Clarity Node 2_properties_typeProperties_userName')]"
+					},
+					"DDCCLRSPRAGDB1_CLARITY1_properties_typeProperties_userName": {
+						"value": "[parameters('DDCCLRSPRAGDB1_CLARITY1_properties_typeProperties_userName')]"
+					},
+					"DDCDETSTDBAG01_properties_typeProperties_userName": {
+						"value": "[parameters('DDCDETSTDBAG01_properties_typeProperties_userName')]"
+					},
+					"DDCDETSTDBAG02_properties_typeProperties_userName": {
+						"value": "[parameters('DDCDETSTDBAG02_properties_typeProperties_userName')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "adf-edp-peaks-dev-001_ArmTemplate_1",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_1.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"KDCDETSTDBBAG03_connectionString": {
+						"value": "[parameters('KDCDETSTDBBAG03_connectionString')]"
+					},
+					"KDCDETSTDBBAG03_password": {
+						"value": "[parameters('KDCDETSTDBBAG03_password')]"
+					},
+					"bld_connectionString": {
+						"value": "[parameters('bld_connectionString')]"
+					},
+					"ddcadifinprddb_connectionString": {
+						"value": "[parameters('ddcadifinprddb_connectionString')]"
+					},
+					"testv_connectionString": {
+						"value": "[parameters('testv_connectionString')]"
+					},
+					"testv_password": {
+						"value": "[parameters('testv_password')]"
+					},
+					"tstag2_connectionString": {
+						"value": "[parameters('tstag2_connectionString')]"
+					},
+					"tstag2_IRP_connectionString": {
+						"value": "[parameters('tstag2_IRP_connectionString')]"
+					},
+					"KDCDETSTDBBAG03_properties_typeProperties_userName": {
+						"value": "[parameters('KDCDETSTDBBAG03_properties_typeProperties_userName')]"
+					},
+					"stedplandinglakedev01_properties_typeProperties_url": {
+						"value": "[parameters('stedplandinglakedev01_properties_typeProperties_url')]"
+					},
+					"steplandinglakedev01VAL_properties_typeProperties_url": {
+						"value": "[parameters('steplandinglakedev01VAL_properties_typeProperties_url')]"
+					},
+					"testv_properties_typeProperties_userName": {
+						"value": "[parameters('testv_properties_typeProperties_userName')]"
+					},
+					"pep-adf-edp-peaks-dev_properties_privateLinkResourceId": {
+						"value": "[parameters('pep-adf-edp-peaks-dev_properties_privateLinkResourceId')]"
+					},
+					"pep-adf-edp-peaks-dev_properties_groupId": {
+						"value": "[parameters('pep-adf-edp-peaks-dev_properties_groupId')]"
+					},
+					"pep-adf-edp-peaks-dev_properties_fqdns": {
+						"value": "[parameters('pep-adf-edp-peaks-dev_properties_fqdns')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'adf-edp-peaks-dev-001_ArmTemplate_0')]"
+			]
+		},
+		{
+			"name": "adf-edp-peaks-dev-001_ArmTemplate_2",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_2.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'adf-edp-peaks-dev-001_ArmTemplate_1')]"
+			]
+		},
+		{
+			"name": "adf-edp-peaks-dev-001_ArmTemplate_3",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_3.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'adf-edp-peaks-dev-001_ArmTemplate_2')]"
+			]
+		},
+		{
+			"name": "adf-edp-peaks-dev-001_ArmTemplate_4",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_4.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'adf-edp-peaks-dev-001_ArmTemplate_3')]"
+			]
+		},
+		{
+			"name": "adf-edp-peaks-dev-001_ArmTemplate_5",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_5.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'adf-edp-peaks-dev-001_ArmTemplate_4')]"
+			]
+		},
+		{
+			"name": "adf-edp-peaks-dev-001_ArmTemplate_6",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_6.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'adf-edp-peaks-dev-001_ArmTemplate_5')]"
+			]
+		},
+		{
+			"name": "adf-edp-peaks-dev-001_ArmTemplate_7",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_7.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'adf-edp-peaks-dev-001_ArmTemplate_6')]"
+			]
+		},
+		{
+			"name": "adf-edp-peaks-dev-001_ArmTemplate_8",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_8.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'adf-edp-peaks-dev-001_ArmTemplate_7')]"
+			]
+		},
+		{
+			"name": "adf-edp-peaks-dev-001_ArmTemplate_9",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_9.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'adf-edp-peaks-dev-001_ArmTemplate_8')]"
+			]
+		},
+		{
+			"name": "adf-edp-peaks-dev-001_ArmTemplate_10",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_10.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"stg_connectionString": {
+						"value": "[parameters('stg_connectionString')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'adf-edp-peaks-dev-001_ArmTemplate_9')]"
+			]
+		},
+		{
+			"name": "adf-edp-peaks-dev-001_ArmTemplate_11",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_11.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'adf-edp-peaks-dev-001_ArmTemplate_10')]"
+			]
+		},
+		{
+			"name": "adf-edp-peaks-dev-001_ArmTemplate_12",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_12.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'adf-edp-peaks-dev-001_ArmTemplate_11')]"
+			]
+		},
+		{
+			"name": "adf-edp-peaks-dev-001_ArmTemplate_13",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_13.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'adf-edp-peaks-dev-001_ArmTemplate_12')]"
+			]
+		}
+	]
+}

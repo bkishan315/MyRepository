@@ -1,0 +1,1244 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "adf-edp-peaks-dev-001"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "[concat(parameters('factoryName'), '/DelimitedText_ZC_PROC_REC_TYPE')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "stedplandinglakedev01",
+					"type": "LinkedServiceReference"
+				},
+				"folder": {
+					"name": "SCM/SCM_Old"
+				},
+				"annotations": [],
+				"type": "DelimitedText",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobFSLocation",
+						"folderPath": "enterprise/peaks/epic_clarity/SCM",
+						"fileSystem": "dls-stedplandinglakedev01"
+					},
+					"columnDelimiter": ",",
+					"escapeChar": "\\",
+					"firstRowAsHeader": true,
+					"quoteChar": "\""
+				},
+				"schema": []
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/DelimitedText_ZC_SUPPLY_DRUG')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "stedplandinglakedev01",
+					"type": "LinkedServiceReference"
+				},
+				"folder": {
+					"name": "SCM/SCM_Old"
+				},
+				"annotations": [],
+				"type": "DelimitedText",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobFSLocation",
+						"folderPath": "enterprise/peaks/epic_clarity/SCM",
+						"fileSystem": "dls-stedplandinglakedev01"
+					},
+					"columnDelimiter": ",",
+					"escapeChar": "\\",
+					"firstRowAsHeader": true,
+					"quoteChar": "\""
+				},
+				"schema": []
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/DestinationDataset_8cq')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "stedplandinglakedev01",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "DelimitedText",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobFSLocation",
+						"fileName": "TR_TEST_CLARITY_BLD_REPORT.dbo.ZC_ACCOUNT_TYPE",
+						"folderPath": "enterprise/peaks/epic_clarity",
+						"fileSystem": "dls-stedplandinglakedev01"
+					},
+					"columnDelimiter": ",",
+					"escapeChar": "\\",
+					"firstRowAsHeader": true,
+					"quoteChar": "\""
+				},
+				"schema": []
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/DestinationDataset_9u4')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "stedplandinglakedev01",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "DelimitedText",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobFSLocation",
+						"folderPath": "enterprise/peaks/epic_clarity",
+						"fileSystem": "dls-stedplandinglakedev01"
+					},
+					"columnDelimiter": ",",
+					"escapeChar": "\\",
+					"firstRowAsHeader": true,
+					"quoteChar": "\""
+				},
+				"schema": []
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/DestinationDataset_avv')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "stedplandinglakedev01",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "Parquet",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobFSLocation",
+						"folderPath": "enterprise/peaks/epic_clarity",
+						"fileSystem": "dls-stedplandinglakedev01"
+					},
+					"compressionCodec": "none"
+				},
+				"schema": []
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/DestinationDataset_eih')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "stedplandinglakedev01",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "DelimitedText",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobFSLocation",
+						"folderPath": "enterprise/peaks/epic_clarity/SCM",
+						"fileSystem": "dls-stedplandinglakedev01"
+					},
+					"columnDelimiter": "|",
+					"escapeChar": "\\",
+					"firstRowAsHeader": true,
+					"quoteChar": "\""
+				},
+				"schema": []
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/DestinationDataset_fe7')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "tstag2",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "SqlServerTable",
+				"schema": [],
+				"typeProperties": {
+					"schema": "dbo",
+					"table": "account_2_testing"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/DestinationDataset_ou8')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "stedplandinglakedev01",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "DelimitedText",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobFSLocation",
+						"folderPath": "enterprise/peaks/epic_clarity",
+						"fileSystem": "dls-stedplandinglakedev01"
+					},
+					"columnDelimiter": ",",
+					"escapeChar": "\\",
+					"firstRowAsHeader": true,
+					"quoteChar": "\""
+				},
+				"schema": []
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/DestinationDataset_rea')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "stedplandinglakedev01",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "Parquet",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobFSLocation",
+						"fileName": "test.parquet",
+						"folderPath": "enterprise/peaks/RAD/physician_recruitment",
+						"fileSystem": "dls-stedplandinglakedev01"
+					},
+					"compressionCodec": "snappy"
+				},
+				"schema": []
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/EBAEDWHrPersonPositionOpenCurrent')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "stedplandinglakedev01",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "Parquet",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobFSLocation",
+						"folderPath": "enterprise/peaks/epic_clarity/SCM",
+						"fileSystem": "dls-stedplandinglakedev01"
+					},
+					"compressionCodec": "snappy"
+				},
+				"schema": [
+					{
+						"name": "LOCATION_ALL",
+						"type": "UTF8"
+					},
+					{
+						"name": "LOCATION_MARKET_ABBR",
+						"type": "UTF8"
+					},
+					{
+						"name": "LOCATION_MARKET_NAME",
+						"type": "UTF8"
+					},
+					{
+						"name": "LOCATION_TYPE",
+						"type": "UTF8"
+					},
+					{
+						"name": "LOCATION_REGION",
+						"type": "UTF8"
+					},
+					{
+						"name": "LOCATION_SITES",
+						"type": "UTF8"
+					},
+					{
+						"name": "LOCATION_ABBR",
+						"type": "UTF8"
+					},
+					{
+						"name": "ROLLUP_TYPE",
+						"type": "UTF8"
+					},
+					{
+						"name": "LOCATION_NAME",
+						"type": "UTF8"
+					},
+					{
+						"name": "LOCATION_ABBR_ALT",
+						"type": "UTF8"
+					},
+					{
+						"name": "FACILITY_LOC_NUM",
+						"type": "UTF8"
+					},
+					{
+						"name": "REV_LOC",
+						"type": "UTF8"
+					},
+					{
+						"name": "LEGACYNAME_ROW",
+						"type": "UTF8"
+					},
+					{
+						"name": "NHSN_ORGID",
+						"type": "UTF8"
+					},
+					{
+						"name": "PREMIER_FACILITY",
+						"type": "UTF8"
+					},
+					{
+						"name": "ERP_LAWSON",
+						"type": "UTF8"
+					},
+					{
+						"name": "ERP_ORACLE",
+						"type": "UTF8"
+					},
+					{
+						"name": "ERP_PEOPLESOFT",
+						"type": "UTF8"
+					},
+					{
+						"name": "ERP_REPORTING",
+						"type": "UTF8"
+					},
+					{
+						"name": "NETREV_AVAILABLE",
+						"type": "UTF8"
+					},
+					{
+						"name": "FCILITY_ID",
+						"type": "UTF8"
+					},
+					{
+						"name": "LOCATION_MK",
+						"type": "UTF8"
+					}
+				]
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/EBAEDWHrTaRecruitProvider')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "stedplandinglakedev01",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "Parquet",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobFSLocation",
+						"fileName": "HrTaRecruitProvider.parquet",
+						"folderPath": "enterprise/peaks/epic_clarity/SCM",
+						"fileSystem": "dls-stedplandinglakedev01"
+					},
+					"compressionCodec": "snappy"
+				},
+				"schema": [
+					{
+						"name": "EMP_NO",
+						"type": "UTF8"
+					},
+					{
+						"name": "START_DT",
+						"type": "UTF8"
+					},
+					{
+						"name": "END_DT",
+						"type": "UTF8"
+					},
+					{
+						"name": "POSITION_ID",
+						"type": "UTF8"
+					},
+					{
+						"name": "PRMRY_ASSIGNMENT_FLG",
+						"type": "UTF8"
+					},
+					{
+						"name": "MSPR_ID",
+						"type": "UTF8"
+					},
+					{
+						"name": "LDAP_USER_NM",
+						"type": "UTF8"
+					},
+					{
+						"name": "CURRENTLY_ACTIVE_FLG",
+						"type": "UTF8"
+					},
+					{
+						"name": "TERM_FLG",
+						"type": "UTF8"
+					},
+					{
+						"name": "PERSON_TYP_TXT",
+						"type": "UTF8"
+					},
+					{
+						"name": "LAST_NM",
+						"type": "UTF8"
+					},
+					{
+						"name": "FIRST_NM",
+						"type": "UTF8"
+					},
+					{
+						"name": "PREFERRED_NM",
+						"type": "UTF8"
+					},
+					{
+						"name": "MIDDLE_NM",
+						"type": "UTF8"
+					},
+					{
+						"name": "EMAIL_ADDR_TXT",
+						"type": "UTF8"
+					},
+					{
+						"name": "BUSINESS_UNIT_NO",
+						"type": "UTF8"
+					},
+					{
+						"name": "BUSINESS_UNIT_NM",
+						"type": "UTF8"
+					},
+					{
+						"name": "COST_CENTER_NO",
+						"type": "UTF8"
+					},
+					{
+						"name": "COST_CENTER_NM",
+						"type": "UTF8"
+					},
+					{
+						"name": "COST_CENTER_COMBINED_CD_NM",
+						"type": "UTF8"
+					},
+					{
+						"name": "CARE_GROUP_NM",
+						"type": "UTF8"
+					},
+					{
+						"name": "SERVICE_LINE_NM",
+						"type": "UTF8"
+					},
+					{
+						"name": "LOC_NM",
+						"type": "UTF8"
+					},
+					{
+						"name": "LOC_ADDR_LINE_1_TXT",
+						"type": "UTF8"
+					},
+					{
+						"name": "LOC_CITY_NM",
+						"type": "UTF8"
+					},
+					{
+						"name": "LOC_STATE_NM",
+						"type": "UTF8"
+					},
+					{
+						"name": "LOC_POSTAL_CD",
+						"type": "UTF8"
+					},
+					{
+						"name": "JOB_CD",
+						"type": "UTF8"
+					},
+					{
+						"name": "POSITION_TITLE_TXT",
+						"type": "UTF8"
+					},
+					{
+						"name": "EXEMPT_FLG",
+						"type": "UTF8"
+					},
+					{
+						"name": "WORKING_HRS",
+						"type": "UTF8"
+					},
+					{
+						"name": "WORKING_HRS_ALL_POSITION",
+						"type": "UTF8"
+					},
+					{
+						"name": "JOB_FAMILY_COMP",
+						"type": "UTF8"
+					},
+					{
+						"name": "GL_ACCT_NO",
+						"type": "UTF8"
+					},
+					{
+						"name": "AA_GROUP_CD",
+						"type": "UTF8"
+					},
+					{
+						"name": "AA_GROUP_NM",
+						"type": "UTF8"
+					},
+					{
+						"name": "SUPERVISOR_NOW_EMP_NO",
+						"type": "UTF8"
+					},
+					{
+						"name": "SUPERVISOR_NOW_LAST_NM",
+						"type": "UTF8"
+					},
+					{
+						"name": "SUPERVISOR_NOW_FIRST_NM",
+						"type": "UTF8"
+					},
+					{
+						"name": "SUPERVISOR_NOW_PREF_NM",
+						"type": "UTF8"
+					},
+					{
+						"name": "SUPERVISOR_NOW_MSPR_ID",
+						"type": "UTF8"
+					},
+					{
+						"name": "SUPERVISOR_NOW_LDAP_USER_NM",
+						"type": "UTF8"
+					},
+					{
+						"name": "SUPERVISOR_NOW_EMAIL_ADDR_TXT",
+						"type": "UTF8"
+					},
+					{
+						"name": "HRBP_EMP_NO",
+						"type": "UTF8"
+					},
+					{
+						"name": "HRBP_LAST_NM",
+						"type": "UTF8"
+					},
+					{
+						"name": "HRBP_FIRST_NM",
+						"type": "UTF8"
+					},
+					{
+						"name": "HRBP_PREF_NM",
+						"type": "UTF8"
+					},
+					{
+						"name": "HRBP_MSPR_ID",
+						"type": "UTF8"
+					},
+					{
+						"name": "HRBP_LDAP_USER_NM",
+						"type": "UTF8"
+					},
+					{
+						"name": "HRBP_EMAIL_ADDR_TXT",
+						"type": "UTF8"
+					},
+					{
+						"name": "EDW_INSERT_DTS",
+						"type": "UTF8"
+					},
+					{
+						"name": "EDW_UPDATE_DTS",
+						"type": "UTF8"
+					},
+					{
+						"name": "EDW_LOAD_DTS",
+						"type": "UTF8"
+					}
+				]
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/EBA_NoTable')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "DDCADIFINPRDDB_EBA",
+					"type": "LinkedServiceReference"
+				},
+				"folder": {
+					"name": "SCM"
+				},
+				"annotations": [],
+				"type": "SqlServerTable",
+				"schema": [],
+				"typeProperties": {}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/EbaKpiIHLocations')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "stedplandinglakedev01",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "Parquet",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobFSLocation",
+						"folderPath": "enterprise/peaks/epic_clarity/SCM",
+						"fileSystem": "dls-stedplandinglakedev01"
+					},
+					"compressionCodec": "snappy"
+				},
+				"schema": []
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/Excel_EBA')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "stedplandinglakedev01",
+					"type": "LinkedServiceReference"
+				},
+				"folder": {
+					"name": "SCM"
+				},
+				"annotations": [],
+				"type": "Excel",
+				"typeProperties": {
+					"sheetName": "EBA",
+					"location": {
+						"type": "AzureBlobFSLocation",
+						"fileName": "SCM_tables.xlsx",
+						"folderPath": "enterprise/peaks/epic_clarity/SCM",
+						"fileSystem": "dls-stedplandinglakedev01"
+					}
+				},
+				"schema": [
+					{
+						"type": "String"
+					}
+				]
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/HrPersonPositionOpenCurrent')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "DDCADIFINPRDDB_EBA",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "SqlServerTable",
+				"schema": [
+					{
+						"name": "EMP_NO",
+						"type": "varchar"
+					},
+					{
+						"name": "START_DT",
+						"type": "varchar"
+					},
+					{
+						"name": "END_DT",
+						"type": "varchar"
+					},
+					{
+						"name": "POSITION_ID",
+						"type": "varchar"
+					},
+					{
+						"name": "PRMRY_ASSIGNMENT_FLG",
+						"type": "varchar"
+					},
+					{
+						"name": "MSPR_ID",
+						"type": "varchar"
+					},
+					{
+						"name": "LDAP_USER_NM",
+						"type": "varchar"
+					},
+					{
+						"name": "CURRENTLY_ACTIVE_FLG",
+						"type": "varchar"
+					},
+					{
+						"name": "TERM_FLG",
+						"type": "varchar"
+					},
+					{
+						"name": "PERSON_TYP_TXT",
+						"type": "varchar"
+					},
+					{
+						"name": "LAST_NM",
+						"type": "varchar"
+					},
+					{
+						"name": "FIRST_NM",
+						"type": "varchar"
+					},
+					{
+						"name": "PREFERRED_NM",
+						"type": "varchar"
+					},
+					{
+						"name": "MIDDLE_NM",
+						"type": "varchar"
+					},
+					{
+						"name": "EMAIL_ADDR_TXT",
+						"type": "varchar"
+					},
+					{
+						"name": "BUSINESS_UNIT_NO",
+						"type": "varchar"
+					},
+					{
+						"name": "BUSINESS_UNIT_NM",
+						"type": "varchar"
+					},
+					{
+						"name": "COST_CENTER_NO",
+						"type": "varchar"
+					},
+					{
+						"name": "COST_CENTER_NM",
+						"type": "varchar"
+					},
+					{
+						"name": "COST_CENTER_COMBINED_CD_NM",
+						"type": "varchar"
+					},
+					{
+						"name": "CARE_GROUP_NM",
+						"type": "varchar"
+					},
+					{
+						"name": "SERVICE_LINE_NM",
+						"type": "varchar"
+					},
+					{
+						"name": "LOC_NM",
+						"type": "varchar"
+					},
+					{
+						"name": "LOC_ADDR_LINE_1_TXT",
+						"type": "varchar"
+					},
+					{
+						"name": "LOC_CITY_NM",
+						"type": "varchar"
+					},
+					{
+						"name": "LOC_STATE_NM",
+						"type": "varchar"
+					},
+					{
+						"name": "LOC_POSTAL_CD",
+						"type": "varchar"
+					},
+					{
+						"name": "JOB_CD",
+						"type": "varchar"
+					},
+					{
+						"name": "POSITION_TITLE_TXT",
+						"type": "varchar"
+					},
+					{
+						"name": "EXEMPT_FLG",
+						"type": "varchar"
+					},
+					{
+						"name": "WORKING_HRS",
+						"type": "varchar"
+					},
+					{
+						"name": "WORKING_HRS_ALL_POSITION",
+						"type": "varchar"
+					},
+					{
+						"name": "JOB_FAMILY_COMP",
+						"type": "varchar"
+					},
+					{
+						"name": "GL_ACCT_NO",
+						"type": "varchar"
+					},
+					{
+						"name": "AA_GROUP_CD",
+						"type": "varchar"
+					},
+					{
+						"name": "AA_GROUP_NM",
+						"type": "varchar"
+					},
+					{
+						"name": "SUPERVISOR_NOW_EMP_NO",
+						"type": "varchar"
+					},
+					{
+						"name": "SUPERVISOR_NOW_LAST_NM",
+						"type": "varchar"
+					},
+					{
+						"name": "SUPERVISOR_NOW_FIRST_NM",
+						"type": "varchar"
+					},
+					{
+						"name": "SUPERVISOR_NOW_PREF_NM",
+						"type": "varchar"
+					},
+					{
+						"name": "SUPERVISOR_NOW_MSPR_ID",
+						"type": "varchar"
+					},
+					{
+						"name": "SUPERVISOR_NOW_LDAP_USER_NM",
+						"type": "varchar"
+					},
+					{
+						"name": "SUPERVISOR_NOW_EMAIL_ADDR_TXT",
+						"type": "varchar"
+					},
+					{
+						"name": "HRBP_EMP_NO",
+						"type": "varchar"
+					},
+					{
+						"name": "HRBP_LAST_NM",
+						"type": "varchar"
+					},
+					{
+						"name": "HRBP_FIRST_NM",
+						"type": "varchar"
+					},
+					{
+						"name": "HRBP_PREF_NM",
+						"type": "varchar"
+					},
+					{
+						"name": "HRBP_MSPR_ID",
+						"type": "varchar"
+					},
+					{
+						"name": "HRBP_LDAP_USER_NM",
+						"type": "varchar"
+					},
+					{
+						"name": "HRBP_EMAIL_ADDR_TXT",
+						"type": "varchar"
+					},
+					{
+						"name": "EDW_INSERT_DTS",
+						"type": "varchar"
+					},
+					{
+						"name": "EDW_UPDATE_DTS",
+						"type": "varchar"
+					},
+					{
+						"name": "EDW_LOAD_DTS",
+						"type": "varchar"
+					}
+				],
+				"typeProperties": {
+					"schema": "EDW",
+					"table": "HrPersonPositionOpenCurrent"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/HrPersonPositionOpenCurrent2')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "stedplandinglakedev01",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "Parquet",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobFSLocation",
+						"folderPath": "enterprise/peaks/RAD/physician_recruitment",
+						"fileSystem": "dls-stedplandinglakedev01"
+					},
+					"compressionCodec": "snappy"
+				},
+				"schema": [
+					{
+						"name": "CANDIDATE_ID",
+						"type": "UTF8"
+					},
+					{
+						"name": "EMP_NO",
+						"type": "UTF8"
+					},
+					{
+						"name": "FIRST_NM",
+						"type": "UTF8"
+					},
+					{
+						"name": "LAST_NM",
+						"type": "UTF8"
+					},
+					{
+						"name": "BIRTH_DT",
+						"type": "DATE"
+					},
+					{
+						"name": "ETHNICITY_TXT",
+						"type": "UTF8"
+					},
+					{
+						"name": "GENDER",
+						"type": "UTF8"
+					},
+					{
+						"name": "REQ_ID",
+						"type": "UTF8"
+					},
+					{
+						"name": "REQ_NM",
+						"type": "UTF8"
+					},
+					{
+						"name": "STAGE",
+						"type": "UTF8"
+					},
+					{
+						"name": "STAGE_STATUS",
+						"type": "UTF8"
+					},
+					{
+						"name": "STAGE_CAND_STATUS",
+						"type": "UTF8"
+					},
+					{
+						"name": "STAGE_CAND_STEP",
+						"type": "UTF8"
+					},
+					{
+						"name": "ADDED_BY_SOURCE",
+						"type": "UTF8"
+					},
+					{
+						"name": "REQ_POSITION_ID",
+						"type": "UTF8"
+					},
+					{
+						"name": "JOB_CD",
+						"type": "UTF8"
+					},
+					{
+						"name": "JOB_TITLE_TXT",
+						"type": "UTF8"
+					},
+					{
+						"name": "JOB_FAMILY_RECRUITING",
+						"type": "UTF8"
+					},
+					{
+						"name": "BUSINESS_UNIT_NO",
+						"type": "UTF8"
+					},
+					{
+						"name": "BUSINESS_UNIT_NM",
+						"type": "UTF8"
+					},
+					{
+						"name": "COST_CENTER_NO",
+						"type": "UTF8"
+					},
+					{
+						"name": "COST_CENTER_NM",
+						"type": "UTF8"
+					},
+					{
+						"name": "COST_CENTER_COMBINED_CD_NM",
+						"type": "UTF8"
+					},
+					{
+						"name": "REGION_NM",
+						"type": "UTF8"
+					},
+					{
+						"name": "PRIMARY_LOC_NM",
+						"type": "UTF8"
+					},
+					{
+						"name": "LOC_CITY_NM",
+						"type": "UTF8"
+					},
+					{
+						"name": "LOC_STATE_NM",
+						"type": "UTF8"
+					},
+					{
+						"name": "LOC_POSTAL_CD",
+						"type": "UTF8"
+					},
+					{
+						"name": "CAND_START_DT",
+						"type": "DATE"
+					},
+					{
+						"name": "INTERNAL_FLG",
+						"type": "UTF8"
+					},
+					{
+						"name": "JOB_REQ_STATUS",
+						"type": "UTF8"
+					},
+					{
+						"name": "IN_OFFER_FLG",
+						"type": "UTF8"
+					},
+					{
+						"name": "MANAGEMENT_LEVEL_TXT",
+						"type": "UTF8"
+					},
+					{
+						"name": "SERVICE_LINE_NM",
+						"type": "UTF8"
+					},
+					{
+						"name": "JOB_REQ_CREATE_REASON",
+						"type": "UTF8"
+					},
+					{
+						"name": "NUMBER_OF_OPENINGS",
+						"type": "UTF8"
+					},
+					{
+						"name": "SCHEDULED_WEEKLY_HRS",
+						"type": "UTF8"
+					},
+					{
+						"name": "ADDED_DT",
+						"type": "DATE"
+					},
+					{
+						"name": "TARGET_HIRE_DT",
+						"type": "DATE"
+					},
+					{
+						"name": "REQUEST_COMPLETED_DT",
+						"type": "DATE"
+					},
+					{
+						"name": "RECRUITING_START_DT",
+						"type": "DATE"
+					},
+					{
+						"name": "RECRUITER_EMP_NO",
+						"type": "UTF8"
+					},
+					{
+						"name": "RECRUITER_FIRST_NM",
+						"type": "UTF8"
+					},
+					{
+						"name": "RECRUITER_LAST_NM",
+						"type": "UTF8"
+					},
+					{
+						"name": "HIRING_MANAGER_EMP_NO",
+						"type": "UTF8"
+					},
+					{
+						"name": "HIRING_MANAGER_FIRST_NM",
+						"type": "UTF8"
+					},
+					{
+						"name": "HIRING_MANAGER_LAST_NM",
+						"type": "UTF8"
+					},
+					{
+						"name": "EDW_LOAD_DTS",
+						"type": "DATE"
+					}
+				]
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/HrTaRecruitProvider')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "stedplandinglakedev01",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "Parquet",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobFSLocation",
+						"fileName": "HrTaRecruitProvider.parquet",
+						"folderPath": "enterprise/peaks/RAD/physician_recruitment",
+						"fileSystem": "dls-stedplandinglakedev01"
+					},
+					"compressionCodec": "snappy"
+				},
+				"schema": []
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/MetadataDrivenCopyTask_llv_ControlDS')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "tstag2",
+					"type": "LinkedServiceReference"
+				},
+				"folder": {
+					"name": "MetadataDrivenCopyTask_llv_20230825"
+				},
+				"annotations": [],
+				"type": "SqlServerTable",
+				"schema": [],
+				"typeProperties": {
+					"schema": "sclhs",
+					"table": "MainControlTable_llv"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/MetadataDrivenCopyTask_llv_DestinationDS')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "stedplandinglakedev01",
+					"type": "LinkedServiceReference"
+				},
+				"parameters": {
+					"cw_fileName": {
+						"type": "String"
+					},
+					"cw_folderPath": {
+						"type": "String"
+					},
+					"cw_fileSystem": {
+						"type": "String"
+					}
+				},
+				"folder": {
+					"name": "MetadataDrivenCopyTask_llv_20230825"
+				},
+				"annotations": [],
+				"type": "Parquet",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobFSLocation",
+						"fileName": {
+							"value": "@dataset().cw_fileName",
+							"type": "Expression"
+						},
+						"folderPath": {
+							"value": "@dataset().cw_folderPath",
+							"type": "Expression"
+						},
+						"fileSystem": {
+							"value": "@dataset().cw_fileSystem",
+							"type": "Expression"
+						}
+					},
+					"compressionCodec": "none"
+				},
+				"schema": []
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/MetadataDrivenCopyTask_llv_SourceDS')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "tstag2",
+					"type": "LinkedServiceReference"
+				},
+				"parameters": {
+					"cw_schema": {
+						"type": "String"
+					},
+					"cw_table": {
+						"type": "String"
+					}
+				},
+				"folder": {
+					"name": "MetadataDrivenCopyTask_llv_20230825"
+				},
+				"annotations": [],
+				"type": "SqlServerTable",
+				"schema": [],
+				"typeProperties": {
+					"schema": {
+						"value": "@dataset().cw_schema",
+						"type": "Expression"
+					},
+					"table": {
+						"value": "@dataset().cw_table",
+						"type": "Expression"
+					}
+				}
+			},
+			"dependsOn": []
+		}
+	]
+}

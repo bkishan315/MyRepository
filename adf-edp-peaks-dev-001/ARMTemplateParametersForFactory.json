@@ -1,0 +1,119 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "adf-edp-peaks-dev-001"
+		},
+		"AGCLRSPRD_CLARITY_AG_connectionString": {
+			"value": "Integrated Security=True;Data Source=AGCLRSPRD;Initial Catalog=master"
+		},
+		"AGCLRSPRD_CLARITY_AG_password": {
+			"value": ""
+		},
+		"Clarity Node 2_connectionString": {
+			"value": "Integrated Security=True;Data Source=ddcclrspragdb2.sclhs.net;Initial Catalog=master"
+		},
+		"Clarity Node 2_password": {
+			"value": ""
+		},
+		"Clarity Node 3_connectionString": {
+			"value": ""
+		},
+		"ClarityVal_connectionString": {
+			"value": ""
+		},
+		"ClarityVal2_connectionString": {
+			"value": ""
+		},
+		"DDCADIFINPRDDB_EBA_connectionString": {
+			"value": ""
+		},
+		"DDCCLRSPRAGDB1_CLARITY1_connectionString": {
+			"value": "Integrated Security=True;Data Source=DDCCLRSPRAGDB1;Initial Catalog=master"
+		},
+		"DDCCLRSPRAGDB1_CLARITY1_password": {
+			"value": ""
+		},
+		"DDCDETSTDBAG01_connectionString": {
+			"value": "Integrated Security=True;Data Source=DDCDETSTDBAG01;Initial Catalog=master"
+		},
+		"DDCDETSTDBAG01_password": {
+			"value": ""
+		},
+		"DDCDETSTDBAG02_connectionString": {
+			"value": "Integrated Security=True;Data Source=DDCDETSTDBAG02;Initial Catalog=CLARITY_BLD_REPORT"
+		},
+		"DDCDETSTDBAG02_password": {
+			"value": ""
+		},
+		"DataBricks_node3_connectionString": {
+			"value": ""
+		},
+		"KDCDETSTDBBAG03_connectionString": {
+			"value": "Integrated Security=True;Data Source=KDCDETSTDBAG03;Initial Catalog=master"
+		},
+		"KDCDETSTDBBAG03_password": {
+			"value": ""
+		},
+		"bld_connectionString": {
+			"value": ""
+		},
+		"ddcadifinprddb_connectionString": {
+			"value": ""
+		},
+		"stg_connectionString": {
+			"value": ""
+		},
+		"testv_connectionString": {
+			"value": "Integrated Security=True;Data Source=DDCDETSTDBAG01;Initial Catalog=clarity_bld_stage"
+		},
+		"testv_password": {
+			"value": ""
+		},
+		"tstag2_connectionString": {
+			"value": ""
+		},
+		"tstag2_IRP_connectionString": {
+			"value": ""
+		},
+		"AGCLRSPRD_CLARITY_AG_properties_typeProperties_userName": {
+			"value": "SCLHS\\s168198"
+		},
+		"Clarity Node 2_properties_typeProperties_userName": {
+			"value": "sclhs\\s016168"
+		},
+		"DDCCLRSPRAGDB1_CLARITY1_properties_typeProperties_userName": {
+			"value": "SCLHS\\s168198"
+		},
+		"DDCDETSTDBAG01_properties_typeProperties_userName": {
+			"value": "SCLHS\\s168198"
+		},
+		"DDCDETSTDBAG02_properties_typeProperties_userName": {
+			"value": "sclhs\\S164612"
+		},
+		"KDCDETSTDBBAG03_properties_typeProperties_userName": {
+			"value": "SCLHS\\S164612"
+		},
+		"stedplandinglakedev01_properties_typeProperties_url": {
+			"value": "https://stedplandinglakedev01.dfs.core.windows.net/"
+		},
+		"steplandinglakedev01VAL_properties_typeProperties_url": {
+			"value": "https://stedplandinglaketst01.dfs.core.windows.net/"
+		},
+		"testv_properties_typeProperties_userName": {
+			"value": "sclhs\\s016168"
+		},
+		"pep-adf-edp-peaks-dev_properties_privateLinkResourceId": {
+			"value": "/subscriptions/fb826747-574b-46e0-9d16-af4e3271fe45/resourceGroups/rg-edp-dev-storage/providers/Microsoft.Storage/storageAccounts/stedplandinglakedev01"
+		},
+		"pep-adf-edp-peaks-dev_properties_groupId": {
+			"value": "dfs"
+		},
+		"pep-adf-edp-peaks-dev_properties_fqdns": {
+			"value": [
+				"stedplandinglakedev01.dfs.core.windows.net"
+			]
+		}
+	}
+}

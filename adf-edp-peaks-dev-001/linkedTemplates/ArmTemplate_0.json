@@ -1,0 +1,433 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "adf-edp-peaks-dev-001"
+		},
+		"AGCLRSPRD_CLARITY_AG_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AGCLRSPRD_CLARITY_AG'",
+			"defaultValue": "Integrated Security=True;Data Source=AGCLRSPRD;Initial Catalog=master"
+		},
+		"AGCLRSPRD_CLARITY_AG_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'AGCLRSPRD_CLARITY_AG'"
+		},
+		"Clarity Node 2_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'Clarity Node 2'",
+			"defaultValue": "Integrated Security=True;Data Source=ddcclrspragdb2.sclhs.net;Initial Catalog=master"
+		},
+		"Clarity Node 2_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'Clarity Node 2'"
+		},
+		"Clarity Node 3_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'Clarity Node 3'"
+		},
+		"ClarityVal_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'ClarityVal'"
+		},
+		"ClarityVal2_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'ClarityVal2'"
+		},
+		"DDCADIFINPRDDB_EBA_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'DDCADIFINPRDDB_EBA'"
+		},
+		"DDCCLRSPRAGDB1_CLARITY1_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'DDCCLRSPRAGDB1_CLARITY1'",
+			"defaultValue": "Integrated Security=True;Data Source=DDCCLRSPRAGDB1;Initial Catalog=master"
+		},
+		"DDCCLRSPRAGDB1_CLARITY1_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'DDCCLRSPRAGDB1_CLARITY1'"
+		},
+		"DDCDETSTDBAG01_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'DDCDETSTDBAG01'",
+			"defaultValue": "Integrated Security=True;Data Source=DDCDETSTDBAG01;Initial Catalog=master"
+		},
+		"DDCDETSTDBAG01_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'DDCDETSTDBAG01'"
+		},
+		"DDCDETSTDBAG02_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'DDCDETSTDBAG02'",
+			"defaultValue": "Integrated Security=True;Data Source=DDCDETSTDBAG02;Initial Catalog=CLARITY_BLD_REPORT"
+		},
+		"DDCDETSTDBAG02_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'DDCDETSTDBAG02'"
+		},
+		"DataBricks_node3_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'DataBricks_node3'"
+		},
+		"AGCLRSPRD_CLARITY_AG_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "SCLHS\\s168198"
+		},
+		"Clarity Node 2_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "sclhs\\s016168"
+		},
+		"DDCCLRSPRAGDB1_CLARITY1_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "SCLHS\\s168198"
+		},
+		"DDCDETSTDBAG01_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "SCLHS\\s168198"
+		},
+		"DDCDETSTDBAG02_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "sclhs\\S164612"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "[concat(parameters('factoryName'), '/iR-DDCIRPRDAPP1')]",
+			"type": "Microsoft.DataFactory/factories/integrationRuntimes",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"type": "SelfHosted",
+				"description": "IR using nodes DDCIRPRDAPP1 and DDCIRPRDAPP2.",
+				"typeProperties": {}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/integrationRuntimeDDCMSIRTPRDAPP1')]",
+			"type": "Microsoft.DataFactory/factories/integrationRuntimes",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"type": "SelfHosted",
+				"typeProperties": {}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/integrationRuntimealain')]",
+			"type": "Microsoft.DataFactory/factories/integrationRuntimes",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"type": "SelfHosted",
+				"typeProperties": {}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/ir-poc-testing')]",
+			"type": "Microsoft.DataFactory/factories/integrationRuntimes",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"type": "SelfHosted",
+				"description": "IR used to test the hub",
+				"typeProperties": {}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/sql')]",
+			"type": "Microsoft.DataFactory/factories/integrationRuntimes",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"type": "Managed",
+				"typeProperties": {
+					"computeProperties": {
+						"location": "West US 2",
+						"dataFlowProperties": {
+							"computeType": "General",
+							"coreCount": 8,
+							"timeToLive": 10,
+							"cleanup": false,
+							"customProperties": []
+						}
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/testsql')]",
+			"type": "Microsoft.DataFactory/factories/integrationRuntimes",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"type": "SelfHosted",
+				"typeProperties": {}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/teststg')]",
+			"type": "Microsoft.DataFactory/factories/integrationRuntimes",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"type": "SelfHosted",
+				"typeProperties": {}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/id_adf_edp_peaks_dev_001')]",
+			"type": "Microsoft.DataFactory/factories/credentials",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"description": "The User Assigned identity for the Peaks ADF instance.",
+				"type": "ManagedIdentity",
+				"typeProperties": {
+					"resourceId": "/subscriptions/fb826747-574b-46e0-9d16-af4e3271fe45/resourcegroups/rg-edp-dev-analytics-and-iot/providers/Microsoft.ManagedIdentity/userAssignedIdentities/id-adf-edp-peaks-dev-001"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/tst_credential')]",
+			"type": "Microsoft.DataFactory/factories/credentials",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"type": "ManagedIdentity",
+				"typeProperties": {
+					"resourceId": "/subscriptions/fb826747-574b-46e0-9d16-af4e3271fe45/resourcegroups/rg-edp-dev-analytics-and-iot/providers/Microsoft.ManagedIdentity/userAssignedIdentities/id-adf-edp-peaks-dev-001"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/default')]",
+			"type": "Microsoft.DataFactory/factories/managedVirtualNetworks",
+			"apiVersion": "2018-06-01",
+			"properties": {},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/AGCLRSPRD_CLARITY_AG')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "SqlServer",
+				"typeProperties": {
+					"connectionString": "[parameters('AGCLRSPRD_CLARITY_AG_connectionString')]",
+					"userName": "[parameters('AGCLRSPRD_CLARITY_AG_properties_typeProperties_userName')]",
+					"password": {
+						"type": "SecureString",
+						"value": "[parameters('AGCLRSPRD_CLARITY_AG_password')]"
+					}
+				},
+				"connectVia": {
+					"referenceName": "integrationRuntimeDDCMSIRTPRDAPP1",
+					"type": "IntegrationRuntimeReference"
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/integrationRuntimes/integrationRuntimeDDCMSIRTPRDAPP1')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/Clarity Node 2')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "SqlServer",
+				"typeProperties": {
+					"connectionString": "[parameters('Clarity Node 2_connectionString')]",
+					"userName": "[parameters('Clarity Node 2_properties_typeProperties_userName')]",
+					"password": {
+						"type": "SecureString",
+						"value": "[parameters('Clarity Node 2_password')]"
+					}
+				},
+				"connectVia": {
+					"referenceName": "integrationRuntimeDDCMSIRTPRDAPP1",
+					"type": "IntegrationRuntimeReference"
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/integrationRuntimes/integrationRuntimeDDCMSIRTPRDAPP1')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/Clarity Node 3')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"description": "KDCCLRSPRAGDB3",
+				"annotations": [],
+				"type": "SqlServer",
+				"typeProperties": {
+					"connectionString": "[parameters('Clarity Node 3_connectionString')]"
+				},
+				"connectVia": {
+					"referenceName": "integrationRuntimeDDCMSIRTPRDAPP1",
+					"type": "IntegrationRuntimeReference"
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/integrationRuntimes/integrationRuntimeDDCMSIRTPRDAPP1')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/ClarityVal')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "SqlServer",
+				"typeProperties": {
+					"connectionString": "[parameters('ClarityVal_connectionString')]"
+				},
+				"connectVia": {
+					"referenceName": "integrationRuntimeDDCMSIRTPRDAPP1",
+					"type": "IntegrationRuntimeReference"
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/integrationRuntimes/integrationRuntimeDDCMSIRTPRDAPP1')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/ClarityVal2')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "SqlServer",
+				"typeProperties": {
+					"connectionString": "[parameters('ClarityVal2_connectionString')]"
+				},
+				"connectVia": {
+					"referenceName": "iR-DDCIRPRDAPP1",
+					"type": "IntegrationRuntimeReference"
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/integrationRuntimes/iR-DDCIRPRDAPP1')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/DDCADIFINPRDDB_EBA')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "SqlServer",
+				"typeProperties": {
+					"connectionString": "[parameters('DDCADIFINPRDDB_EBA_connectionString')]"
+				},
+				"connectVia": {
+					"referenceName": "integrationRuntimeDDCMSIRTPRDAPP1",
+					"type": "IntegrationRuntimeReference"
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/integrationRuntimes/integrationRuntimeDDCMSIRTPRDAPP1')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/DDCCLRSPRAGDB1_CLARITY1')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "SqlServer",
+				"typeProperties": {
+					"connectionString": "[parameters('DDCCLRSPRAGDB1_CLARITY1_connectionString')]",
+					"userName": "[parameters('DDCCLRSPRAGDB1_CLARITY1_properties_typeProperties_userName')]",
+					"password": {
+						"type": "SecureString",
+						"value": "[parameters('DDCCLRSPRAGDB1_CLARITY1_password')]"
+					}
+				},
+				"connectVia": {
+					"referenceName": "integrationRuntimeDDCMSIRTPRDAPP1",
+					"type": "IntegrationRuntimeReference"
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/integrationRuntimes/integrationRuntimeDDCMSIRTPRDAPP1')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/DDCDETSTDBAG01')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "SqlServer",
+				"typeProperties": {
+					"connectionString": "[parameters('DDCDETSTDBAG01_connectionString')]",
+					"userName": "[parameters('DDCDETSTDBAG01_properties_typeProperties_userName')]",
+					"password": {
+						"type": "SecureString",
+						"value": "[parameters('DDCDETSTDBAG01_password')]"
+					}
+				},
+				"connectVia": {
+					"referenceName": "integrationRuntimeDDCMSIRTPRDAPP1",
+					"type": "IntegrationRuntimeReference"
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/integrationRuntimes/integrationRuntimeDDCMSIRTPRDAPP1')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/DDCDETSTDBAG02')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "SqlServer",
+				"typeProperties": {
+					"connectionString": "[parameters('DDCDETSTDBAG02_connectionString')]",
+					"userName": "[parameters('DDCDETSTDBAG02_properties_typeProperties_userName')]",
+					"password": {
+						"type": "SecureString",
+						"value": "[parameters('DDCDETSTDBAG02_password')]"
+					}
+				},
+				"connectVia": {
+					"referenceName": "integrationRuntimeDDCMSIRTPRDAPP1",
+					"type": "IntegrationRuntimeReference"
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/integrationRuntimes/integrationRuntimeDDCMSIRTPRDAPP1')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/DataBricks_node3')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"description": "Clarity Node 3 DataBricks table",
+				"annotations": [],
+				"type": "SqlServer",
+				"typeProperties": {
+					"connectionString": "[parameters('DataBricks_node3_connectionString')]"
+				},
+				"connectVia": {
+					"referenceName": "integrationRuntimeDDCMSIRTPRDAPP1",
+					"type": "IntegrationRuntimeReference"
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/integrationRuntimes/integrationRuntimeDDCMSIRTPRDAPP1')]"
+			]
+		}
+	]
+}
