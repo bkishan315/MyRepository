@@ -1,6 +1,5 @@
 {
 	"name": "steplandinglakedev01VAL",
-	"type": "Microsoft.DataFactory/factories/linkedservices",
 	"properties": {
 		"annotations": [],
 		"type": "AzureBlobFS",
@@ -12,8 +11,9 @@
 			}
 		},
 		"connectVia": {
-			"referenceName": "iR-DDCIRPRDAPP1",
+			"referenceName": "integrationRuntimeDDCMSIRTPRDAPP1",
 			"type": "IntegrationRuntimeReference"
 		}
-	}
+	},
+	"type": "Microsoft.DataFactory/factories/linkedservices"
 }
