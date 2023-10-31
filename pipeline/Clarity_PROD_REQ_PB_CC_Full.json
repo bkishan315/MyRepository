@@ -1,5 +1,5 @@
 {
-	"name": "Clarity_VAL_REQ_PB_CC_Full",
+	"name": "Clarity_PROD_REQ_PB_CC_Full",
 	"properties": {
 		"activities": [
 			{
@@ -124,7 +124,7 @@
 			}
 		],
 		"folder": {
-			"name": "VAL"
+			"name": "PROD"
 		},
 		"annotations": [],
 		"lastPublishTime": "2023-10-27T13:20:18Z"

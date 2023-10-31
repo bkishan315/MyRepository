@@ -1,5 +1,5 @@
 {
-	"name": "Clarity_VAL_REQ_CUSTOM_CC_Full_WorkinProgress",
+	"name": "Clarity_PROD_REQ_CUSTOM_CC_Full_WorkinProgress",
 	"properties": {
 		"description": "We are going to use non Community connect logic for these tables until we update it in metadata tables",
 		"activities": [
@@ -124,7 +124,7 @@
 			}
 		],
 		"folder": {
-			"name": "VAL"
+			"name": "PROD"
 		},
 		"annotations": [],
 		"lastPublishTime": "2023-10-24T18:55:02Z"

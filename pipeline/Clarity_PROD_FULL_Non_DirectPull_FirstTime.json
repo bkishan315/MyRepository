@@ -1,5 +1,5 @@
 {
-	"name": "Clarity_VAL_FULL_Non_DirectPull_FirstTime",
+	"name": "Clarity_PROD_FULL_Non_DirectPull_FirstTime",
 	"properties": {
 		"activities": [
 			{
@@ -122,7 +122,7 @@
 			}
 		],
 		"folder": {
-			"name": "VAL"
+			"name": "PROD"
 		},
 		"annotations": [],
 		"lastPublishTime": "2023-10-24T18:55:02Z"
