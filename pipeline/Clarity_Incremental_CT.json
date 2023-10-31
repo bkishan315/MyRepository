@@ -21,6 +21,10 @@
 						"queryTimeout": "02:00:00",
 						"partitionOption": "None"
 					},
+					"dataset": {
+						"referenceName": "TstAg2_NoTable",
+						"type": "DatasetReference"
+					},
 					"firstRowOnly": false
 				}
 			},
@@ -75,8 +79,22 @@
 										"type": "ParquetWriteSettings"
 									}
 								},
-								"enableStaging": false
+								"enableStaging": false,
+								"translator": {
+									"type": "TabularTranslator",
+									"typeConversion": true,
+									"typeConversionSettings": {
+										"allowDataTruncation": true,
+										"treatBooleanAsNumber": false
+									}
+								}
 							},
+							"inputs": [
+								{
+									"referenceName": "TstAg2_NoTable",
+									"type": "DatasetReference"
+								}
+							],
 							"outputs": [
 								{
 									"referenceName": "Dataset_Gen2_Dynamic_Parquet",
@@ -161,6 +179,10 @@
 									},
 									"queryTimeout": "02:00:00",
 									"partitionOption": "None"
+								},
+								"dataset": {
+									"referenceName": "TstAg2_NoTable",
+									"type": "DatasetReference"
 								}
 							}
 						}

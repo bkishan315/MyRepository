@@ -1,5 +1,5 @@
 {
-	"name": "Clarity_Full",
+	"name": "Clarity_VAL_REQ_SA_CC_Full",
 	"properties": {
 		"activities": [
 			{
@@ -7,8 +7,8 @@
 				"type": "Lookup",
 				"dependsOn": [],
 				"policy": {
-					"timeout": "0.12:00:00",
-					"retry": 0,
+					"timeout": "0.20:00:00",
+					"retry": 5,
 					"retryIntervalInSeconds": 30,
 					"secureOutput": false,
 					"secureInput": false
@@ -17,25 +17,26 @@
 				"typeProperties": {
 					"source": {
 						"type": "SqlServerSource",
-						"sqlReaderQuery": "select * from etl.x_Databricks_Logic where IsActive =1\n",
+						"sqlReaderQuery": "select x.Sourcetablename,x.Targetfilename,x.targetfoldername,x.Query_Full_CC from etl.x_Databricks_Logic_new x where EPIC_CC_Filters in ('Service Area Lookup') and Is_REQ=1  and IsActive=1",
 						"queryTimeout": "02:00:00",
 						"partitionOption": "None"
 					},
 					"dataset": {
-						"referenceName": "TstAg2_NoTable",
+						"referenceName": "Val_No_Table",
 						"type": "DatasetReference"
 					},
 					"firstRowOnly": false
 				}
 			},
 			{
-				"name": "CopyEachtables",
+				"name": "ForEach1",
+				"description": "using Community connect logic for these table list. rest will use No CC logic until we update it in metadata table",
 				"type": "ForEach",
 				"dependsOn": [
 					{
 						"activity": "check_metadata",
 						"dependencyConditions": [
-							"Completed"
+							"Succeeded"
 						]
 					}
 				],
@@ -45,15 +46,15 @@
 						"value": "@activity('check_metadata').output.value",
 						"type": "Expression"
 					},
-					"isSequential": true,
+					"isSequential": false,
 					"activities": [
 						{
-							"name": "Full",
+							"name": "CopyChangesToBlob_copy1",
 							"type": "Copy",
 							"dependsOn": [],
 							"policy": {
-								"timeout": "0.12:00:00",
-								"retry": 0,
+								"timeout": "0.20:00:00",
+								"retry": 5,
 								"retryIntervalInSeconds": 30,
 								"secureOutput": false,
 								"secureInput": false
@@ -62,8 +63,17 @@
 							"typeProperties": {
 								"source": {
 									"type": "SqlServerSource",
+									"additionalColumns": [
+										{
+											"name": "AzureEtlLoadTime",
+											"value": {
+												"value": "@formatDateTime(convertFromUtc(utcnow(), 'Mountain Standard Time'),'yyyy-MM-dd-HH-mm-ss')",
+												"type": "Expression"
+											}
+										}
+									],
 									"sqlReaderQuery": {
-										"value": "@item().query_Full",
+										"value": "@item().query_Full_CC",
 										"type": "Expression"
 									},
 									"queryTimeout": "02:00:00",
@@ -72,8 +82,7 @@
 								"sink": {
 									"type": "ParquetSink",
 									"storeSettings": {
-										"type": "AzureBlobFSWriteSettings",
-										"copyBehavior": "FlattenHierarchy"
+										"type": "AzureBlobFSWriteSettings"
 									},
 									"formatSettings": {
 										"type": "ParquetWriteSettings"
@@ -91,19 +100,20 @@
 							},
 							"inputs": [
 								{
-									"referenceName": "TstAg2_NoTable",
+									"referenceName": "Val_No_Table",
 									"type": "DatasetReference"
 								}
 							],
 							"outputs": [
 								{
-									"referenceName": "Dataset_Gen2_Dynamic_Parquet",
+									"referenceName": "datasetgen2_CDC",
 									"type": "DatasetReference",
 									"parameters": {
 										"path": {
-											"value": "@concat(item().Targetfilename,'_',formatDateTime(utcNow(),'yyyy-MM-dd HH:mm:ss'),'.','parquet')",
+											"value": "@concat(item().Targetfilename,'_Full','_',formatDateTime(convertFromUtc(utcnow(), 'Mountain Standard Time'),'yyyy-MM-dd-HH-mm-ss'),'.','parquet')",
 											"type": "Expression"
-										}
+										},
+										"folder": "@item().targetfoldername"
 									}
 								}
 							]
@@ -113,10 +123,10 @@
 			}
 		],
 		"folder": {
-			"name": "Test"
+			"name": "VAL"
 		},
 		"annotations": [],
-		"lastPublishTime": "2023-10-18T17:32:43Z"
+		"lastPublishTime": "2023-10-24T18:55:02Z"
 	},
 	"type": "Microsoft.DataFactory/factories/pipelines"
 }

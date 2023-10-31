@@ -1,0 +1,604 @@
+{
+	"name": "bld_pat_enc_sink",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "stedplandinglakedev01",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": {
+					"value": "@concat('pat_enc','_',formatDateTime(utcNow(),'yyyy-MM-dd HH:mm:ss'),'.','parquet')",
+					"type": "Expression"
+				},
+				"folderPath": "enterprise/peaks/epic_clarity/Test",
+				"fileSystem": "dls-stedplandinglakedev01"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": [
+			{
+				"name": "__$start_lsn",
+				"type": "BINARY"
+			},
+			{
+				"name": "__$operation",
+				"type": "INT32"
+			},
+			{
+				"name": "__$update_mask",
+				"type": "BINARY"
+			},
+			{
+				"name": "ACCOUNT_ID",
+				"type": "DECIMAL",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "ACCOUNT_NAME",
+				"type": "UTF8"
+			},
+			{
+				"name": "CONTACT_PERSON",
+				"type": "UTF8"
+			},
+			{
+				"name": "BIRTHDATE",
+				"type": "INT96"
+			},
+			{
+				"name": "SEX",
+				"type": "UTF8"
+			},
+			{
+				"name": "SSN",
+				"type": "UTF8"
+			},
+			{
+				"name": "IS_ACTIVE",
+				"type": "UTF8"
+			},
+			{
+				"name": "BILLING_ADDRESS_1",
+				"type": "UTF8"
+			},
+			{
+				"name": "BILLING_ADDRESS_2",
+				"type": "UTF8"
+			},
+			{
+				"name": "CITY",
+				"type": "UTF8"
+			},
+			{
+				"name": "STATE_C",
+				"type": "UTF8"
+			},
+			{
+				"name": "ZIP",
+				"type": "UTF8"
+			},
+			{
+				"name": "HOME_PHONE",
+				"type": "UTF8"
+			},
+			{
+				"name": "WORK_PHONE",
+				"type": "UTF8"
+			},
+			{
+				"name": "ACCOUNT_TYPE_C",
+				"type": "INT32"
+			},
+			{
+				"name": "REFERRING_PROV_ID",
+				"type": "UTF8"
+			},
+			{
+				"name": "SERV_AREA_ID",
+				"type": "DECIMAL",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "FIN_CLASS_C",
+				"type": "UTF8"
+			},
+			{
+				"name": "TOTAL_BALANCE",
+				"type": "DECIMAL",
+				"precision": 12,
+				"scale": 2
+			},
+			{
+				"name": "INSURANCE_BALANCE",
+				"type": "DECIMAL",
+				"precision": 12,
+				"scale": 2
+			},
+			{
+				"name": "PATIENT_BALANCE",
+				"type": "DECIMAL",
+				"precision": 12,
+				"scale": 2
+			},
+			{
+				"name": "BILLING_CYCLE_C",
+				"type": "INT32"
+			},
+			{
+				"name": "FOLLOW_UP_CYCLE_ID",
+				"type": "DECIMAL",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "BILLING_STATUS_C",
+				"type": "INT32"
+			},
+			{
+				"name": "PMT_PLAN_AMOUNT",
+				"type": "DECIMAL",
+				"precision": 12,
+				"scale": 2
+			},
+			{
+				"name": "PMT_PLAN_FREQ",
+				"type": "UTF8"
+			},
+			{
+				"name": "PMT_PLAN_STRT_DATE",
+				"type": "INT96"
+			},
+			{
+				"name": "PMT_PLAN_DUE_DATE",
+				"type": "INT32"
+			},
+			{
+				"name": "LAST_INS_PMT_DATE",
+				"type": "INT96"
+			},
+			{
+				"name": "LAST_INS_PMT_AMT",
+				"type": "DECIMAL",
+				"precision": 12,
+				"scale": 2
+			},
+			{
+				"name": "LAST_PAT_PMT_DATE",
+				"type": "INT96"
+			},
+			{
+				"name": "LAST_PAT_PMT_AMT",
+				"type": "DECIMAL",
+				"precision": 12,
+				"scale": 2
+			},
+			{
+				"name": "LAST_STMT_DATE",
+				"type": "INT96"
+			},
+			{
+				"name": "CONTRACT_ID",
+				"type": "DECIMAL",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "CONTRACT_EXP_DATE",
+				"type": "INT96"
+			},
+			{
+				"name": "EMPLOYER_ID",
+				"type": "UTF8"
+			},
+			{
+				"name": "EMPLOYER_PHONE",
+				"type": "UTF8"
+			},
+			{
+				"name": "COLLECTOR_USER_ID",
+				"type": "UTF8"
+			},
+			{
+				"name": "EPIC_ACCT_ID",
+				"type": "DECIMAL",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "RESEARCH_ID",
+				"type": "UTF8"
+			},
+			{
+				"name": "OCCUPATION",
+				"type": "UTF8"
+			},
+			{
+				"name": "UNDIST_PMT_YN",
+				"type": "UTF8"
+			},
+			{
+				"name": "CREDIT_BALANCE_YN",
+				"type": "UTF8"
+			},
+			{
+				"name": "BAD_DEBT_BALANCE",
+				"type": "DECIMAL",
+				"precision": 12,
+				"scale": 2
+			},
+			{
+				"name": "PP_AMOUNT_DUE",
+				"type": "DECIMAL",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "PP_CUR_BALANCE",
+				"type": "DECIMAL",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "CM_PHY_OWNER_ID",
+				"type": "UTF8"
+			},
+			{
+				"name": "CM_LOG_OWNER_ID",
+				"type": "UTF8"
+			},
+			{
+				"name": "ROI_PAT_ACCNT_YN",
+				"type": "UTF8"
+			},
+			{
+				"name": "ROI_BALANCE",
+				"type": "DECIMAL",
+				"precision": 12,
+				"scale": 2
+			},
+			{
+				"name": "EB_LAST_ND_STMT_DT",
+				"type": "INT96"
+			},
+			{
+				"name": "EB_LAST_D_STMT_DT",
+				"type": "INT96"
+			},
+			{
+				"name": "HOM_CLARITY_FLG_YN",
+				"type": "UTF8"
+			},
+			{
+				"name": "HB_BALANCE",
+				"type": "DECIMAL",
+				"precision": 12,
+				"scale": 2
+			},
+			{
+				"name": "HB_PREBILL_BALANCE",
+				"type": "DECIMAL",
+				"precision": 12,
+				"scale": 2
+			},
+			{
+				"name": "HB_INSURANCE_BALAN",
+				"type": "DECIMAL",
+				"precision": 12,
+				"scale": 2
+			},
+			{
+				"name": "HB_SELFPAY_BALANCE",
+				"type": "DECIMAL",
+				"precision": 12,
+				"scale": 2
+			},
+			{
+				"name": "HB_BADDEBT_BALANCE",
+				"type": "DECIMAL",
+				"precision": 12,
+				"scale": 2
+			},
+			{
+				"name": "HB_UNDISTRIB_BAL",
+				"type": "DECIMAL",
+				"precision": 12,
+				"scale": 2
+			},
+			{
+				"name": "HB_SP_AGING_DATE",
+				"type": "INT96"
+			},
+			{
+				"name": "HB_INS_AGING_DATE",
+				"type": "INT96"
+			},
+			{
+				"name": "HB_LAST_INS_PMT_DT",
+				"type": "INT96"
+			},
+			{
+				"name": "HB_LAST_SP_PMT_DT",
+				"type": "INT96"
+			},
+			{
+				"name": "SBO_HSP_ACCOUNT_ID",
+				"type": "DECIMAL",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "EB_LAST_INFO_ST_DT",
+				"type": "INT96"
+			},
+			{
+				"name": "EB_LAST_D_INFO_DT",
+				"type": "INT96"
+			},
+			{
+				"name": "HB_PP_EST_LIST",
+				"type": "UTF8"
+			},
+			{
+				"name": "EMPR_ID_CMT",
+				"type": "UTF8"
+			},
+			{
+				"name": "GUAR_REHOMED_YN",
+				"type": "UTF8"
+			},
+			{
+				"name": "OLD_REHOMED_ID",
+				"type": "DECIMAL",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "HOUSE_NUM",
+				"type": "UTF8"
+			},
+			{
+				"name": "PAT_REC_OF_GUAR_ID",
+				"type": "UTF8"
+			},
+			{
+				"name": "NXT_STM_DATE",
+				"type": "INT96"
+			},
+			{
+				"name": "CLNT_BILL_FRQNCY_C",
+				"type": "INT32"
+			},
+			{
+				"name": "CLNT_BILL_DAY_C",
+				"type": "INT32"
+			},
+			{
+				"name": "CLNT_BILL_DT_MNTH",
+				"type": "INT32"
+			},
+			{
+				"name": "CLIENT_ACCOUNT_YN",
+				"type": "UTF8"
+			},
+			{
+				"name": "CLIENT_REIMB_ID",
+				"type": "DECIMAL",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "PMT_PLAN_DURATION",
+				"type": "INT32"
+			},
+			{
+				"name": "PMT_PLAN_TOTAL_AMT",
+				"type": "DECIMAL",
+				"precision": 12,
+				"scale": 2
+			},
+			{
+				"name": "PMT_PLAN_ON_TIME_YN",
+				"type": "UTF8"
+			},
+			{
+				"name": "PMT_PLAN_BAL_PD_YN",
+				"type": "UTF8"
+			},
+			{
+				"name": "PMT_PLAN_LNKSTMT_YN",
+				"type": "UTF8"
+			},
+			{
+				"name": "RQG_RELATIONSHIP_C",
+				"type": "INT32"
+			},
+			{
+				"name": "DISTRICT_C",
+				"type": "INT32"
+			},
+			{
+				"name": "ROI_BILL_HOUSE_NUM",
+				"type": "UTF8"
+			},
+			{
+				"name": "ROI_BILL_DISTRICT_C",
+				"type": "INT32"
+			},
+			{
+				"name": "HB_BD_SELFPAY_BAL",
+				"type": "DECIMAL",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "HB_BD_INSURANCE_BAL",
+				"type": "DECIMAL",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "HB_BD_UNDISTRIB_BAL",
+				"type": "DECIMAL",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "SELF_VERIFY_DATE",
+				"type": "INT96"
+			},
+			{
+				"name": "SELF_VERIFY_STAT_YN",
+				"type": "UTF8"
+			},
+			{
+				"name": "ROI_BILL_COUNTY_C",
+				"type": "UTF8"
+			},
+			{
+				"name": "COUNTY_C",
+				"type": "UTF8"
+			},
+			{
+				"name": "COUNTRY_C",
+				"type": "UTF8"
+			},
+			{
+				"name": "EMPY_STAT_C",
+				"type": "INT32"
+			},
+			{
+				"name": "GUAR_EMPR_CITY",
+				"type": "UTF8"
+			},
+			{
+				"name": "GUAR_EMPR_STATE_C",
+				"type": "UTF8"
+			},
+			{
+				"name": "GUAR_EMPR_ZIP",
+				"type": "UTF8"
+			},
+			{
+				"name": "GUAR_EMP_CNTRY_C",
+				"type": "UTF8"
+			},
+			{
+				"name": "GUAR_VERIF_STAT_C",
+				"type": "UTF8"
+			},
+			{
+				"name": "LAST_VERIF_DT",
+				"type": "INT96"
+			},
+			{
+				"name": "NEXT_REVIEW_DT",
+				"type": "INT96"
+			},
+			{
+				"name": "LAST_VERIF_USER_ID",
+				"type": "UTF8"
+			},
+			{
+				"name": "EXT_BD_SP_BAL",
+				"type": "DECIMAL",
+				"precision": 12,
+				"scale": 2
+			},
+			{
+				"name": "EXT_BD_INS_BAL",
+				"type": "DECIMAL",
+				"precision": 12,
+				"scale": 2
+			},
+			{
+				"name": "PB_EXT_SP_BAL",
+				"type": "DECIMAL",
+				"precision": 12,
+				"scale": 2
+			},
+			{
+				"name": "PB_EXT_INS_BAL",
+				"type": "DECIMAL",
+				"precision": 12,
+				"scale": 2
+			},
+			{
+				"name": "INCOME_SOURCE_C",
+				"type": "UTF8"
+			},
+			{
+				"name": "LANGUAGE_C",
+				"type": "UTF8"
+			},
+			{
+				"name": "HB_LAST_STMT_DATE",
+				"type": "INT96"
+			},
+			{
+				"name": "HB_NEXT_STMT_DATE",
+				"type": "INT96"
+			},
+			{
+				"name": "HB_LAST_DEMAND_DATE",
+				"type": "INT96"
+			},
+			{
+				"name": "HB_BILL_NOTE_EXP_DT",
+				"type": "INT96"
+			},
+			{
+				"name": "HB_PP_MONTHLY_DUE",
+				"type": "UTF8"
+			},
+			{
+				"name": "HB_PP_CUR_HAR_DUE",
+				"type": "UTF8"
+			},
+			{
+				"name": "HB_PP_INIT_HAR_BAL",
+				"type": "UTF8"
+			},
+			{
+				"name": "GUAR_EMP_HOUSE_NUM",
+				"type": "UTF8"
+			},
+			{
+				"name": "GUAR_EMPR_DISTR_C",
+				"type": "INT32"
+			},
+			{
+				"name": "ARPB_NEXT_STMT_DATE",
+				"type": "INT96"
+			},
+			{
+				"name": "GUAR_VERIF_ID",
+				"type": "DECIMAL",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "ROI_DISPLY_IN_QD_YN",
+				"type": "UTF8"
+			},
+			{
+				"name": "ROI_TAX_EXEMPT_YN",
+				"type": "UTF8"
+			},
+			{
+				"name": "ROI_PREPAY_ONLY_YN",
+				"type": "UTF8"
+			},
+			{
+				"name": "CONF_NAM_OF_ASSC_PT",
+				"type": "UTF8"
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
